@@ -1,0 +1,8 @@
+pandas
+oocsi
+sklearn
+numpy
+streamlit
+streamlit-extras
+uuid4
+
