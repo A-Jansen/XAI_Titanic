@@ -3,6 +3,8 @@ from uuid import uuid4
 from streamlit_extras.switch_page_button import switch_page
 import random
 import pandas as pd
+import xgboost as xgb
+
 
 header = st.container()
 body = st.container()
@@ -17,14 +19,18 @@ st.write(st.session_state.nextPage)
 def loadData():
     train_df = pd.read_csv('assets/train_df.csv')
     test_df = pd.read_csv('assets/test_df.csv')
+    test_with_names = pd.read_csv('assets/test_with_names.csv')
     X_train = train_df.drop("Survived", axis=1)
     Y_train = train_df["Survived"]
     X_test  = test_df.drop("PassengerId", axis=1).copy()
-    return X_train, Y_train, X_test
+    X_test_names = test_with_names.copy()
+    return X_train, Y_train, X_test, X_test_names
 
 if 'X_train' not in st.session_state:
-    st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test= loadData()
+    st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test, st.session_state.X_test_names= loadData()
     # st.dataframe(st.session_state.X_train)
+
+
 
 with header:
     st.title("Who survived and why?")
