@@ -18,16 +18,21 @@ import matplotlib.pyplot as plt
 
 #Delete this page from the array of pages to visit, this way it cannot be visited twice
 if 'profile4' not in st.session_state:
-    st.session_state.profiles.remove("visualMap")
+    st.session_state.pages.remove("visualMap")
     st.session_state.profile4= 'deleted'
-    if (len(st.session_state.profiles)>0):
-        st.session_state.nextPage4 = random.randint(0, len(st.session_state.profiles)-1)
+    if (len(st.session_state.pages)>0):
+        st.session_state.nextPage4 = random.randint(0, len(st.session_state.pages)-1)
         st.session_state.lastQuestion= 'no'
     else:
         st.session_state.lastQuestion= 'yes'
 
+
+if 'index4' not in st.session_state:
+    st.session_state.index4= 0    
+
 if 'profileIndex' not in st.session_state:
-    st.session_state.profileIndex= 0    
+    st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index4]       
+    
     
 
 header = st.container()
@@ -94,10 +99,15 @@ with explanation:
    
 
 with footer:
-    if st.button("New profile"):
-        st.session_state.profileIndex= random.randint(0,400)
-        st.text("Scroll up to see the new profile")
-    # st.markdown("[New profile](#top)")
+    if (st.session_state.index4 < len(st.session_state.profileIndices)):
+        if st.button("New profile"):
+            st.session_state.profileIndex = st.session_state.profileIndices[st.session_state.index4]
+            st.session_state.index4 = st.session_state.index4+1
+    else:
+
+        st.markdown("You have reached the end of the profiles :disappointed_relieved:")
+        if st.button("Continue to evaluation"):
+            st.write("add")
 
 
 
@@ -160,4 +170,5 @@ with evaluation:
             if (st.session_state.lastQuestion =='yes'): 
                 switch_page('finalPage')
             else: 
-                    switch_page(st.session_state.profiles[st.session_state.nextPage4])
+                st.session_state.profileIndex =st.session_state.profileIndices[0]
+                switch_page(st.session_state.pages[st.session_state.nextPage4])

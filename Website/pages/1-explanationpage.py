@@ -11,7 +11,7 @@ body = st.container()
 footer =st.container()
 
 if 'nextPage' not in st.session_state:
-    st.session_state.nextPage = random.randint(0, len(st.session_state.profiles)-1)
+    st.session_state.nextPage = random.randint(0, len(st.session_state.pages)-1)
 st.write(st.session_state.nextPage)
 
 
@@ -49,4 +49,4 @@ with body:
 
 with footer:
     if st.button("Start the experiment "):
-        switch_page(st.session_state.profiles[st.session_state.nextPage])
+        switch_page(st.session_state.pages[st.session_state.nextPage])

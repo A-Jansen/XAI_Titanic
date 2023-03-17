@@ -20,13 +20,21 @@ import base64
 
 #Delete this page from the array of pages to visit, this way it cannot be visited twice
 if 'profile2' not in st.session_state:
-    st.session_state.profiles.remove("DecisionTree")
+    st.session_state.pages.remove("DecisionTree")
     st.session_state.profile2= 'deleted'
-    if (len(st.session_state.profiles)>0):
-        st.session_state.nextPage2 = random.randint(0, len(st.session_state.profiles)-1)
+    if (len(st.session_state.pages)>0):
+        st.session_state.nextPage2 = random.randint(0, len(st.session_state.pages)-1)
         st.session_state.lastQuestion= 'no'
     else:
         st.session_state.lastQuestion= 'yes'
+
+
+if 'index2' not in st.session_state:
+    st.session_state.index2= 0    
+
+
+if 'profileIndex' not in st.session_state:
+    st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index2]       
     
 nameArray =st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"].split(',')
 name= nameArray[1]+" "+ nameArray[0]
@@ -119,11 +127,14 @@ with explanation:
     st.text("")
 
 with footer:
-    if st.button("New profile"):
-        st.session_state.profileIndex= random.randint(0,400)
-        st.text("Scroll up to see the new profile")
+    if (st.session_state.index2 < len(st.session_state.profileIndices)):
+        if st.button("New profile"):
+            st.session_state.profileIndex = st.session_state.profileIndices[st.session_state.index2]
+            st.session_state.index2 = st.session_state.index2+1
     else:
-        st.text("")
+        st.markdown("You have reached the end of the profiles :disappointed_relieved:")
+        if st.button("Continue to evaluation"):
+            st.write("add")
 
 
     # st.markdown("[New profile](#top)")
@@ -185,4 +196,5 @@ with evaluation:
             if (st.session_state.lastQuestion =='yes'): 
                 switch_page('finalPage')
             else: 
-                switch_page(st.session_state.profiles[st.session_state.nextPage2])
+                st.session_state.profileIndex =st.session_state.profileIndices[0]
+                switch_page(st.session_state.pages[st.session_state.nextPage2])

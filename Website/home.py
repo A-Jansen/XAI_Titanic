@@ -35,16 +35,13 @@ import json
 # If not, then initialize it
 if 'participantID' not in st.session_state:
     st.session_state.participantID= "P" + uuid4().__str__().replace('-', '')[0:10]
-    st.session_state.profiles =['SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
+    st.session_state.pages =['SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
+    st.session_state.profileIndices=[1 ,0, 12, 32]
 
 if 'oocsi' not in st.session_state:
     st.session_state.oocsi = OOCSI('','oocsi.id.tue.nl')
 
 
-if 'URL' not in st.session_state:
-    # API endpoint
-    st.session_state.URL = "https://data.id.tue.nl/datasets/ts/record/7810/V0NLMVNwQmNLQUMrYlZVRi9kaUx2ejNhbUhtNzMrTURPS0JaZ2hxc213TT0="
-    st.session_state.URLconsent="https://data.id.tue.nl/datasets/ts/record/7813/aDc4MzNpa2Q1RXQ4ZmI3MS85S2ozVUhkMitEY25GV3FBM3VkaEZ5Rm9uaz0="
 # st.write(st.session_state.participantID)
 
 
