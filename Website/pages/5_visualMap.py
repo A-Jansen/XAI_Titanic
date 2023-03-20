@@ -108,67 +108,123 @@ with footer:
         st.markdown("You have reached the end of the profiles :disappointed_relieved:")
         if st.button("Continue to evaluation"):
             st.write("add")
+        with st.form("my_form4", clear_on_submit=True):
+            st.subheader("Evaluation")
+            st.write("These questions only ask for your opinion about this specific explanation")
+            q1 = st.select_slider(
+            '**1**- From the explanation, I **understand** how the algorithm works:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            q2 = st.select_slider(
+            '**2**- This explanation of how the algorithm works is **satisfying**:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            q3 = st.select_slider(
+            '**3**- This explanation of how the algorithm works has **sufficient detail**:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            q4 = st.select_slider(
+            '**4**- This explanation of how the algorithm works seems **complete**:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            q5 = st.select_slider(
+            '**5**- This explanation of how the algorithm works **tells me how to use it**:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            q6 = st.select_slider(
+            '**6**- This explanation of how the algorithm works is **useful to my goals**:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            q7 = st.select_slider(
+            '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            q8 = st.select_slider(
+            '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
+            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+
+            # Every form must have a submit button.
+            submitted = st.form_submit_button("Submit")
+            if submitted:
+                # st.write("question 1", q1)
+                st.session_state.oocsi.send('EngD_HAII', {
+                    'participant_ID': st.session_state.participantID,
+                    'type of explanation': 'counterfactual',
+                    'q1': q1,
+                    'q2': q2,
+                    'q3': q3,
+                    'q4': q4,
+                    'q5': q5,
+                    'q6': q6,
+                    'q7': q7,
+                    'q8': q8,
+                    
+                    })
+                if (st.session_state.lastQuestion =='yes'): 
+                    switch_page('finalPage')
+                else: 
+                    st.session_state.profileIndex =st.session_state.profileIndices[0]
+                    switch_page(st.session_state.pages[st.session_state.nextPage4])
 
 
 
+# with evaluation:
+#     # finished4 = st.checkbox('I am finished looking at the explanation, continue to the questions')
+#     # if finished4:
+#     with st.form("my_form4", clear_on_submit=True):
+#         st.subheader("Evaluation")
+#         st.write("These questions only ask for your opinion about this specific explanation")
+#         q1 = st.select_slider(
+#         '**1**- From the explanation, I **understand** how the algorithm works:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-with evaluation:
-    # finished4 = st.checkbox('I am finished looking at the explanation, continue to the questions')
-    # if finished4:
-    with st.form("my_form4", clear_on_submit=True):
-        st.subheader("Evaluation")
-        st.write("These questions only ask for your opinion about this specific explanation")
-        q1 = st.select_slider(
-        '**1**- From the explanation, I **understand** how the algorithm works:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+#         q2 = st.select_slider(
+#         '**2**- This explanation of how the algorithm works is **satisfying**:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-        q2 = st.select_slider(
-        '**2**- This explanation of how the algorithm works is **satisfying**:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+#         q3 = st.select_slider(
+#         '**3**- This explanation of how the algorithm works has **sufficient detail**:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-        q3 = st.select_slider(
-        '**3**- This explanation of how the algorithm works has **sufficient detail**:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+#         q4 = st.select_slider(
+#         '**4**- This explanation of how the algorithm works seems **complete**:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-        q4 = st.select_slider(
-        '**4**- This explanation of how the algorithm works seems **complete**:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+#         q5 = st.select_slider(
+#         '**5**- This explanation of how the algorithm works **tells me how to use it**:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-        q5 = st.select_slider(
-        '**5**- This explanation of how the algorithm works **tells me how to use it**:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+#         q6 = st.select_slider(
+#         '**6**- This explanation of how the algorithm works is **useful to my goals**:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-        q6 = st.select_slider(
-        '**6**- This explanation of how the algorithm works is **useful to my goals**:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+#         q7 = st.select_slider(
+#         '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-        q7 = st.select_slider(
-        '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+#         q8 = st.select_slider(
+#         '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
+#         options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-        q8 = st.select_slider(
-        '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
-        options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
-
-        # Every form must have a submit button.
-        submitted = st.form_submit_button("Submit")
-        if submitted:
-            # st.write("question 1", q1)
-            st.session_state.oocsi.send('EngD_HAII', {
-                'participant_ID': st.session_state.participantID,
-                'type of explanation': 'counterfactual',
-                'q1': q1,
-                'q2': q2,
-                'q3': q3,
-                'q4': q4,
-                'q5': q5,
-                'q6': q6,
-                'q7': q7,
-                'q8': q8,
+#         # Every form must have a submit button.
+#         submitted = st.form_submit_button("Submit")
+#         if submitted:
+#             # st.write("question 1", q1)
+#             st.session_state.oocsi.send('EngD_HAII', {
+#                 'participant_ID': st.session_state.participantID,
+#                 'type of explanation': 'counterfactual',
+#                 'q1': q1,
+#                 'q2': q2,
+#                 'q3': q3,
+#                 'q4': q4,
+#                 'q5': q5,
+#                 'q6': q6,
+#                 'q7': q7,
+#                 'q8': q8,
                 
-                })
-            if (st.session_state.lastQuestion =='yes'): 
-                switch_page('finalPage')
-            else: 
-                st.session_state.profileIndex =st.session_state.profileIndices[0]
-                switch_page(st.session_state.pages[st.session_state.nextPage4])
+#                 })
+#             if (st.session_state.lastQuestion =='yes'): 
+#                 switch_page('finalPage')
+#             else: 
+#                 st.session_state.profileIndex =st.session_state.profileIndices[0]
+#                 switch_page(st.session_state.pages[st.session_state.nextPage4])
