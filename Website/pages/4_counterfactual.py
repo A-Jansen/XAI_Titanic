@@ -87,10 +87,10 @@ with prediction:
     probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     if prediction == 0:
         prob = round((probability[0][0]*100),2)
-        st.markdown("There is {}% change that {}  will :red[**not survive**]".format(prob, name) )
+        st.markdown("There is {}% probability that {}  will :red[**not survive**]".format(prob, name) )
     else:
         prob = round((probability[0][1]*100),2)
-        st.markdown("There is {}% change that {}  will :green[**survive**]".format(prob, name) )
+        st.markdown("There is {}% probability that {}  will :green[**survive**]".format(prob, name) )
 
 with explanation:
     st.subheader("Explanation")
