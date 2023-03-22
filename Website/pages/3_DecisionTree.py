@@ -62,24 +62,37 @@ def trainModel(X_train,Y_train):
     model = xgb.XGBClassifier().fit(X_train, Y_train)
     return model
 
-@st.cache_resource
-def createTree(X_train, Y_train, X_test):
+# @st.cache_resource
+def createTree(_model, X_train, Y_train, X_test):
     # X, y = make_moons(n_samples=20, noise=0.25, random_state=3)
     # treeclf = DecisionTreeClassifier(random_state=0)
     # treeclf.fit(X, y)
     # viz_model= dtreeviz(treeclf, X, y, target_name="Classes",
     #     feature_names=["f0", "f1"], class_names=["c0", "c1"])
-    clf = DecisionTreeClassifier(max_depth=3)
-    clf.fit(X_train, Y_train)
+    # clf = DecisionTreeClassifier(max_depth=3)
+    # clf.fit(X_train, Y_train)
+
     # Y_pred = clf.predict(X_test)  
     # acc_decision_tree2 = round(clf.score(X_train, Y_train) * 100, 2)
-    viz_model = dtreeviz(clf,
+    # viz_model = dtreeviz(clf,
+    #                      X_train, Y_train,
+    #                     feature_names=X_train.columns,
+    #                     target_name='Survived',
+    #                     class_names=['Dead', 'Alive'],
+    #                     X=X_test.iloc[1]  
+    # ) 
+    viz_model = dtreeviz(_model, 
                          X_train, Y_train,
-                        feature_names=X_train.columns,
-                        target_name='Survived',
-                        class_names=['Dead', 'Alive'],
-                        X=X_test.iloc[1]  
-    ) 
+                         tree_index=0,
+                         feature_names=list(X_train.columns),
+                         target_name='Survived',
+                         class_names=['Dead', 'Alive'],
+                         X=X_test.iloc[st.session_state.profileIndex],
+                        #depth_range_to_display=(0, 2),
+                        show_just_path=True,
+                        # orientation ='LR',
+                         )
+    #path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
     viz_model.save("/assets/images/prediction_path.svg") 
     return viz_model
 
@@ -109,22 +122,25 @@ with prediction:
     probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     if prediction == 0:
         prob = round((probability[0][0]*100),2)
-        st.markdown("There is {}% probability that {}  will :red[**not survive**]".format(prob, name) )
+        st.markdown("The model predicts with {}% probability  that {}  will :red[**not survive**]".format(prob, name) )
     else:
         prob = round((probability[0][1]*100),2)
-        st.markdown("There is {}% probability that {}  will :green[**survive**]".format(prob, name) )
+        st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
 with explanation:
     st.subheader("Explanation")
-    st.markdown("One of the four types of predictions")
-    # X_train, Y_train, X_test= loadData()
-    viz_model = createTree(st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
+
+    with st.spinner("Please be patient, we are generating a new explanation"):
+        viz_model = createTree(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
     # st.image("/assets/images/prediction_path.svg", width =200, use_column_width=True)
     #viz_model.view()
      # read in svg prediction path and display
+        path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
+    # st.success("Done!")
     with open("/assets/images/prediction_path.svg", "r") as f:
         svg = f.read()
     render_svg(svg)
+    
     st.text("")
 
 with footer:

@@ -64,16 +64,6 @@ def getSHAPvalues(_model,X_train, Y_train, X_test):
 def shapPlot(X_test, _shap_values):
     return shap.plots.waterfall(shap_values[st.session_state.profileIndex])
 
-
-def probaToCategory(prob):
-    if (prob <= 70):
-        category= "low"
-    elif ((prob > 70 )& (prob <= 90 )):
-        category= "medium"
-    else:
-        category= "high"
-    return category
-
 with header:
     st.header(name, anchor='top')
     st.write("For debugging:")
@@ -96,35 +86,17 @@ with prediction:
 
     if prediction == 0:
         prob = round((probability[0][0]*100),2)
-        categoricalProbability = probaToCategory((probability[0][0]*100))
-        st.markdown("There is {}% probability  that {}  will :red[**not survive**]".format(prob, name) )
-        st.markdown("{} would :red[**not have survived**] the Titanic ({}%)".format(name, prob) )
-        st.markdown("The model has {} certainty that {} will :red[**not survive**]".format(categoricalProbability, name))
-        if (prob>90):
-            st.markdown("{} would :red[**not have survived**] the titanic".format(name))
-        elif ((prob <= 90) &( prob >70)):
-            st.markdown("It is likely that {}  would :red[**not have survived**] the titanic".format(name))
-        else:
-            st.markdown("It is not certain but {} might :red[**not have survived**] the titanic". format(name))
+        st.markdown("The model predicts with {}% probability  that {}  will :red[**not survive**]".format(prob, name) )
+
     else:
         prob = round((probability[0][1]*100),2)
-        categoricalProbability = probaToCategory((probability[0][1]*100))
-        st.markdown("There is {}% probability that {}  will :green[**survive**]".format(prob, name) )
-        st.markdown("{} would have :green[**survived**] the Titanic ({}%)".format(name, prob) )
-        st.markdown("The model has {} certainty that {} will :green[**survive**]".format(categoricalProbability, name))
-        if (prob>90):
-            st.markdown("{} would have :green[**survived**] the titanic".format(name))
-        elif ((prob <= 90) &( prob >70)):
-            st.markdown("It is likely that {}  would have :green[**survived**] the titanic".format(name))
-        else:
-            st.markdown("It is not certain but {} might have :green[**survived**] the titanic". format(name))
+        st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
+
 
 with explanation:
-    shap_values= getSHAPvalues(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
-    # plot = shapPlot(X_test, shap_values)
-
     st.subheader("Explanation")
-    st.markdown("SHAP waterfall plot, more text here")
+    # with st.spinner("Please be patient, we are generating a new explanation"):
+    shap_values= getSHAPvalues(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
     st.set_option('deprecation.showPyplotGlobalUse', False)
     fig = shap.plots.waterfall(shap_values[st.session_state.profileIndex])
     st.pyplot(fig, bbox_inches='tight')
