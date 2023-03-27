@@ -33,12 +33,12 @@ if 'index1' not in st.session_state:
 if 'profileIndex' not in st.session_state:
     st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index1]   
 
-header = st.container()
-characteristics = st.container()
-prediction = st.container()
-explanation = st.container()
-footer =st.container()
-evaluation = st.container()
+header1, header2, header3 = st.columns([1,2,1])
+characteristics1, characteristics2, characteristics3 = st.columns([1,2,1])
+prediction1, prediction2, prediction3 =st.columns([1,2,1])
+explanation1, explanation2, explanation3 = st.columns([1,2,1])
+footer1, footer2, footer3 =st.columns([1,2,1])
+evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 
 
 
@@ -64,13 +64,13 @@ def getSHAPvalues(_model,X_train, Y_train, X_test):
 def shapPlot(X_test, _shap_values):
     return shap.plots.waterfall(shap_values[st.session_state.profileIndex])
 
-with header:
+with header2:
     st.header(name, anchor='top')
     st.write("For debugging:")
     st.write(st.session_state.participantID)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
-with characteristics:
+with characteristics2:
     # initialize list of lists
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
@@ -79,7 +79,7 @@ with characteristics:
 
 
 
-with prediction:
+with prediction2:
     # st.header("Prediction")
     prediction =  XGBmodel.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
@@ -93,7 +93,7 @@ with prediction:
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
 
-with explanation:
+with explanation2:
     st.subheader("Explanation")
     # with st.spinner("Please be patient, we are generating a new explanation"):
     shap_values= getSHAPvalues(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
@@ -101,7 +101,7 @@ with explanation:
     fig = shap.plots.waterfall(shap_values[st.session_state.profileIndex])
     st.pyplot(fig, bbox_inches='tight')
 
-with footer:
+with footer2:
     st.write(st.session_state.index1)
     if (st.session_state.index1 < len(st.session_state.profileIndices)-1):
         if st.button("New profile"):
@@ -112,8 +112,8 @@ with footer:
             st.experimental_rerun()
     else:
         st.markdown("You have reached the end of the profiles :disappointed_relieved:")
-        if st.button("Continue to evaluation"):
-            st.write(" ")
+        # if st.button("Continue to evaluation"):
+        #     st.write(" ")
         with st.form("my_form1", clear_on_submit=True):
             st.subheader("Evaluation")
             st.write("These questions only ask for your opinion about this specific explanation")

@@ -6,9 +6,9 @@ import pandas as pd
 import xgboost as xgb
 
 
-header = st.container()
-body = st.container()
-footer =st.container()
+header1, header2, header3 = st.columns([1,2,1])
+body1, body2, body3 =st.columns([1,2,1])
+footer1, footer2, footer3 =st.columns([1,2,1])
 
 if 'nextPage' not in st.session_state:
     st.session_state.nextPage = random.randint(0, len(st.session_state.pages)-1)
@@ -32,13 +32,13 @@ if 'X_train' not in st.session_state:
 
 
 
-with header:
+with header2:
     st.title("Who survived and why?")
     st.write("For debugging:")
     st.write(st.session_state.participantID)
     # X_train, Y_train, X_test= loadData()
 
-with body:
+with body2:
     st.header("The Titanic")
     st.markdown("In the year 1912, the Titanic left from Southampton to New York City, but it never arrived. On April 15, it crashed into an iceberg and sunk. Of the estimated 2,224 passengers and crew aboard, more than 1,500 died, making it the deadliest sinking of a single ship up to that time. ")
     st.image('assets/titanic.jpg')
@@ -47,6 +47,6 @@ with body:
     st.markdown(" After each profile, you will get a few questions about the explanation that was given. In total there are # questions.")
 
 
-with footer:
+with footer2:
     if st.button("Start the experiment "):
         switch_page(st.session_state.pages[st.session_state.nextPage])

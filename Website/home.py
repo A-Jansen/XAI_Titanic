@@ -43,17 +43,18 @@ if 'oocsi' not in st.session_state:
 
 
 # st.write(st.session_state.participantID)
-#comment
 
-header = st.container()
-consent_form = st.container()
+st.set_page_config(page_title="XAI research", layout="wide")
 
-with header:
+header1, header2, header3 = st.columns([1,2,1])
+consent_form1, consent_form2, consent_form3 = st.columns([1,2,1])
+
+with header2:
     st.title("Consent form")
     st.write("For debugging:")
     st.write(st.session_state.participantID)
 
-with consent_form:
+with consent_form2:
     st.markdown("A whole lot of text and options")
     agree = st.checkbox('I agree')
     if agree:

@@ -5,6 +5,7 @@ from oocsi_source import OOCSI
 from uuid import uuid4
 from streamlit_extras.switch_page_button import switch_page
 import random
+import dtreeviz
 import xgboost as xgb
 from dtreeviz.trees import *
 from sklearn.tree import DecisionTreeClassifier
@@ -41,12 +42,13 @@ nameArray =st.session_state.X_test_names.loc[st.session_state.profileIndex, "Nam
 name= nameArray[1]+" "+ nameArray[0]
 
 
-header = st.container()
-characteristics = st.container()
-prediction = st.container()
-explanation = st.container()
-footer = st.container()
-evaluation = st.container()
+header1, header2, header3 = st.columns([1,2,1])
+characteristics1, characteristics2, characteristics3 = st.columns([1,2,1])
+prediction1, prediction2, prediction3 =st.columns([1,2,1])
+explanation1, explanation2, explanation3 = st.columns([1,2,1])
+footer1, footer2, footer3 =st.columns([1,2,1])
+evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
+
 
 @st.cache_resource
 def loadData():
@@ -103,13 +105,13 @@ def render_svg(svg):
     st.write(html, unsafe_allow_html=True)
 
 
-with header:
+with header2:
     st.header(name)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     # st.write("For debugging:")
     # st.write(st.session_state.participantID)
     
-with characteristics:
+with characteristics2:
     # initialize list of lists
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
@@ -117,7 +119,7 @@ with characteristics:
     st.dataframe(df)
 
 
-with prediction:
+with prediction2:
     prediction =  XGBmodel.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     if prediction == 0:
@@ -127,7 +129,7 @@ with prediction:
         prob = round((probability[0][1]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
-with explanation:
+with explanation2:
     st.subheader("Explanation")
 
     with st.spinner("Please be patient, we are generating a new explanation"):
@@ -143,7 +145,7 @@ with explanation:
     
     st.text("")
 
-with footer:
+with footer2:
     if (st.session_state.index2 < len(st.session_state.profileIndices)-1):
         if st.button("New profile"):
             st.session_state.index2 = st.session_state.index2+1
@@ -151,8 +153,8 @@ with footer:
             st.experimental_rerun()
     else:
         st.markdown("You have reached the end of the profiles :disappointed_relieved:")
-        if st.button("Continue to evaluation"):
-            st.write(" ")
+        # if st.button("Continue to evaluation"):
+        #     st.write(" ")
         with st.form("my_form2", clear_on_submit=True):
             st.subheader("Evaluation")
             st.write("These questions only ask for your opinion about this specific explanation")

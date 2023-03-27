@@ -5,7 +5,9 @@ from oocsi_source import OOCSI
 from uuid import uuid4
 from streamlit_extras.switch_page_button import switch_page
 import random
-import shap
+# import shap
+import dice_ml
+from dice_ml.utils import helpers
 import xgboost as xgb
 import matplotlib.pyplot as plt
 
@@ -34,12 +36,12 @@ if 'index3' not in st.session_state:
 if 'profileIndex' not in st.session_state:
     st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index3]      
 
-header = st.container()
-characteristics = st.container()
-prediction = st.container()
-explanation = st.container()
-footer =st.container()
-evaluation = st.container()
+header1, header2, header3 = st.columns([1,2,1])
+characteristics1, characteristics2, characteristics3 = st.columns([1,2,1])
+prediction1, prediction2, prediction3 =st.columns([1,2,1])
+explanation1, explanation2, explanation3 = st.columns([1,2,1])
+footer1, footer2, footer3 =st.columns([1,2,1])
+evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 
 
 
@@ -48,31 +50,33 @@ name= nameArray[1]+" "+ nameArray[0]
 
 @st.cache_resource
 def trainModel(X_train,Y_train):
-    model = xgb.XGBClassifier().fit(X_train, Y_train)
+    model = xgb.XGBClassifier().fit(X_train, Y_train)  ## Are we switching to an XGBOOST model then and not random forest? (same model for the shap and decision tree)
     return model
 
 
 @st.cache_resource
-def getSHAPvalues(_model,X_train, Y_train, X_test):
-    # compute SHAP values
-    explainer = shap.Explainer(_model, X_test)
-    shap_values = explainer(X_test)
-    return shap_values
+def getcounterfactual_values(_model,X_train, Y_train, X_test):
+    # compute counterfactual values
+    continous_col=["Age"]
+    dice_data = dice_ml.Data(dataframe=X_train,continuous_features=continous_col,outcome_name='Survived')
+    dice_model= dice_ml.Model(model=_model, backend="sklearn")
+    explainer = dice_ml.Dice(dice_data,dice_model, method="random")
+    return explainer
 
 
 
+def Counterfactualsplot(X_test, explainer):
+    e1 = explainer.generate_counterfactuals(X_test[1:2], total_CFs=4, desired_class="opposite")
+    return e1.visualize_as_dataframe(show_only_changes=True)
 
-def shapPlot(X_test, _shap_values):
-    return shap.plots.waterfall(shap_values[st.session_state.profileIndex])
 
-
-with header:
+with header2:
     st.header(name, anchor='top')
     # st.write("For debugging:")
     # st.write(st.session_state.participantID)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
-with characteristics:
+with characteristics2:
     # initialize list of lists
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
@@ -81,7 +85,7 @@ with characteristics:
 
 
 
-with prediction:
+with prediction2:
     # st.header("Prediction")
     prediction =  XGBmodel.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
@@ -92,12 +96,12 @@ with prediction:
         prob = round((probability[0][1]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
-with explanation:
+with explanation2:
     st.subheader("Explanation")
     st.markdown("counterfactual, more text here")
    
 
-with footer:
+with footer2:
     if (st.session_state.index3 < len(st.session_state.profileIndices)-1):
         if st.button("New profile"):
             st.session_state.index3 = st.session_state.index3+1
@@ -105,8 +109,8 @@ with footer:
             st.experimental_rerun()
     else:
         st.markdown("You have reached the end of the profiles :disappointed_relieved:")
-        if st.button("Continue to evaluation"):
-            st.write(" ")
+        # if st.button("Continue to evaluation"):
+        #     st.write(" ")
         with st.form("my_form3", clear_on_submit=True):
             st.subheader("Evaluation")
             st.write("These questions only ask for your opinion about this specific explanation")
