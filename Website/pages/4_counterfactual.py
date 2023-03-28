@@ -57,10 +57,11 @@ def trainModel(X_train,Y_train):
 @st.cache_resource
 def getcounterfactual_values(_model,X_train, Y_train, X_test):
     # compute counterfactual values
-    continous_col=["Age"]
-    dice_data = dice_ml.Data(dataframe=X_train,continuous_features=continous_col,outcome_name='Survived')
+    continous_col=["Age", 'Embarked', 'Deck', 'Title']
+    train_df = pd.concat([Y_train, X_train], axis = 1)
+    dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continous_col,outcome_name='Survived')
     dice_model= dice_ml.Model(model=_model, backend="sklearn")
-    explainer = dice_ml.Dice(dice_data,dice_model, method="random")
+    explainer = dice_ml.Dice(dice_data, dice_model, method="random")
     return explainer
 
 
@@ -82,7 +83,9 @@ with characteristics2:
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
+    df2 = pd.DataFrame(data, columns=st.session_state.Y_train)
     st.dataframe(df)
+    st.dataframe(df2)
 
 
 with prediction2:
