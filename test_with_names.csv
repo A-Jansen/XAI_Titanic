@@ -1,0 +1,419 @@
+PassengerId,Pclass,Sex,Age,Siblings,Fare,Embarked,relatives,Deck,Title,Age_Class,Name
+892,3,Male,34,0,7,Queenstown,0,H,Mr,102, James Kelly
+893,3,Female,47,1,7,Southampton,1,H,Mrs,141, James (Ellen Needs) Wilkes
+894,2,Male,62,0,9,Queenstown,0,H,Mr,124, Thomas Francis Myles
+895,3,Male,27,0,8,Southampton,0,H,Mr,81, Albert Wirz
+896,3,Female,22,1,12,Southampton,2,H,Mrs,66, Alexander (Helga E Lindqvist) Hirvonen
+897,3,Male,14,0,9,Southampton,0,H,Mr,42, Johan Cervin Svensson
+898,3,Female,30,0,7,Queenstown,0,H,Miss,90, Kate Connolly
+899,2,Male,26,1,29,Southampton,2,H,Mr,52, Albert Francis Caldwell
+900,3,Female,18,0,7,Cherbourg,0,H,Mrs,54, Joseph (Sophie Halaut Easu) Abrahim
+901,3,Male,21,2,24,Southampton,2,H,Mr,63, John Samuel Davies
+902,3,Male,25,0,7,Southampton,0,H,Mr,75, Ylio Ilieff
+903,1,Male,46,0,26,Southampton,0,H,Mr,46, Charles Cresson Jones
+904,1,Female,23,1,82,Southampton,1,B,Mrs,23, John Pillsbury (Nelle Stevenson) Snyder
+905,2,Male,63,1,26,Southampton,1,H,Mr,126, Benjamin Howard
+906,1,Female,47,1,61,Southampton,1,E,Mrs,47, Herbert Fuller (Carrie Constance Toogood) Chaffee
+907,2,Female,24,1,27,Cherbourg,1,H,Mrs,48, Sebastiano (Argenia Genovesi) del Carlo
+908,2,Male,35,0,12,Queenstown,0,H,Mr,70, Daniel Keane
+909,3,Male,21,0,7,Cherbourg,0,H,Mr,63, Gerios Assaf
+910,3,Female,27,1,7,Southampton,1,H,Miss,81, Ida Livija Ilmakangas
+911,3,Female,45,0,7,Cherbourg,0,H,Mrs,135," Mariana (Miriam"")"" Assaf Khalil"
+912,1,Male,55,1,59,Cherbourg,1,H,Mr,55, Martin Rothschild
+913,3,Male,9,0,3,Southampton,1,H,Master,27, Artur Karl Olsen
+914,1,Female,21,0,31,Southampton,0,H,Mrs,21, Alfred (Antoinette) Flegenheim
+915,1,Male,21,0,61,Cherbourg,1,H,Mr,21, Richard Norris II Williams
+916,1,Female,48,1,262,Cherbourg,4,B,Mrs,48, Arthur Larned (Emily Maria Borie) Ryerson
+917,3,Male,50,1,14,Southampton,1,H,Mr,150, Alexander A Robins
+918,1,Female,22,0,61,Cherbourg,1,B,Miss,22, Helene Ragnhild Ostby
+919,3,Male,22,0,7,Cherbourg,0,H,Mr,66, Shedid Daher
+920,1,Male,41,0,30,Southampton,0,A,Mr,41, John Bertram Brady
+921,3,Male,41,2,21,Cherbourg,2,H,Mr,123, Elias Samaan
+922,2,Male,50,1,26,Southampton,1,H,Mr,100, Charles Alexander Louch
+923,2,Male,24,2,31,Southampton,2,H,Mr,48, Clifford Thomas Jefferys
+924,3,Female,33,1,20,Southampton,3,H,Mrs,99, Bertram (Eva Georgetta Light) Dean
+925,3,Female,28,1,23,Southampton,3,H,Mrs,84," Andrew G (Elizabeth Lily"" Watson)"" Johnston"
+926,1,Male,30,1,57,Cherbourg,1,C,Mr,30, Philipp Edmund Mock
+927,3,Male,18,0,7,Cherbourg,0,H,Mr,54," Vassilios (Catavelas Vassilios"")"" Katavelas"
+928,3,Female,17,0,8,Southampton,0,H,Miss,51, Sarah A Roth
+929,3,Female,21,0,8,Southampton,0,H,Miss,63, Manda Cacic
+930,3,Male,25,0,9,Southampton,0,H,Mr,75, Julius Sap
+931,3,Male,37,0,56,Southampton,0,H,Mr,111, Ling Hee
+932,3,Male,39,0,13,Cherbourg,1,H,Mr,117, Franz Karun
+933,1,Male,16,0,26,Southampton,0,D,Mr,16, Thomas Parham Franklin
+934,3,Male,41,0,7,Southampton,0,H,Mr,123, Nathan Goldsmith
+935,2,Female,30,0,13,Southampton,0,H,Mrs,60, Walter H (Irene Colvin) Corbett
+936,1,Female,45,1,52,Southampton,1,D,Mrs,45, Edwin Nelson Jr (Gertrude Parsons) Kimball
+937,3,Male,25,0,7,Southampton,0,H,Mr,75, Nikolai Johannes Peltomaki
+938,1,Male,45,0,29,Cherbourg,0,A,Mr,45, Paul Romaine Chevre
+939,3,Male,35,0,7,Queenstown,0,H,Mr,105, Patrick Shaughnessy
+940,1,Female,60,0,76,Cherbourg,0,D,Mrs,60, William Robert (Emma Eliza Ward) Bucknell
+941,3,Female,36,0,15,Southampton,2,H,Mrs,108," William (Winnie Minnie"" Treanor)"" Coutts"
+942,1,Male,24,1,60,Southampton,1,C,Mr,24, Lucien Philip Smith
+943,2,Male,27,0,15,Cherbourg,0,H,Mr,54, Franz Pulbaum
+944,2,Female,20,2,23,Southampton,3,H,Miss,40," Ellen Nellie"""" Hocking"
+945,1,Female,28,3,263,Southampton,5,C,Miss,28, Ethel Flora Fortune
+946,2,Male,27,0,15,Cherbourg,0,H,Mr,54, Serafino Emilio Mangiavacchi
+947,3,Male,10,4,29,Queenstown,5,H,Master,30, Albert Rice
+948,3,Male,35,0,7,Southampton,0,H,Mr,105, Bartol Cor
+949,3,Male,25,0,7,Southampton,0,F,Mr,75, Olaus Jorgensen Abelseth
+950,3,Male,18,1,16,Southampton,1,H,Mr,54, Thomas Henry Davison
+951,1,Female,36,0,262,Cherbourg,0,B,Miss,36, Victorine Chaudanson
+952,3,Male,17,0,7,Southampton,0,H,Mr,51, Mirko Dika
+953,2,Male,32,0,13,Southampton,0,H,Mr,64, Arthur Gordon McCrae
+954,3,Male,18,0,7,Southampton,0,H,Mr,54, Ernst Herbert Bjorklund
+955,3,Female,22,0,7,Queenstown,0,H,Miss,66, Bridget Delia Bradley
+956,1,Male,13,2,262,Cherbourg,4,B,Master,13, John Borie Ryerson
+957,2,Female,36,0,21,Southampton,0,H,Mrs,72, Percy C (Mary Phyllis Elizabeth Miller) Corey
+958,3,Female,18,0,7,Queenstown,0,H,Miss,54, Mary Delia Burns
+959,1,Male,47,0,42,Southampton,0,H,Mr,47, Clarence Bloomfield Moore
+960,1,Male,31,0,28,Cherbourg,0,C,Mr,31, Gilbert Milligan Jr Tucker
+961,1,Female,60,1,263,Southampton,5,C,Mrs,60, Mark (Mary McDougald) Fortune
+962,3,Female,24,0,7,Queenstown,0,H,Miss,72, Bertha E Mulvihill
+963,3,Male,21,0,7,Southampton,0,H,Mr,63, Lazar Minkoff
+964,3,Female,29,0,7,Southampton,0,H,Miss,87, Manta Josefina Nieminen
+965,1,Male,28,0,27,Cherbourg,0,D,Mr,28, Servando Ovies y Rodriguez
+966,1,Female,35,0,211,Cherbourg,0,C,Miss,35, Amalie Geiger
+967,1,Male,32,0,211,Cherbourg,0,C,Mr,32, Edwin Keeping
+968,3,Male,39,0,8,Southampton,0,H,Mr,117, Frank Miles
+969,1,Female,55,2,25,Southampton,2,C,Mrs,55, Robert Clifford (Malvina Helen Lamson) Cornell
+970,2,Male,30,0,13,Southampton,0,H,Mr,60, Charles Augustus Aldworth
+971,3,Female,24,0,7,Queenstown,0,H,Miss,72, Elizabeth Doyle
+972,3,Male,6,1,15,Cherbourg,2,H,Master,18, Akar Boulos
+973,1,Male,67,1,221,Southampton,1,C,Mr,67, Isidor Straus
+974,1,Male,49,0,26,Southampton,0,H,Mr,49, Howard Brown Case
+975,3,Male,27,0,7,Southampton,0,H,Mr,81, Marinko Demetri
+976,2,Male,18,0,10,Queenstown,0,H,Mr,36, John Joseph Lamb
+977,3,Male,19,1,14,Cherbourg,1,H,Mr,57, Betros Khalil
+978,3,Female,27,0,7,Queenstown,0,H,Miss,81, Julia Barry
+979,3,Female,18,0,8,Southampton,0,H,Miss,54, Emily Louisa Badman
+980,3,Female,23,0,7,Queenstown,0,H,Ms,69, Bridget O'Donoghue
+981,2,Male,2,1,23,Southampton,2,H,Master,4, Ralph Lester Wells
+982,3,Female,22,1,13,Southampton,1,H,Mrs,66, Adolf Fredrik (Anna Elisabeth Judith Andersson) Dyker
+983,3,Male,29,0,7,Southampton,0,H,Mr,87, Olaf Pedersen
+984,1,Female,27,1,52,Southampton,3,B,Mrs,27, Thornton (Orian Hays) Davidson
+985,3,Male,37,0,8,Southampton,0,H,Mr,111, Robert Guest
+986,1,Male,25,0,26,Cherbourg,0,H,Mr,25, Jakob Birnbaum
+987,3,Male,25,0,7,Southampton,0,H,Mr,75, Gunnar Isidor Tenglin
+988,1,Female,76,1,78,Southampton,1,C,Mrs,76, Tyrell William (Julia Florence Siegel) Cavendish
+989,3,Male,29,0,7,Southampton,0,H,Mr,87, Kalle Edvard Makinen
+990,3,Female,20,0,7,Southampton,0,H,Miss,60, Elin Ester Maria Braf
+991,3,Male,33,0,8,Southampton,0,H,Mr,99, William Henry Nancarrow
+992,1,Female,43,1,55,Cherbourg,1,C,Mrs,43, Charles Emil Henry (Annie May Morris) Stengel
+993,2,Male,27,1,26,Southampton,1,H,Mr,54, Leopold Weisz
+994,3,Male,33,0,7,Queenstown,0,H,Mr,99, William Foley
+995,3,Male,26,0,7,Southampton,0,H,Mr,78, Oskar Leander Johansson Palmquist
+996,3,Female,16,1,8,Cherbourg,2,H,Mrs,48," Alexander (Thamine Thelma"")"" Thomas"
+997,3,Male,28,0,22,Southampton,0,H,Mr,84, Johan Martin Holthen
+998,3,Male,21,0,7,Queenstown,0,H,Mr,63, Daniel Buckley
+999,3,Male,28,0,7,Queenstown,0,H,Mr,84, Edward Ryan
+1000,3,Male,31,0,8,Southampton,0,H,Mr,93," Aaron (Abi Weller"")"" Willer"
+1001,2,Male,18,0,13,Southampton,0,F,Mr,36, George Swane
+1002,2,Male,41,0,15,Cherbourg,0,H,Mr,82, Samuel Ward Stanton
+1003,3,Female,28,0,7,Queenstown,0,H,Miss,84, Ellen Natalia Shine
+1004,1,Female,36,0,31,Cherbourg,0,A,Miss,36, Edith Corse Evans
+1005,3,Female,18,0,7,Queenstown,0,H,Miss,54, Katherine Buckley
+1006,1,Female,63,1,221,Southampton,1,C,Mrs,63, Isidor (Rosalie Ida Blun) Straus
+1007,3,Male,18,1,14,Cherbourg,1,H,Mr,54, Demetrios Chronopoulos
+1008,3,Male,21,0,6,Cherbourg,0,H,Mr,63, John Thomas
+1009,3,Female,1,1,16,Southampton,2,G,Miss,3, Beatrice Irene Sandstrom
+1010,1,Male,36,0,75,Cherbourg,0,C,Mr,36, Thomson Beattie
+1011,2,Female,29,1,26,Southampton,1,H,Mrs,58, John Henry (Sara Elizabeth Lawry) Chapman
+1012,2,Female,12,0,15,Southampton,0,H,Miss,24, Bertha J Watt
+1013,3,Male,30,1,7,Queenstown,1,H,Mr,90, John Kiernan
+1014,1,Female,35,1,57,Cherbourg,1,C,Mrs,35, Paul (Emma Mock) Schabert
+1015,3,Male,28,0,7,Southampton,0,H,Mr,84, Alfred John Carver
+1016,3,Male,19,0,7,Queenstown,0,H,Mr,57, John Kennedy
+1017,3,Female,17,0,16,Southampton,1,H,Miss,51, Laura Alice Cribb
+1018,3,Male,22,0,7,Southampton,0,H,Mr,66, Karl Rudolf Brobeck
+1019,3,Female,31,2,23,Queenstown,2,H,Miss,93, Alicia McCoy
+1020,2,Male,42,0,13,Southampton,0,H,Mr,84, Solomon Bowenur
+1021,3,Male,24,0,8,Southampton,0,H,Mr,72, Marius Petersen
+1022,3,Male,32,0,8,Southampton,0,H,Mr,96, Henry John Spinner
+1023,1,Male,53,0,28,Cherbourg,0,C,Col,53, Archibald IV Gracie
+1024,3,Female,16,0,25,Southampton,4,H,Mrs,48, Frank (Frances) Lefebre
+1025,3,Male,25,1,6,Cherbourg,1,H,Mr,75, Charles P Thomas
+1026,3,Male,43,0,7,Southampton,0,H,Mr,129, Valtcho Dintcheff
+1027,3,Male,24,0,7,Southampton,0,H,Mr,72, Carl Robert Carlsson
+1028,3,Male,26,0,7,Cherbourg,0,H,Mr,78, Mapriededer Zakarian
+1029,2,Male,26,0,13,Southampton,0,H,Mr,52, August Schmidt
+1030,3,Female,23,0,8,Southampton,0,H,Miss,69, Jennie Drapkin
+1031,3,Male,40,1,46,Southampton,7,H,Mr,120, Charles Frederick Goodwin
+1032,3,Female,10,5,46,Southampton,7,H,Miss,30, Jessie Allis Goodwin
+1033,1,Female,33,0,151,Southampton,0,H,Miss,33, Sarah Daniels
+1034,1,Male,61,1,262,Cherbourg,4,B,Mr,61, Arthur Larned Ryerson
+1035,2,Male,28,0,26,Southampton,0,H,Mr,56, Henry James Beauchamp
+1036,1,Male,42,0,26,Southampton,0,H,Mr,42," Erik Gustaf (Mr Edward Lingrey"")"" Lindeberg-Lind"
+1037,3,Male,31,3,18,Southampton,3,H,Mr,93, Julius Vander Planke
+1038,1,Male,32,0,51,Southampton,0,E,Mr,32, Herbert Henry Hilliard
+1039,3,Male,22,0,8,Southampton,0,H,Mr,66, Evan Davies
+1040,1,Male,17,0,26,Southampton,0,H,Mr,17, John Bertram Crafton
+1041,2,Male,30,1,26,Southampton,2,H,Rev,60, William Lahtinen
+1042,1,Female,23,0,83,Cherbourg,1,C,Mrs,23, Boulton (Olive Potter) Earnshaw
+1043,3,Male,23,0,7,Cherbourg,0,H,Mr,69, Nicola Matinoff
+1044,3,Male,60,0,0,Southampton,0,H,Mr,180, Thomas Storey
+1045,3,Female,36,0,12,Southampton,2,H,Mrs,108, (Hulda Kristina Eugenia Lofqvist) Klasen
+1046,3,Male,13,4,31,Southampton,6,H,Master,39, Filip Oscar Asplund
+1047,3,Male,24,0,7,Southampton,0,H,Mr,72, Joseph Duquemin
+1048,1,Female,29,0,221,Southampton,0,C,Miss,29, Ellen Bird
+1049,3,Female,23,0,7,Southampton,0,H,Miss,69, Olga Elida Lundin
+1050,1,Male,42,0,26,Southampton,0,D,Mr,42, John James Borebank
+1051,3,Female,26,0,13,Southampton,2,H,Mrs,78, Benjamin (Edith Nile) Peacock
+1052,3,Female,16,0,7,Queenstown,0,H,Miss,48, Julia Smyth
+1053,3,Male,7,1,15,Cherbourg,2,H,Master,21, Georges Youssef Touma
+1054,2,Female,26,0,13,Southampton,0,H,Miss,52, Marion Wright
+1055,3,Male,40,0,7,Southampton,0,H,Mr,120, Ernest Pearce
+1056,2,Male,41,0,13,Southampton,0,H,Rev,82, Joseph Maria Peruschitz
+1057,3,Female,26,1,22,Southampton,2,H,Mrs,78, Anton (Luise Heilmann) Kink-Heilmann
+1058,1,Male,48,0,50,Cherbourg,0,B,Mr,48, Emil Brandeis
+1059,3,Male,18,2,34,Southampton,4,H,Mr,54, Edward Watson Ford
+1060,1,Female,33,0,27,Cherbourg,0,H,Mrs,33, Henry Arthur Jr (Eleanor Genevieve Fosdick) Cassebeer
+1061,3,Female,22,0,8,Southampton,0,H,Miss,66, Hilda Maria Hellstrom
+1062,3,Male,36,0,7,Southampton,0,H,Mr,108, Simon Lithman
+1063,3,Male,27,0,7,Cherbourg,0,H,Mr,81, Ortin Zakarian
+1064,3,Male,23,1,13,Southampton,1,H,Mr,69, Adolf Fredrik Dyker
+1065,3,Male,19,0,7,Cherbourg,0,H,Mr,57, Assad Torfa
+1066,3,Male,40,1,31,Southampton,6,H,Mr,120, Carl Oscar Vilhelm Gustafsson Asplund
+1067,2,Female,15,0,39,Southampton,2,H,Miss,30, Edith Eileen Brown
+1068,2,Female,20,0,36,Southampton,0,H,Miss,40, Maude Sincock
+1069,1,Male,54,1,55,Cherbourg,1,C,Mr,54, Charles Emil Henry Stengel
+1070,2,Female,36,0,39,Southampton,3,F,Mrs,72, Allen Oliver (Nellie E Baumgardner) Becker
+1071,1,Female,64,0,83,Cherbourg,2,E,Mrs,64, Alexander Taylor (Mary Eliza Ingersoll) Compton
+1072,2,Male,30,0,13,Southampton,0,H,Mr,60, James Matthew McCrie
+1073,1,Male,37,1,83,Cherbourg,2,E,Mr,37, Alexander Taylor Jr Compton
+1074,1,Female,18,1,53,Southampton,1,D,Mrs,18, Daniel Warner (Mary Graham Carmichael Farquarson) Marvin
+1075,3,Male,32,0,7,Queenstown,0,H,Mr,96, Patrick Lane
+1076,1,Female,27,1,247,Cherbourg,2,B,Mrs,27, Frederick Charles (Mary Helene Baxter) Douglas
+1077,2,Male,40,0,16,Southampton,0,H,Mr,80, Frank Hubert Maybery
+1078,2,Female,21,0,21,Southampton,1,H,Miss,42, Alice Frances Louisa Phillips
+1079,3,Male,17,2,8,Southampton,2,H,Mr,51, Joseph Davies
+1080,3,Female,26,8,69,Southampton,10,H,Miss,78, Ada Sage
+1081,2,Male,40,0,13,Southampton,0,H,Mr,80, James Veal
+1082,2,Male,34,1,26,Southampton,1,H,Mr,68, William A Angle
+1083,1,Male,41,0,26,Southampton,0,H,Mr,41, Abraham L Salomon
+1084,3,Male,11,1,14,Southampton,2,H,Master,33, Walter John van Billiard
+1085,2,Male,61,0,12,Queenstown,0,H,Mr,122, John Lingane
+1086,2,Male,8,0,32,Southampton,2,H,Master,16, Marshall Brines Drew
+1087,3,Male,33,0,7,Southampton,0,H,Mr,99, Julius Konrad Eugen Karlsson
+1088,1,Male,6,0,134,Cherbourg,2,E,Master,6, Robert Douglas Spedden
+1089,3,Female,18,0,7,Southampton,0,H,Miss,54, Berta Olivia Nilsson
+1090,2,Male,23,0,10,Southampton,0,H,Mr,46, Charles Robert Baimbrigge
+1091,3,Female,23,0,8,Southampton,0,H,Mrs,69, (Lena Jacobsen Solvang) Rasmussen
+1092,3,Female,41,0,15,Queenstown,0,H,Miss,123, Nora Murphy
+1093,3,Male,0,0,14,Southampton,2,H,Master,0, Gilbert Sigvard Emanuel Danbom
+1094,1,Male,47,1,227,Cherbourg,1,C,Col,47, John Jacob Astor
+1095,2,Female,8,1,26,Southampton,2,H,Miss,16, Winifred Vera Quick
+1096,2,Male,25,0,10,Southampton,0,H,Mr,50, Frank Thomas Andrew
+1097,1,Male,30,0,25,Cherbourg,0,H,Mr,30, Alfred Fernand Omont
+1098,3,Female,35,0,7,Queenstown,0,H,Miss,105, Katherine McGowan
+1099,2,Male,24,0,10,Southampton,0,H,Mr,48, Sidney C Stuart Collett
+1100,1,Female,33,0,27,Cherbourg,0,A,Miss,33, Edith Louise Rosenbaum
+1101,3,Male,25,0,7,Southampton,0,H,Mr,75, Redjo Delalic
+1102,3,Male,32,0,22,Southampton,0,H,Mr,96, Albert Karvin Andersen
+1103,3,Male,37,0,7,Southampton,0,H,Mr,111, Luigi Finoli
+1104,2,Male,17,0,73,Southampton,0,H,Mr,34, Percy William Deacon
+1105,2,Female,60,1,26,Southampton,1,H,Mrs,120, Benjamin (Ellen Truelove Arman) Howard
+1106,3,Female,38,4,7,Southampton,6,H,Miss,114, Ida Augusta Margareta Andersson
+1107,1,Male,42,0,42,Southampton,0,B,Mr,42, Christopher Head
+1108,3,Female,20,0,7,Queenstown,0,H,Miss,60, Bridget Delia Mahon
+1109,1,Male,57,1,164,Southampton,2,H,Mr,57, George Dennick Wick
+1110,1,Female,50,1,211,Cherbourg,2,C,Mrs,50, George Dunton (Eleanor Elkins) Widener
+1111,3,Male,29,0,8,Southampton,0,H,Mr,87, Alexander Morrison Thomson
+1112,2,Female,30,1,13,Cherbourg,1,H,Miss,60, Florentina Duran y More
+1113,3,Male,21,0,8,Southampton,0,H,Mr,63, Harold J Reynolds
+1114,2,Female,22,0,10,Southampton,0,F,Mrs,44, (Selena Rogers) Cook
+1115,3,Male,21,0,7,Southampton,0,H,Mr,63, Einar Gervasius Karlsson
+1116,1,Female,53,0,27,Cherbourg,0,H,Mrs,53, Edward (Helen Churchill Hungerford) Candee
+1117,3,Female,22,0,15,Cherbourg,2,H,Mrs,66," George (Omine Amenia"" Alexander)"" Moubarek"
+1118,3,Male,23,0,7,Southampton,0,H,Mr,69, Johan Charles Asplund
+1119,3,Female,19,0,7,Queenstown,0,H,Miss,57, Bridget McNeill
+1120,3,Male,40,0,15,Southampton,0,H,Mr,120, Thomas James Everett
+1121,2,Male,36,0,13,Southampton,0,H,Mr,72, Samuel James Metcalfe Hocking
+1122,2,Male,14,0,65,Southampton,0,H,Mr,28, George Frederick Sweet
+1123,1,Female,21,0,26,Southampton,0,H,Miss,21, Constance Willard
+1124,3,Male,21,1,6,Southampton,1,H,Mr,63, Karl Johan Wiklund
+1125,3,Male,35,0,7,Queenstown,0,H,Mr,105, Michael Linehan
+1126,1,Male,39,1,71,Cherbourg,1,C,Mr,39, John Bradley Cumings
+1127,3,Male,20,0,7,Southampton,0,H,Mr,60, Olof Edvin Vendel
+1128,1,Male,64,1,75,Cherbourg,1,D,Mr,64, Frank Manley Warren
+1129,3,Male,20,0,7,Cherbourg,0,H,Mr,60, Raffull Baccos
+1130,2,Female,18,1,13,Southampton,2,H,Miss,36, Marta Hiltunen
+1131,1,Female,48,1,106,Cherbourg,1,C,Mrs,48, Walter Donald (Mahala Dutton) Douglas
+1132,1,Female,55,0,27,Cherbourg,0,H,Mrs,55, Carl Johan (Sigrid Posse) Lindstrom
+1133,2,Female,45,0,30,Southampton,2,H,Mrs,90, (Alice Frances) Christy
+1134,1,Male,45,1,134,Cherbourg,2,E,Mr,45, Frederic Oakley Spedden
+1135,3,Male,40,0,7,Southampton,0,H,Mr,120, Abraham Hyman
+1136,3,Male,43,1,23,Southampton,3,H,Master,129," William Arthur Willie"""" Johnston"
+1137,1,Male,41,1,51,Southampton,1,D,Mr,41, Frederick R Kenyon
+1138,2,Female,22,0,21,Southampton,0,H,Mrs,44, J Frank (Claire Bennett) Karnes
+1139,2,Male,42,1,32,Southampton,2,H,Mr,84, James Vivian Drew
+1140,2,Female,29,1,26,Southampton,1,H,Mrs,58, Stephen (Annie Margaret Hill) Hold
+1141,3,Female,25,1,14,Cherbourg,1,H,Mrs,75," Betros (Zahie Maria"" Elias)"" Khalil"
+1142,2,Female,0,1,27,Southampton,3,H,Miss,0, Barbara J West
+1143,3,Male,20,0,7,Southampton,0,H,Mr,60, Abraham August Johannes Abrahamsson
+1144,1,Male,27,1,136,Cherbourg,1,C,Mr,27, Walter Miller Clark
+1145,3,Male,24,0,9,Southampton,0,H,Mr,72, Karl Johan Salander
+1146,3,Male,32,0,9,Southampton,0,H,Mr,96, Linhart Wenzel
+1147,3,Male,19,0,7,Southampton,0,H,Mr,57, George William MacKay
+1148,3,Male,31,0,7,Queenstown,0,H,Mr,93, John Mahon
+1149,3,Male,28,0,8,Southampton,0,H,Mr,84, Samuel Niklasson
+1150,2,Female,19,0,13,Southampton,0,H,Miss,38, Lilian W Bentham
+1151,3,Male,21,0,7,Southampton,0,H,Mr,63, Karl Albert Midtsjo
+1152,3,Male,36,1,17,Southampton,1,H,Mr,108, Guillaume Joseph de Messemaeker
+1153,3,Male,21,0,7,Southampton,0,H,Mr,63, August Ferdinand Nilsson
+1154,2,Female,29,0,23,Southampton,2,H,Mrs,58," Arthur Henry (Addie"" Dart Trevaskis)"" Wells"
+1155,3,Female,1,1,12,Southampton,2,H,Miss,3, Gertrud Emilia Klasen
+1156,2,Male,30,0,12,Cherbourg,0,H,Mr,60, Emilio Ilario Giuseppe Portaluppi
+1157,3,Male,21,0,7,Southampton,0,H,Mr,63, Stanko Lyntakoff
+1158,1,Male,20,0,0,Southampton,0,H,Mr,20, Roderick Robert Crispin Chisholm
+1159,3,Male,41,0,7,Southampton,0,H,Mr,123, Charles William Warren
+1160,3,Female,28,0,8,Southampton,0,H,Miss,84, May Elizabeth Howard
+1161,3,Male,17,0,8,Southampton,0,H,Mr,51, Mate Pokrnic
+1162,1,Male,46,0,75,Cherbourg,0,C,Mr,46, Thomas Francis McCaffry
+1163,3,Male,30,0,7,Queenstown,0,H,Mr,90, Patrick Fox
+1164,1,Female,26,1,136,Cherbourg,1,C,Mrs,26, Walter Miller (Virginia McDowell) Clark
+1165,3,Female,38,1,15,Queenstown,1,H,Miss,114, Mary Lennon
+1166,3,Male,41,0,7,Cherbourg,0,H,Mr,123, Jean Nassr Saade
+1167,2,Female,20,1,26,Southampton,1,H,Miss,40, Dagmar Jenny Ingeborg  Bryhl
+1168,2,Male,28,0,10,Southampton,0,H,Mr,56, Clifford Richard Parker
+1169,2,Male,40,1,26,Southampton,1,H,Mr,80, Harry Faunthorpe
+1170,2,Male,30,1,21,Southampton,1,H,Mr,60, John James Ware
+1171,2,Male,22,0,10,Southampton,0,H,Mr,44, Percy Thomas Oxenham
+1172,3,Female,23,0,8,Southampton,0,H,Miss,69, Jelka Oreskovic
+1173,3,Male,0,1,13,Southampton,2,H,Master,0, Alfred Edward Peacock
+1174,3,Female,33,0,7,Queenstown,0,H,Miss,99, Honora Fleming
+1175,3,Female,9,1,15,Cherbourg,2,H,Miss,27, Maria Youssef Touma
+1176,3,Female,2,1,20,Southampton,2,H,Miss,6, Salli Helena Rosblom
+1177,3,Male,36,0,7,Southampton,0,H,Mr,108, William Dennis
+1178,3,Male,21,0,7,Southampton,0,H,Mr,63, Charles (Charles Fardon) Franklin
+1179,1,Male,24,1,82,Southampton,1,B,Mr,24, John Pillsbury Snyder
+1180,3,Male,26,0,7,Cherbourg,0,F,Mr,78, Sarkis Mardirosian
+1181,3,Male,32,0,8,Southampton,0,H,Mr,96, Arthur Ford
+1182,1,Male,31,0,39,Southampton,0,H,Mr,31, George Alexander Lucien Rheims
+1183,3,Female,30,0,6,Queenstown,0,H,Miss,90," Margaret Marcella Maggie"""" Daly"
+1184,3,Male,38,0,7,Cherbourg,0,H,Mr,114, Mustafa Nasr
+1185,1,Male,53,1,81,Southampton,2,A,Dr,53, Washington Dodge
+1186,3,Male,36,0,9,Southampton,0,H,Mr,108, Camille Wittevrongel
+1187,3,Male,26,0,7,Southampton,0,H,Mr,78, Minko Angheloff
+1188,2,Female,1,1,41,Cherbourg,3,H,Miss,2, Louise Laroche
+1189,3,Male,42,2,21,Cherbourg,2,H,Mr,126, Hanna Samaan
+1190,1,Male,30,0,45,Southampton,0,H,Mr,30, Joseph Holland Loring
+1191,3,Male,29,0,7,Southampton,0,H,Mr,87, Nils Johansson
+1192,3,Male,32,0,7,Southampton,0,H,Mr,96, Oscar Wilhelm Olsson
+1193,2,Male,27,0,15,Cherbourg,0,D,Mr,54, Noel Malachard
+1194,2,Male,43,0,21,Southampton,1,H,Mr,86, Escott Robert Phillips
+1195,3,Male,24,0,8,Southampton,0,H,Mr,72, Tome Pokrnic
+1196,3,Female,41,0,7,Queenstown,0,H,Miss,123," Catherine Katie"""" McCarthy"
+1197,1,Female,64,1,26,Southampton,2,B,Mrs,64, Edward Gifford (Catherine Elizabeth Halstead) Crosby
+1198,1,Male,30,1,151,Southampton,3,C,Mr,30, Hudson Joshua Creighton Allison
+1199,3,Male,0,0,9,Southampton,1,H,Master,0, Philip Frank Aks
+1200,1,Male,55,1,93,Southampton,2,B,Mr,55, Charles Melville Hays
+1201,3,Female,45,1,14,Southampton,1,H,Mrs,135, Claus Peter (Jennie L Howard) Hansen
+1202,3,Male,18,0,8,Southampton,0,H,Mr,54, Jego Grga Cacic
+1203,3,Male,22,0,7,Cherbourg,0,H,Mr,66, David Vartanian
+1204,3,Male,32,0,7,Southampton,0,H,Mr,96, Harry Sadowitz
+1205,3,Female,37,0,7,Queenstown,0,H,Miss,111, Jeannie Carr
+1206,1,Female,55,0,135,Cherbourg,0,C,Mrs,55, John Stuart (Ella Holmes) White
+1207,3,Female,17,0,7,Queenstown,0,H,Miss,51, Kate Hagardon
+1208,1,Male,57,1,146,Cherbourg,1,B,Mr,57, William Augustus Spencer
+1209,2,Male,19,0,10,Southampton,0,H,Mr,38, Reginald Harry Rogers
+1210,3,Male,27,0,7,Southampton,0,H,Mr,81, Nils Hilding Jonsson
+1211,2,Male,22,2,31,Southampton,2,H,Mr,44, Ernest Wilfred Jefferys
+1212,3,Male,26,0,7,Southampton,0,H,Mr,78, Johan Samuel Andersson
+1213,3,Male,25,0,7,Cherbourg,0,F,Mr,75, Neshan Krekorian
+1214,2,Male,26,0,13,Southampton,0,F,Mr,52, Israel Nesson
+1215,1,Male,33,0,26,Southampton,0,H,Mr,33, Alfred G Rowe
+1216,1,Female,39,0,211,Southampton,0,H,Miss,39, Emilie Kreuchen
+1217,3,Male,23,0,7,Southampton,0,H,Mr,69, Ali Assam
+1218,2,Female,12,2,39,Southampton,3,F,Miss,24, Ruth Elizabeth Becker
+1219,1,Male,46,0,79,Cherbourg,0,H,Mr,46," George (Mr George Thorne"")"" Rosenshine"
+1220,2,Male,29,1,26,Southampton,1,H,Mr,58, Charles Valentine Clarke
+1221,2,Male,21,0,13,Southampton,0,H,Mr,42, Ingvar Enander
+1222,2,Female,48,0,36,Southampton,2,H,Mrs,96, John Morgan (Elizabeth Agnes Mary White)  Davies
+1223,1,Male,39,0,29,Cherbourg,0,A,Mr,39, William Crothers Dulles
+1224,3,Male,38,0,7,Cherbourg,0,H,Mr,114, Tannous Thomas
+1225,3,Female,19,1,15,Cherbourg,2,H,Mrs,57," Said (Waika Mary"" Mowad)"" Nakid"
+1226,3,Male,27,0,7,Southampton,0,H,Mr,81, Ivan Cor
+1227,1,Male,30,0,26,Southampton,0,C,Mr,30, John Edward Maguire
+1228,2,Male,32,0,13,Southampton,0,H,Mr,64, Jose Joaquim de Brito
+1229,3,Male,39,0,7,Cherbourg,2,H,Mr,117, Joseph Elias
+1230,2,Male,25,0,31,Southampton,0,H,Mr,50, Herbert Denbury
+1231,3,Male,27,0,7,Cherbourg,0,H,Master,81, Seman Betros
+1232,2,Male,18,0,10,Southampton,0,H,Mr,36, Joseph Charles Fillbrook
+1233,3,Male,32,0,7,Southampton,0,H,Mr,96, Thure Edvin Lundstrom
+1234,3,Male,21,1,69,Southampton,10,H,Mr,63, John George Sage
+1235,1,Female,58,0,512,Cherbourg,1,B,Mrs,58, James Warburton Martinez (Charlotte Wardle Drake) Cardeza
+1236,3,Male,37,1,14,Southampton,2,H,Master,111, James William van Billiard
+1237,3,Female,16,0,7,Southampton,0,H,Miss,48, Karen Marie Abelseth
+1238,2,Male,26,0,13,Southampton,0,H,Mr,52, William Hull Botsford
+1239,3,Female,38,0,7,Cherbourg,0,H,Mrs,114, George Joseph (Shawneene Abi-Saab) Whabee
+1240,2,Male,24,0,13,Southampton,0,H,Mr,48, Ralph Giles
+1241,2,Female,31,0,21,Southampton,0,H,Miss,62, Nellie Walcroft
+1242,1,Female,45,0,63,Cherbourg,1,D,Mrs,45, Leo David (Blanche Strouse) Greenfield
+1243,2,Male,25,0,10,Southampton,0,H,Mr,50, Philip Joseph Stokes
+1244,2,Male,18,0,73,Southampton,0,H,Mr,36, William Dibden
+1245,2,Male,49,1,65,Southampton,3,H,Mr,98, Samuel Herman
+1246,3,Female,0,1,20,Southampton,3,H,Miss,0," Elizabeth Gladys Millvina"""" Dean"
+1247,1,Male,50,0,26,Southampton,0,E,Mr,50, Henry Forbes Julian
+1248,1,Female,59,2,51,Southampton,2,C,Mrs,59, John Murray (Caroline Lane Lamson) Brown
+1249,3,Male,19,0,7,Southampton,0,H,Mr,57, Edward Lockyer
+1250,3,Male,28,0,7,Queenstown,0,H,Mr,84, Patrick O'Keefe
+1251,3,Female,30,1,15,Southampton,1,H,Mrs,90, Edvard Bengtsson (Elin Gerda Persson) Lindell
+1252,3,Male,14,8,69,Southampton,10,H,Master,42, William Henry Sage
+1253,2,Female,24,1,37,Cherbourg,2,H,Mrs,48, Albert (Antoinette Magnin) Mallet
+1254,2,Female,31,0,21,Southampton,0,H,Mrs,62, John James (Florence Louise Long) Ware
+1255,3,Male,27,0,8,Southampton,0,H,Mr,81, Ivan Strilic
+1256,1,Female,25,1,55,Cherbourg,1,E,Mrs,25, George Achilles (Dorothy Annan) Harder
+1257,3,Female,18,1,69,Southampton,10,H,Mrs,54, John (Annie Bullen) Sage
+1258,3,Male,43,1,14,Cherbourg,1,H,Mr,129, Joseph Caram
+1259,3,Female,22,0,39,Southampton,0,H,Miss,66," Susanna Juhantytar Sanni"""" Riihivouri"
+1260,1,Female,45,0,59,Cherbourg,1,H,Mrs,45, Leonard (Pauline C Boeson) Gibson
+1261,2,Male,29,0,13,Cherbourg,0,H,Mr,58, Emilio Pallas y Castello
+1262,2,Male,21,1,11,Southampton,1,H,Mr,42, Edgar Giles
+1263,1,Female,31,0,134,Cherbourg,0,E,Miss,31, Helen Alice Wilson
+1264,1,Male,49,0,0,Southampton,0,B,Mr,49, Joseph Bruce Ismay
+1265,2,Male,44,0,13,Southampton,0,H,Mr,88, William H Harbeck
+1266,1,Female,54,1,81,Southampton,2,A,Mrs,54, Washington (Ruth Vidaver) Dodge
+1267,1,Female,45,0,262,Cherbourg,0,H,Miss,45, Grace Scott Bowen
+1268,3,Female,22,2,8,Southampton,2,H,Miss,66, Maria Kink
+1269,2,Male,21,0,11,Southampton,0,H,Mr,42," Henry Harry"""" Cotterill"
+1270,1,Male,55,0,50,Southampton,0,C,Mr,55, William Edward Hipkins
+1271,3,Male,5,4,31,Southampton,6,H,Master,15, Carl Edgar Asplund
+1272,3,Male,42,0,7,Queenstown,0,H,Mr,126, Patrick O'Connor
+1273,3,Male,26,0,7,Queenstown,0,H,Mr,78, Joseph Foley
+1274,3,Female,41,0,14,Southampton,0,H,Mrs,123, Samuel (Emma) Risien
+1275,3,Female,19,1,16,Southampton,1,H,Mrs,57, Neal (Eileen O'Leary) McNamee
+1276,2,Male,27,0,12,Southampton,0,H,Mr,54," Edwin Frederick"""" Wheeler"
+1277,2,Female,24,1,65,Southampton,3,H,Miss,48, Kate Herman
+1278,3,Male,24,0,7,Southampton,0,H,Mr,72, Ernst Axel Algot Aronsson
+1279,2,Male,57,0,13,Southampton,0,H,Mr,114, John Ashby
+1280,3,Male,21,0,7,Queenstown,0,H,Mr,63, Patrick Canavan
+1281,3,Male,6,3,21,Southampton,4,H,Master,18, Paul Folke Palsson
+1282,1,Male,23,0,93,Southampton,0,B,Mr,23, Vivian Ponsonby Payne
+1283,1,Female,51,0,39,Southampton,1,D,Mrs,51, Ernest H (Elizabeth Lindsey James) Lines
+1284,3,Male,13,0,20,Southampton,2,H,Master,39, Eugene Joseph Abbott
+1285,2,Male,47,0,10,Southampton,0,H,Mr,94, William Gilbert
+1286,3,Male,29,3,22,Southampton,4,H,Mr,87, Anton Kink-Heilmann
+1287,1,Female,18,1,60,Southampton,1,C,Mrs,18, Lucien Philip (Mary Eloise Hughes) Smith
+1288,3,Male,24,0,7,Queenstown,0,H,Mr,72, Patrick Colbert
+1289,1,Female,48,1,79,Cherbourg,2,B,Mrs,48, Maxmillian (Margaretha Emerentia Stehli) Frolicher-Stehli
+1290,3,Male,22,0,7,Southampton,0,H,Mr,66, Edvard A Larsson-Rondberg
+1291,3,Male,31,0,7,Queenstown,0,H,Mr,93, Thomas Henry Conlon
+1292,1,Female,30,0,164,Southampton,0,C,Miss,30, Caroline Bonnell
+1293,2,Male,38,1,21,Southampton,1,H,Mr,76, Harry Gale
+1294,1,Female,22,0,59,Cherbourg,1,H,Miss,22, Dorothy Winifred Gibson
+1295,1,Male,17,0,47,Southampton,0,H,Mr,17, Jose Pedro Carrau
+1296,1,Male,43,1,27,Cherbourg,1,D,Mr,43, Isaac Gerald Frauenthal
+1297,2,Male,20,0,13,Cherbourg,0,D,Mr,40," Alfred (Baron von Drachstedt"")"" Nourney"
+1298,2,Male,23,1,10,Southampton,1,H,Mr,46, William Jeffery Ware
+1299,1,Male,50,1,211,Cherbourg,2,C,Mr,50, George Dunton Widener
+1300,3,Female,37,0,7,Queenstown,0,H,Miss,111," Johanna Hannah"""" Riordan"
+1301,3,Female,3,1,13,Southampton,2,H,Miss,9, Treasteall Peacock
+1302,3,Female,19,0,7,Queenstown,0,H,Miss,57, Hannah Naughton
+1303,1,Female,37,1,90,Queenstown,1,C,Mrs,37, William Edward (Lillian E Thorpe) Minahan
+1304,3,Female,28,0,7,Southampton,0,H,Miss,84, Jenny Lovisa Henriksson
+1305,3,Male,27,0,8,Southampton,0,H,Mr,81, Woolf Spector
+1306,1,Female,39,0,108,Cherbourg,0,C,Dona,39, Fermina Oliva y Ocana
+1307,3,Male,38,0,7,Southampton,0,H,Mr,114, Simon Sivertsen Saether
+1308,3,Male,41,0,8,Southampton,0,H,Mr,123, Frederick Ware
+1309,3,Male,27,1,22,Cherbourg,2,H,Master,81, Michael J Peter
