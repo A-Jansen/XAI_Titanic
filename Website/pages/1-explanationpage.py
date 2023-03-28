@@ -34,8 +34,8 @@ if 'X_train' not in st.session_state:
 
 with header2:
     st.title("Who survived and why?")
-    st.write("For debugging:")
-    st.write(st.session_state.participantID)
+    # st.write("For debugging:")
+    # st.write(st.session_state.participantID)
     # X_train, Y_train, X_test= loadData()
 
 with body2:
@@ -43,10 +43,51 @@ with body2:
     st.markdown("In the year 1912, the Titanic left from Southampton to New York City, but it never arrived. On April 15, it crashed into an iceberg and sunk. Of the estimated 2,224 passengers and crew aboard, more than 1,500 died, making it the deadliest sinking of a single ship up to that time. ")
     st.image('assets/titanic.jpg')
     st.header('Explanation experiment')
-    st.markdown("In this experiment we will show you different profiles of passengers who were on the titanic(?). Using Machine Learning (ML) we will show a prediction whether they would have survived the disaster. This prediction is accompanied by each time a different type of explanation.")
-    st.markdown(" After each profile, you will get a few questions about the explanation that was given. In total there are # questions.")
+    st.markdown('''In this experiment we will show you different profiles of passengers. 
+    Using Machine Learning (ML) we will show a prediction whether they would have survived the disaster. 
+    This prediction is accompanied by each time a different type of explanation.''')
+    st.markdown("After seeing 8 profiles, you will be asked to evaluate the explanation you have just seen.")
+
+    st.subheader('Demographic information')
+    st.markdown("Before you start with the study we would like to ask you to first answer these questions")
+
 
 
 with footer2:
-    if st.button("Start the experiment "):
-        switch_page(st.session_state.pages[st.session_state.nextPage])
+    with st.form("demographic_form", clear_on_submit=True):
+        gender = st.radio("How do you identify your gender", ('Female', 'Male', 'Non-binary', 'Other', 'Prefer not to say'))
+        age  = st.radio("How old are you?", ('18-25', '26-35', '36-45', '46-55', '56-65', '66-75', '75+'))
+        educationlevel = st.radio("What is your highest level of education?",
+        ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
+        st.markdown('**AI literacy**')
+        st.markdown('Please rate to what extent you have the skills/knowledge listed below. 0 means that he ability is hardly or not at all pronounced, whereas a value of 10 means that the ability is very well or almost perfectly pronounced')
+        q1 = st.slider('I know the most important concepts of the topic "artificial intelligence"', 0, 10)
+        q2 = st.slider("I know definitions of artificial intelligence", 0, 10 )
+        q3 = st.slider("I can assess what the limitations and opportunities of using an AI are", 0, 10)
+        q4 = st.slider("I can assess what advantages and disadvantages the  use of an artificial intelligence entails", 0, 10)
+        q5 = st.slider("I can think of new uses for AI.", 0, 10)
+        q6 = st.slider("I can imagine possible future uses of AI", 0, 10)
+
+        st.markdown('''On the next page you will see a profile of one of the passengers of the Titanic,
+        a prediction of whether they would have survived and an explanation for why the model made this prediction. Have a look at this and then generate a new profile by clicking on the button.
+        You can look at 8 profiles, next you will be asked to evaluate the explanation. 
+        These steps will be repeated in total 4 times after which you will be asked some final questions.  ''')
+
+        submitted = st.form_submit_button("Start the experiment")
+
+        if submitted:
+            st.session_state.oocsi.send('EngD_HAII_demographics', {
+                    'participant_ID': st.session_state.participantID,
+                    'gender': gender,
+                    'age': age,
+                    'educationLevel': educationlevel,
+                    'q1': q1,
+                    'q2': q2,
+                    'q3': q3,
+                    'q4': q4,
+                    'q5': q5,
+                    'q6': q6,                  
+                    })
+        # if st.button("Start the experiment "):
+
+            switch_page(st.session_state.pages[st.session_state.nextPage])

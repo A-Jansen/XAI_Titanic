@@ -67,6 +67,7 @@ def getcounterfactual_values(_model,X_train, Y_train, X_test):
 
 def Counterfactualsplot(X_test, explainer):
     e1 = explainer.generate_counterfactuals(X_test[1:2], total_CFs=4, desired_class="opposite")
+    print('boujouuuuuuuuuuuuuuuuuuuuuur')
     return e1.visualize_as_dataframe(show_only_changes=True)
 
 
@@ -84,7 +85,6 @@ with characteristics2:
     st.dataframe(df)
 
 
-
 with prediction2:
     # st.header("Prediction")
     prediction =  XGBmodel.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
@@ -99,7 +99,11 @@ with prediction2:
 with explanation2:
     st.subheader("Explanation")
     st.markdown("counterfactual, more text here")
-   
+    # with st.spinner("Please be patient, we are generating a new explanation"):
+    explainer= getcounterfactual_values(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    Counterfactualsplot(st.session_state.X_test, explainer)
+    # st.pyplot(fig, bbox_inches='tight')
 
 with footer2:
     if (st.session_state.index3 < len(st.session_state.profileIndices)-1):
