@@ -97,8 +97,8 @@ def createTree(_model, X_train, Y_train, X_test):
                         show_just_path=True,
                         # orientation ='LR',
                          )
-    #path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
-    viz_model.save("/assets/images/prediction_path.svg") 
+    path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
+    viz_model.save(path) 
     return viz_model
 
 def render_svg(svg):
@@ -180,7 +180,7 @@ with explanation2:
      # read in svg prediction path and display
         path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
     # st.success("Done!")
-    with open("/assets/images/prediction_path.svg", "r") as f:
+    with open(path, "r") as f:
         svg = f.read()
     render_svg(svg)
     
