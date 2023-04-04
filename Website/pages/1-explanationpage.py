@@ -19,11 +19,11 @@ if 'nextPage' not in st.session_state:
 def loadData():
     url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
     # train_df = pd.read_csv('/assets/train_df.csv')
-    train_df=pd.read_csv(url_traindf, index_col=0)
+    train_df=pd.read_csv(url_traindf, index_col=None)
     url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_df.csv"
-    test_df = pd.read_csv(url_testdf, index_col=0)
+    test_df = pd.read_csv(url_testdf, index_col=None)
     url_testnames = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_with_names.csv"
-    test_with_names = pd.read_csv(url_testnames, index_col=0)
+    test_with_names = pd.read_csv(url_testnames, index_col=None)
    # test_with_names.drop('PassengerId', axis=1, inplace=True)
     X_train = train_df.drop("Survived", axis=1)
     Y_train = train_df["Survived"]
