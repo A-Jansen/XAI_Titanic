@@ -1,6 +1,6 @@
 pandas
 oocsi
-sklearn
+scikit-learn
 numpy
 streamlit
 streamlit-extras
