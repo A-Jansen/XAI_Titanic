@@ -67,7 +67,7 @@ def getcounterfactual_values(_model,X_prediction, X_train):
     # compute counterfactual values
     url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
     # train_df = pd.read_csv('/assets/train_df.csv')
-    train_df=pd.read_csv(url_traindf, index_col=None
+    train_df=pd.read_csv(url_traindf, index_col=None)
     continous_col=["Age", 'Fare', 'Siblings_spouses', 'Title', 'Parents_children','relatives' ]
     # test_df_counter = X_test.copy()
     # test_df_counter['Survived'] = X_prediction
