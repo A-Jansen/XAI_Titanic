@@ -62,7 +62,7 @@ def trainModel(X_train,Y_train):
     return model_1
 
 
-@st.cache_resource(persist=True)
+@st.cache_resource
 def getcounterfactual_values(_model,X_prediction, X_train):
     # compute counterfactual values
     train_df = pd.read_csv('assets/train_df.csv')

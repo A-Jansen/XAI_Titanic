@@ -62,7 +62,7 @@ def loadData():
     X_test  = test_df.drop("PassengerId", axis=1).copy()
     return X_train, Y_train, X_test
 
-@st.cache_resource(persist=True)
+@st.cache_resource
 def trainModel(X_train,Y_train):
     model = xgb.XGBClassifier().fit(X_train, Y_train)
     return model

@@ -5,6 +5,7 @@ import random
 import pandas as pd
 import xgboost as xgb
 import copy
+from PIL import Image
 
 header1, header2, header3 = st.columns([1,2,1])
 body1, body2, body3 =st.columns([1,2,1])
@@ -55,7 +56,8 @@ with header2:
 with body2:
     st.header("The Titanic")
     st.markdown("In the year 1912, the Titanic left from Southampton to New York City, but it never arrived. On April 15, it crashed into an iceberg and sunk. Of the estimated 2,224 passengers and crew aboard, more than 1,500 died, making it the deadliest sinking of a single ship up to that time. ")
-    st.markdown("https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/titanic.jpg")
+    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/titanic.jpg?raw=true')
+
     st.header('Explanation experiment')
     st.markdown('''In this experiment we will show you two different profiles of passengers. 
     Using Machine Learning (ML) we will show a prediction whether they would have survived the disaster. 
