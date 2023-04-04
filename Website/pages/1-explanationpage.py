@@ -17,10 +17,10 @@ if 'nextPage' not in st.session_state:
 
 @st.cache_data(persist=True)
 def loadData():
-    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv?token=GHSAT0AAAAAAB5IIACSZOQMHI2ARWQ7DXQCZBMFT2A"
+    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
     # train_df = pd.read_csv('/assets/train_df.csv')
     train_df=pd.read_csv(url_traindf, index_col=0)
-    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_df.csv?token=GHSAT0AAAAAAB5IIACSXO4P4IVCFCOLJEICZBMFV6A"
+    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_df.csv"
     test_df = pd.read_csv(url_testdf, index_col=0)
     test_with_names = pd.read_csv('/assets/test_with_names.csv')
    # test_with_names.drop('PassengerId', axis=1, inplace=True)
