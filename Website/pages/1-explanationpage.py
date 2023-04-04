@@ -15,7 +15,7 @@ if 'nextPage' not in st.session_state:
 # st.write(st.session_state.nextPage)
 
 
-@st.cache_data
+@st.cache_data(persist=True)
 def loadData():
     train_df = pd.read_csv('assets/train_df.csv')
     test_df = pd.read_csv('assets/test_df.csv')

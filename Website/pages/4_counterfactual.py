@@ -65,18 +65,13 @@ def trainModel(X_train,Y_train):
 @st.cache_resource
 def getcounterfactual_values(_model,X_prediction, X_train):
     # compute counterfactual values
-<<<<<<< Updated upstream
-    continous_col=["Age"]
-    dice_data = dice_ml.Data(dataframe=X_train,continuous_features=continous_col,outcome_name='Survived')
-=======
     train_df = pd.read_csv('assets/train_df.csv')
     continous_col=["Age", 'Fare', 'Siblings_spouses', 'Title', 'Parents_children','relatives' ]
     # test_df_counter = X_test.copy()
     # test_df_counter['Survived'] = X_prediction
     dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continous_col, outcome_name='Survived')
->>>>>>> Stashed changes
     dice_model= dice_ml.Model(model=_model, backend="sklearn")
-    explainer = dice_ml.Dice(dice_data,dice_model, method="random")
+    explainer = dice_ml.Dice(dice_data, dice_model, method="random")
     return explainer
 
 
