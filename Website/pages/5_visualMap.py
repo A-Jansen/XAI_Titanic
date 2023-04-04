@@ -43,13 +43,13 @@ evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
 
-@st.cache_resource
+@st.cache_resource(persist=True)
 def trainModel(X_train,Y_train):
     model = xgb.XGBClassifier().fit(X_train, Y_train)
     return model
 
 
-@st.cache_resource
+@st.cache_resource(persist=True)
 def getSHAPvalues(_model,X_train, Y_train, X_test):
     # compute SHAP values
     explainer = shap.Explainer(_model, X_test)

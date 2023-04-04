@@ -2,7 +2,7 @@ pandas
 oocsi
 scikit-learn
 numpy
-streamlit
+streamlit ==1.20
 streamlit-extras
 uuid
 dtreeviz==1.4.1

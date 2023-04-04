@@ -53,16 +53,16 @@ footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 
 
-@st.cache_resource
+@st.cache_data(persist=True)
 def loadData():
-    train_df = pd.read_csv('assets/train_df.csv')
-    test_df = pd.read_csv('assets/test_df.csv')
+    train_df = pd.read_csv('/assets/train_df.csv')
+    test_df = pd.read_csv('/assets/test_df.csv')
     X_train = train_df.drop("Survived", axis=1)
     Y_train = train_df["Survived"]
     X_test  = test_df.drop("PassengerId", axis=1).copy()
     return X_train, Y_train, X_test
 
-@st.cache_resource
+@st.cache_resource(persist=True)
 def trainModel(X_train,Y_train):
     model = xgb.XGBClassifier().fit(X_train, Y_train)
     return model
