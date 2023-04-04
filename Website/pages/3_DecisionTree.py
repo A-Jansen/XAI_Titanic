@@ -178,11 +178,15 @@ with explanation2:
     # st.image("/assets/images/prediction_path.svg", width =200, use_column_width=True)
     #viz_model.view()
      # read in svg prediction path and display
-        path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
-    # st.success("Done!")
-    with open(path, "r") as f:
-        svg = f.read()
-    render_svg(svg)
+    #     path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
+    # # st.success("Done!")
+    # with open(path, "r") as f:
+    #     svg = f.read()
+    if(st.session_state.profileIndex ==25 ):
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_robins.svg"
+    elif (st.session_state.profileIndex== 112):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_robins.svg"
+    st.image(url)
     
     st.text("")
 
