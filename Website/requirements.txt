@@ -10,3 +10,4 @@ shap
 xgboost
 graphviz==0.20.1
 dice_ml
+IPython
