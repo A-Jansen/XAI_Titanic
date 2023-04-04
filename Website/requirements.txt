@@ -5,4 +5,8 @@ numpy
 streamlit
 streamlit-extras
 uuid4
-
+dtreeviz==1.4.1
+shap
+xgboost
+graphviz==0.20.1
+dice_ml

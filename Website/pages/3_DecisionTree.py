@@ -7,11 +7,14 @@ from streamlit_extras.switch_page_button import switch_page
 import random
 import dtreeviz
 import xgboost as xgb
-from dtreeviz.trees import *
+from dtreeviz.trees import dtreeviz
 from sklearn.tree import DecisionTreeClassifier
 import graphviz as graphviz
 from sklearn.datasets import make_moons
 import base64
+
+# import os
+# os.environ["PATH"] += os.pathsep + 'D:/Program Files (x86)/Graphviz2.38/bin/'
 
 # st.markdown("""<style> 
 # .stSlider {
@@ -38,8 +41,8 @@ if 'index2' not in st.session_state:
 if 'profileIndex' not in st.session_state:
     st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index2]       
     
-nameArray =st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"].split(',')
-name= nameArray[1]+" "+ nameArray[0]
+name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
+
 
 
 header1, header2, header3 = st.columns([1,2,1])
@@ -105,8 +108,27 @@ def render_svg(svg):
     st.write(html, unsafe_allow_html=True)
 
 
-with header2:
-    st.header(name)
+with header2: #header2
+    st.header("Explanation - Decision Tree")
+    st.markdown('''Decision Tree models are a non-parametric supervised learning method
+     commonly used for classification and regression.
+     They are constructed using two kinf of elements: Nodes and branches. At each node (intersection),
+     one of the data features is evaluated to split the observations into different paths.
+
+    
+    At typical decision example is shown in the graph below.    
+    ''')
+
+    st.image('assets/Decision_tree.jpg',caption = 'Example of a decision tree')
+
+    st.markdown(''' The Root Node starts the graph. It is usually the variable that splits the more lcearly the data. 
+    Then, intermediate nodes are vsisble were different varaibales are evaluated but no final prediction is made yet. 
+    Finally, leaf nodes are present where the predicrtions (numerical of categoriacl) are made. 
+
+    For the Titanic dataset, the prediction will be whether the studied person survived the shipwreck.
+     ''')
+    
+    st.subheader(name)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     # st.write("For debugging:")
     # st.write(st.session_state.participantID)
@@ -129,8 +151,27 @@ with prediction2:
         prob = round((probability[0][1]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
-with explanation2:
-    st.subheader("Explanation")
+with explanation2: 
+    st.subheader("Visualization - Decision Tree")
+    # st.markdown('''Decision Tree model are a non-parametric supervised learning method
+    #  commonly used for classification and regression.
+    #  They are constructed using two kinf of elements: Nodes and branches. At each node (intersection),
+    #  one of the data features is evaluated to split the observations into different paths.
+
+    
+    # At typical decision example is shown in the graph below.    
+    # ''')
+
+    # st.image('assets/Decision_tree.jpg')
+
+    # st.markdown(''' The Root Node starts the graph. It is usually the variable that splits the more lcearly the data. 
+    # Then, intermediate nodes are vsisble were different varaibales are evaluated but no final prediction is made yet. 
+    # Finally, leaf nodes are present where the predicrtions (numerical of categoriacl) are made. 
+
+    # For the Titanic dataset, the prediction will be whether the studied person survived the shipwreck.
+    #  ''')
+
+    
 
     with st.spinner("Please be patient, we are generating a new explanation"):
         viz_model = createTree(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
@@ -152,63 +193,72 @@ with footer2:
             st.session_state.profileIndex = st.session_state.profileIndices[st.session_state.index2]
             st.experimental_rerun()
     else:
-        st.markdown("You have reached the end of the profiles :disappointed_relieved:")
-        # if st.button("Continue to evaluation"):
-        #     st.write(" ")
-        with st.form("my_form2", clear_on_submit=True):
-            st.subheader("Evaluation")
-            st.write("These questions only ask for your opinion about this specific explanation")
-            q1 = st.select_slider(
-            '**1**- From the explanation, I **understand** how the algorithm works:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+        def is_user_active():
+            if 'user_active2' in st.session_state.keys() and st.session_state['user_active2']:
+                return True
+            else:
+                return False
+        if is_user_active():
+            # if st.button("Continue to evaluation"):
+            #     st.write(" ")
+            with st.form("my_form2", clear_on_submit=True):
+                st.subheader("Evaluation")
+                st.write("These questions only ask for your opinion about this specific explanation")
+                q1 = st.select_slider(
+                '**1**- From the explanation, I **understand** how the algorithm works:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q2 = st.select_slider(
-            '**2**- This explanation of how the algorithm works is **satisfying**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q2 = st.select_slider(
+                '**2**- This explanation of how the algorithm works is **satisfying**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q3 = st.select_slider(
-            '**3**- This explanation of how the algorithm works has **sufficient detail**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q3 = st.select_slider(
+                '**3**- This explanation of how the algorithm works has **sufficient detail**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q4 = st.select_slider(
-            '**4**- This explanation of how the algorithm works seems **complete**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q4 = st.select_slider(
+                '**4**- This explanation of how the algorithm works seems **complete**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q5 = st.select_slider(
-            '**5**- This explanation of how the algorithm works **tells me how to use it**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q5 = st.select_slider(
+                '**5**- This explanation of how the algorithm works **tells me how to use it**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q6 = st.select_slider(
-            '**6**- This explanation of how the algorithm works is **useful to my goals**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q6 = st.select_slider(
+                '**6**- This explanation of how the algorithm works is **useful to my goals**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q7 = st.select_slider(
-            '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q7 = st.select_slider(
+                '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q8 = st.select_slider(
-            '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q8 = st.select_slider(
+                '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            # Every form must have a submit button.
-            submitted = st.form_submit_button("Submit")
-            if submitted:
-                # st.write("question 1", q1)
-                st.session_state.oocsi.send('EngD_HAII', {
-                    'participant_ID': st.session_state.participantID,
-                    'type of explanation': 'Decision tree',
-                    'q1': q1,
-                    'q2': q2,
-                    'q3': q3,
-                    'q4': q4,
-                    'q5': q5,
-                    'q6': q6,
-                    'q7': q7,
-                    'q8': q8,
-                    
-                    })
-                if (st.session_state.lastQuestion =='yes'): 
-                    switch_page('finalPage')
-                else: 
-                    st.session_state.profileIndex =st.session_state.profileIndices[0]
-                    switch_page(st.session_state.pages[st.session_state.nextPage2])
+                # Every form must have a submit button.
+                submitted = st.form_submit_button("Submit")
+                if submitted:
+                    # st.write("question 1", q1)
+                    st.session_state.oocsi.send('EngD_HAII', {
+                        'participant_ID': st.session_state.participantID,
+                        'type of explanation': 'Decision tree',
+                        'q1': q1,
+                        'q2': q2,
+                        'q3': q3,
+                        'q4': q4,
+                        'q5': q5,
+                        'q6': q6,
+                        'q7': q7,
+                        'q8': q8,
+                        
+                        })
+                    if (st.session_state.lastQuestion =='yes'): 
+                        switch_page('finalPage')
+                    else: 
+                        st.session_state.profileIndex =st.session_state.profileIndices[0]
+                        switch_page(st.session_state.pages[st.session_state.nextPage2])
+        else:
+            if st.button('Continue to evaluation'):
+                st.session_state['user_active2']=True
+                st.experimental_rerun()
