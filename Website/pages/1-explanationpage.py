@@ -17,9 +17,9 @@ if 'nextPage' not in st.session_state:
 
 @st.cache_data(persist=True)
 def loadData():
-    train_df = pd.read_csv('/assets/train_df.csv')
-    test_df = pd.read_csv('/assets/test_df.csv')
-    test_with_names = pd.read_csv('assets/test_with_names.csv')
+    train_df = pd.read_csv('/Website/assets/train_df.csv')
+    test_df = pd.read_csv('/Website/assets/test_df.csv')
+    test_with_names = pd.read_csv('/Website/assets/test_with_names.csv')
    # test_with_names.drop('PassengerId', axis=1, inplace=True)
     X_train = train_df.drop("Survived", axis=1)
     Y_train = train_df["Survived"]
