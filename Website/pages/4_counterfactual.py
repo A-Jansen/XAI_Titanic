@@ -45,7 +45,7 @@ if 'profileIndex' not in st.session_state:
     st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index3]      
 
 header1, header2, header3 = st.columns([1,2,1])
-characteristics1, characteristics2, characteristics3 = st.columns([1,5,1])
+characteristics1, characteristics2, characteristics3 = st.columns([1,8,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1,10,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
@@ -81,7 +81,13 @@ def getcounterfactual_values(_model,X_prediction, X_train):
 
 def Counterfactualsplot(X_test, explainer):
     e1 = explainer.generate_counterfactuals(X_test[1:2], total_CFs=4, desired_class="opposite")
-    return e1.visualize_as_dataframe(show_only_changes=True)
+    name_new = name[1:].replace(' ', '_')
+    url_counter = f'https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/counterfactuals_{name_new}.csv'
+    st.markdown(url_counter)
+    st.markdown(name_new)
+    # e1.cf_examples_list[0].final_cfs_df.to_csv(path_or_buf=url_counter, index=False)
+    counter_csv = pd.read_csv(url_counter, index_col=None)
+    return st.dataframe(counter_csv, width=10000)
 
 
 with header2:
