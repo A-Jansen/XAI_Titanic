@@ -102,7 +102,7 @@ with explanation2:
     st.subheader("Visual map")
     st.write("This might take a moment to load, please be patient")
     st.write("Click on the image to see the shap values")
-    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1065?cells=viewof+button%2Cchart2", scrolling=False, height=683)
+    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1222?cells=name%2Cimg%2Cpredictoin%2Cchart2%2Cviewof+button", scrolling=False, height=683)
 
 
 with footer2:
