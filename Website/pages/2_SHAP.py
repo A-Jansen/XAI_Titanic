@@ -35,7 +35,7 @@ if 'profileIndex' not in st.session_state:
     st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index1]   
 
 header1, header2, header3 = st.columns([1,2,1])
-characteristics1, characteristics2, characteristics3 = st.columns([1,8,1])
+characteristics1, characteristics2, characteristics3 = st.columns([2,8,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([2,3,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
@@ -101,9 +101,9 @@ with prediction2:
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
 with explanation1: 
-    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
     st.dataframe(st.session_state.title_df.set_index('Title indices'))
     st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
+    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
 
 
 
@@ -120,14 +120,6 @@ with explanation2:
     # st.dataframe(st.session_state.gender_df)
     # st.dataframe(data_indices)
 
-with presentation1: 
-    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
-
-with presentation2: 
-    st.dataframe(st.session_state.title_df.set_index('Title indices'))
-
-with presentation3: 
-    st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
 
 
 with footer2:
