@@ -48,6 +48,7 @@ prediction1, prediction2, prediction3 =st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1,2,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
+presentation1, presentation2, presentation3 = st.columns([2,2,2])
 
 
 @st.cache_resource
@@ -144,6 +145,16 @@ with explanation2:
     render_svg(svg)
     
     st.text("")
+
+with presentation1: 
+    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
+
+with presentation2: 
+    st.dataframe(st.session_state.title_df.set_index('Title indices'))
+
+with presentation3: 
+    st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
+
 
 with footer2:
     if (st.session_state.index2 < len(st.session_state.profileIndices)-1):
