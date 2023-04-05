@@ -83,16 +83,16 @@ with characteristics2:
 
 
 
-with prediction2:
-    st.subheader("Prediction")
-    prediction =  XGBmodel.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
-    probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
-    if prediction == 0:
-        prob = round((probability[0][0]*100),2)
-        st.markdown("The model predicts with {}% probability  that {}  will :red[**not survive**]".format(prob, name) )
-    else:
-        prob = round((probability[0][1]*100),2)
-        st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
+# with prediction2:
+#     st.subheader("Prediction")
+#     prediction =  XGBmodel.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
+#     probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
+#     if prediction == 0:
+#         prob = round((probability[0][0]*100),2)
+#         st.markdown("The model predicts with {}% probability  that {}  will :red[**not survive**]".format(prob, name) )
+#     else:
+#         prob = round((probability[0][1]*100),2)
+#         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
     
 # with explanationheader2:
 #     st.subheader("Explanation")
@@ -100,8 +100,8 @@ with prediction2:
 
 with explanation2:
     st.subheader("Visual map")
-    st.write("This might take a moment to load, please be patient")
-    st.write("Click on the image to see the shap values")
+    # st.write("This might take a moment to load, please be patient")
+    # st.write("Click on the image to see the shap values")
     components.iframe("https://observablehq.com/embed/d177ef99668b6553@1222?cells=name%2Cimg%2Cpredictoin%2Cchart2%2Cviewof+button", scrolling=False, height=683)
 
 
