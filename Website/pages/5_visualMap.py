@@ -78,7 +78,8 @@ with characteristics2:
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
     # st.dataframe(df)
-
+    st.subheader("Explanation - visual map")
+    st.write("This might take a moment to load, please be patient")
 
 
 # with prediction2:
@@ -97,8 +98,7 @@ with characteristics2:
 #     st.markdown("Click on the image to see how each attribute contributed and hover over them to see the SHAP values")
 
 with explanation2:
-    st.subheader("Explanation - visual map")
-    st.write("This might take a moment to load, please be patient")
+
     # st.write("Click on the image to see the shap values")
     components.iframe("https://observablehq.com/embed/d177ef99668b6553@1222?cells=name%2Cimg%2Cpredictoin%2Cchart2%2Cviewof+button", scrolling=False, height=954)
 
