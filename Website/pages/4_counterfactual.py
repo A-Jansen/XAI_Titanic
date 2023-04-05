@@ -67,7 +67,6 @@ def getcounterfactual_values(_model,X_train, Y_train, X_test):
 
 def Counterfactualsplot(X_test, explainer):
     e1 = explainer.generate_counterfactuals(X_test[1:2], total_CFs=4, desired_class="opposite")
-    print('boujouuuuuuuuuuuuuuuuuuuuuur')
     return e1.visualize_as_dataframe(show_only_changes=True)
 
 
