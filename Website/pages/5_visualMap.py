@@ -71,6 +71,8 @@ with header2:
         ''')
     # st.subheader(name, anchor='top')
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
+    st.subheader("Explanation - visual map")
+    st.write("This might take a moment to load, please be patient")
     
 with characteristics2:
     # initialize list of lists
@@ -78,8 +80,7 @@ with characteristics2:
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
     # st.dataframe(df)
-    st.subheader("Explanation - visual map")
-    st.write("This might take a moment to load, please be patient")
+
 
 
 # with prediction2:
