@@ -119,7 +119,7 @@ with header2: #header2
     At typical decision example is shown in the graph below.    
     ''')
 
-    st.image('assets/Decision_tree.jpg',caption = 'Example of a decision tree')
+    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/Decision_tree.jpg?raw=true',caption = 'Example of a decision tree')
 
     st.markdown(''' The Root Node starts the graph. It is usually the variable that splits the more lcearly the data. 
     Then, intermediate nodes are vsisble were different varaibales are evaluated but no final prediction is made yet. 

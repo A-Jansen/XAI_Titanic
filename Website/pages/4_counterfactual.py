@@ -96,7 +96,7 @@ with header2:
     relationshhip betwen inputs and predictions. 
 ''') 
 
-    st.image('assets/counterfactual.jpg', caption = 'Causal relation between inputs and predictions', use_column_width = 'always' )
+    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/counterfactual.jpg?raw=true', caption = 'Causal relation between inputs and predictions', use_column_width = 'always' )
 
     st.markdown('''A counterfactual explanation of a prediction will then describe the smallest amount of change that is necessary to make to change the output
     prediction to a predefine one.''')
