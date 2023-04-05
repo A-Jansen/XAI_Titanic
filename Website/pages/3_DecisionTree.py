@@ -177,7 +177,7 @@ with explanation2:
     
 
     with st.spinner("Please be patient, we are generating a new explanation"):
-        viz_model = createTree(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
+        #viz_model = createTree(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
     # st.image("/assets/images/prediction_path.svg", width =200, use_column_width=True)
     #viz_model.view()
      # read in svg prediction path and display
