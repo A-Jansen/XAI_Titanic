@@ -72,8 +72,8 @@ with header2:
     the technique helps to understand the decision took by a complex model. The classical models will typically answer the question 'how much' whereas the SHAP
     model will focus on the 'why'.
 
-    Finally, the representation of the SHAP value will show how much each feature are contributing to the final prediction made by the model. For the Titanic dataset, each feature 
-    will analyse each the contribution of each will be presented for different persons explaining the reason why this person survived the shipwreck or not. 
+    Finally, the representation of the SHAP value will show how much each feature are contributing to the final prediction made by the model. Blue bars 
+    represent positive contribution to the prediction (survived) and red bars negative contribution.  
     ''')
     st.subheader(name, anchor='top')
     # st.write("For debugging:")

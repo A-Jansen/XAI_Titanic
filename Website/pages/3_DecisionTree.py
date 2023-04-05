@@ -117,21 +117,12 @@ with header2: #header2
     st.markdown('''Decision Tree models are a non-parametric supervised learning method
      commonly used for classification and regression.
      They are constructed using two kinf of elements: Nodes and branches. At each node (intersection),
-     one of the data features is evaluated to split the observations into different paths.
-
-    
-    At typical decision example is shown in the graph below.    
+     one of the data features is evaluated to split the observations into different paths to obtain in the
+     end of the path the final prediction (survived/not survived). 
     ''')
 
-    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/Decision_tree.jpg?raw=true',caption = 'Example of a decision tree')
-
-    st.markdown(''' The Root Node starts the graph. It is usually the variable that splits the more lcearly the data. 
-    Then, intermediate nodes are vsisble were different varaibales are evaluated but no final prediction is made yet. 
-    Finally, leaf nodes are present where the predicrtions (numerical of categoriacl) are made. 
-
-    For the Titanic dataset, the prediction will be whether the studied person survived the shipwreck.
-     ''')
-    
+    # st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/Decision_tree.jpg?raw=true',caption = 'Example of a decision tree')
+  
     st.subheader(name)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     # st.write("For debugging:")

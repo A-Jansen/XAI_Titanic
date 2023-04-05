@@ -90,14 +90,14 @@ with header2:
     and a specific outcome would not have occurred. In machine learning, counterfactuals are used to explain prediction of individuals instances. The prediction
     of the model will be analysed and certain conditions/features that created this prediction will be modified to obtain an different outcome for the model.''')
 
-    st.markdown('''As displayed in the graph below, the relation betwwen the inputs andthe prediciton is modified by the feature values that creates a simple causal
-    relationshhip betwen inputs and predictions. 
-''') 
+#     st.markdown('''As displayed in the graph below, the relation betwwen the inputs and the prediciton is modified by the feature values that creates a simple causal
+#     relationshhip betwen inputs and predictions. 
+# ''') 
 
-    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/counterfactual.jpg?raw=true', caption = 'Causal relation between inputs and predictions', use_column_width = 'always' )
+#     st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/counterfactual.jpg?raw=true', caption = 'Causal relation between inputs and predictions', use_column_width = 'always' )
 
-    st.markdown('''A counterfactual explanation of a prediction will then describe the smallest amount of change that is necessary to make to change the output
-    prediction to a predefine one.''')
+    st.markdown('''A counterfactual explanation of a prediction will then describe the smallest amount of change that is necessary for a passenger of the titanic
+     to have an opposite outcome to the orignial one (survived/not survived).''')
     st.subheader(name, anchor='top')
     # st.write("For debugging:")
     # st.write(st.session_state.participantID)
