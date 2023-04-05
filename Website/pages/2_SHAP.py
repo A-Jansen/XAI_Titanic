@@ -37,7 +37,7 @@ if 'profileIndex' not in st.session_state:
 header1, header2, header3 = st.columns([1,2,1])
 characteristics1, characteristics2, characteristics3 = st.columns([3,8,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
-explanation1, explanation2, explanation3 = st.columns([1,3,1])
+explanation1, explanation2, explanation3 = st.columns([2,3,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 
