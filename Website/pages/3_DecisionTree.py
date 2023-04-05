@@ -55,8 +55,11 @@ evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 
 @st.cache_data(persist=True)
 def loadData():
-    train_df = pd.read_csv('/assets/train_df.csv')
-    test_df = pd.read_csv('/assets/test_df.csv')
+    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
+    # train_df = pd.read_csv('/assets/train_df.csv')
+    train_df=pd.read_csv(url_traindf, index_col=None)
+    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_df.csv"
+    test_df = pd.read_csv(url_testdf, index_col=None)
     X_train = train_df.drop("Survived", axis=1)
     Y_train = train_df["Survived"]
     X_test  = test_df.drop("PassengerId", axis=1).copy()
