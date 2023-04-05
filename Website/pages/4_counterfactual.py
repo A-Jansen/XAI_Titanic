@@ -45,11 +45,7 @@ if 'profileIndex' not in st.session_state:
     st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index3]      
 
 header1, header2, header3 = st.columns([1,2,1])
-<<<<<<< Updated upstream
 characteristics1, characteristics2, characteristics3 = st.columns([1,8,1])
-=======
-characteristics1, characteristics2, characteristics3 = st.columns([1,10,1])
->>>>>>> Stashed changes
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1,10,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
@@ -94,18 +90,8 @@ def Counterfactualsplot(X_test, explainer):
 
 with header2:
     st.header("Explanation - Counterfactuals")
-<<<<<<< Updated upstream
-    st.markdown('''A counterfactual explanation describes a situation where if a specific event had not occurred, the conclusion would have been different
-    and a specific outcome would not have occurred. In machine learning, counterfactuals are used to explain prediction of individuals instances. The prediction
-    of the model will be analysed and certain conditions/features that created this prediction will be modified to obtain an different outcome for the model.''')
-
-#     st.markdown('''As displayed in the graph below, the relation betwwen the inputs and the prediciton is modified by the feature values that creates a simple causal
-#     relationshhip betwen inputs and predictions. 
-# ''') 
-=======
     st.markdown('''A counterfactual is used to showcase which attributes (e.g. sex or age) would need to change to get the opposite outcome, i.e. to survive when the prediction is not survive. 
     Multiple changes are shown but all have the opposite outcome from the current prediction. ''')
->>>>>>> Stashed changes
 
 #     st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/counterfactual.jpg?raw=true', caption = 'Causal relation between inputs and predictions', use_column_width = 'always' )
 
