@@ -48,6 +48,7 @@ name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 header1, header2, header3 = st.columns([1,2,1])
 characteristics1, characteristics2, characteristics3 = st.columns([1,8,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
+title1, title2, title3 = st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1,2,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
@@ -145,9 +146,12 @@ with prediction2:
     else:
         prob = round((probability[0][1]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
+        
+with title2: 
+    st.subheader("Visualization - Decision Tree")
+
 
 with explanation2: 
-    st.subheader("Visualization - Decision Tree")
     # st.markdown('''Decision Tree model are a non-parametric supervised learning method
     #  commonly used for classification and regression.
     #  They are constructed using two kinf of elements: Nodes and branches. At each node (intersection),
