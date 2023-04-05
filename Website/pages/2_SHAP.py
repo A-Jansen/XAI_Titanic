@@ -6,6 +6,7 @@ from uuid import uuid4
 from streamlit_extras.switch_page_button import switch_page
 import random
 import shap
+from IPython.display import display_html
 import xgboost as xgb
 import matplotlib.pyplot as plt
 
@@ -36,15 +37,15 @@ if 'profileIndex' not in st.session_state:
 header1, header2, header3 = st.columns([1,2,1])
 characteristics1, characteristics2, characteristics3 = st.columns([1,2,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
-explanation1, explanation2, explanation3 = st.columns([1,2,1])
+explanation1, explanation2, explanation3 = st.columns([1,5,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 presentation1, presentation2, presentation3 = st.columns([2,2,2])
 
 
 
-nameArray =st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"].split(',')
-name= nameArray[1]+" "+ nameArray[0]
+
+name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
 @st.cache_resource
 def trainModel(X_train,Y_train):
@@ -66,9 +67,17 @@ def shapPlot(X_test, _shap_values):
     return shap.plots.waterfall(shap_values[st.session_state.profileIndex])
 
 with header2:
-    st.header(name, anchor='top')
-    st.write("For debugging:")
-    st.write(st.session_state.participantID)
+    st.header('Explanation - SHAP Values')
+    st.markdown('''  The SHAP value algorithm (SHapley Additive exPlanations) is a way to reverse-engineer the output of any predictive machine learning model.
+    the technique helps to understand the decision took by a complex model. The classical models will typically answer the question 'how much' whereas the SHAP
+    model will focus on the 'why'.
+
+    Finally, the representation of the SHAP value will show how much each feature are contributing to the final prediction made by the model. For the Titanic dataset, each feature 
+    will analyse each the contribution of each will be presented for different persons explaining the reason why this person survived the shipwreck or not. 
+    ''')
+    st.subheader(name, anchor='top')
+    # st.write("For debugging:")
+    # st.write(st.session_state.participantID)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
 with characteristics2:
@@ -109,74 +118,88 @@ with explanation2:
     st.set_option('deprecation.showPyplotGlobalUse', False)
     fig = shap.plots.waterfall(shap_values[st.session_state.profileIndex])
     st.pyplot(fig, bbox_inches='tight')
+    data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
+    # st.dataframe(st.session_state.ports_df)
+    # st.dataframe(st.session_state.title_df)
+    # st.dataframe(st.session_state.gender_df)
+    st.dataframe(data_indices)
 
 with footer2:
-    st.write(st.session_state.index1)
+
     if (st.session_state.index1 < len(st.session_state.profileIndices)-1):
         if st.button("New profile"):
-            st.write(st.session_state.index1)
+  
             st.session_state.index1 = st.session_state.index1+1
             st.session_state.profileIndex = st.session_state.profileIndices[st.session_state.index1]
-            st.write(st.session_state.index1)
             st.experimental_rerun()
     else:
-        st.markdown("You have reached the end of the profiles :disappointed_relieved:")
+        def is_user_active():
+            if 'user_active1' in st.session_state.keys() and st.session_state['user_active1']:
+                return True
+            else:
+                return False
+        if is_user_active():
+        # st.markdown("You have reached the end of the profiles")
         # if st.button("Continue to evaluation"):
         #     st.write(" ")
-        with st.form("my_form1", clear_on_submit=True):
-            st.subheader("Evaluation")
-            st.write("These questions only ask for your opinion about this specific explanation")
-            q1 = st.select_slider(
-            '**1**- From the explanation, I **understand** how the algorithm works:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+            with st.form("my_form1", clear_on_submit=True):
+                st.subheader("Evaluation")
+                st.write("These questions only ask for your opinion about this specific explanation")
+                q1 = st.select_slider(
+                '**1**- From the explanation, I **understand** how the algorithm works:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q2 = st.select_slider(
-            '**2**- This explanation of how the algorithm works is **satisfying**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q2 = st.select_slider(
+                '**2**- This explanation of how the algorithm works is **satisfying**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q3 = st.select_slider(
-            '**3**- This explanation of how the algorithm works has **sufficient detail**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q3 = st.select_slider(
+                '**3**- This explanation of how the algorithm works has **sufficient detail**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q4 = st.select_slider(
-            '**4**- This explanation of how the algorithm works seems **complete**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q4 = st.select_slider(
+                '**4**- This explanation of how the algorithm works seems **complete**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q5 = st.select_slider(
-            '**5**- This explanation of how the algorithm works **tells me how to use it**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q5 = st.select_slider(
+                '**5**- This explanation of how the algorithm works **tells me how to use it**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q6 = st.select_slider(
-            '**6**- This explanation of how the algorithm works is **useful to my goals**:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q6 = st.select_slider(
+                '**6**- This explanation of how the algorithm works is **useful to my goals**:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q7 = st.select_slider(
-            '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q7 = st.select_slider(
+                '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            q8 = st.select_slider(
-            '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
-            options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
+                q8 = st.select_slider(
+                '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
+                options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
-            # Every form must have a submit button.
-            submitted = st.form_submit_button("Submit")
-            if submitted:
-                st.write("question 1", q1)
-                st.session_state.oocsi.send('EngD_HAII', {
-                    'participant_ID': st.session_state.participantID,
-                    'type of explanation': 'SHAP',
-                    'q1': q1,
-                    'q2': q2,
-                    'q3': q3,
-                    'q4': q4,
-                    'q5': q5,
-                    'q6': q6,
-                    'q7': q7,
-                    'q8': q8,
-                    
-                    })
-                if (st.session_state.lastQuestion =='yes'): 
-                    switch_page('finalPage')
-                else: 
-                    st.session_state.profileIndex =st.session_state.profileIndices[0]
-                    switch_page(st.session_state.pages[st.session_state.nextPage1])
+                # Every form must have a submit button.
+                submitted = st.form_submit_button("Submit")
+                if submitted:
+                    st.write("question 1", q1)
+                    st.session_state.oocsi.send('EngD_HAII', {
+                        'participant_ID': st.session_state.participantID,
+                        'type of explanation': 'SHAP',
+                        'q1': q1,
+                        'q2': q2,
+                        'q3': q3,
+                        'q4': q4,
+                        'q5': q5,
+                        'q6': q6,
+                        'q7': q7,
+                        'q8': q8,
+                        
+                        })
+                    if (st.session_state.lastQuestion =='yes'): 
+                        switch_page('finalPage')
+                    else: 
+                        st.session_state.profileIndex =st.session_state.profileIndices[0]
+                        switch_page(st.session_state.pages[st.session_state.nextPage1])
+        else:
+            if st.button('Continue to evaluation'):
+                st.session_state['user_active1']=True
+                st.experimental_rerun()
