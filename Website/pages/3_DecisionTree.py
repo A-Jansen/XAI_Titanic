@@ -185,6 +185,11 @@ with explanation2:
     
     st.text("")
 
+with explanation1: 
+    st.dataframe(st.session_state.title_df.set_index('Title indices'))
+    st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
+    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
+
 with presentation1: 
     st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
 
