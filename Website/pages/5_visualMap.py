@@ -31,7 +31,7 @@ if 'profileIndex' not in st.session_state:
     
 
 header1, header2, header3 = st.columns([1,2,1])
-characteristics1, characteristics2, characteristics3 = st.columns([1,2,1])
+characteristics1, characteristics2, characteristics3 = st.columns([1,5,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
 explanationheader1,explanationheader2, explanationheader3 = st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1,6,1])
@@ -65,7 +65,7 @@ def shapPlot(X_test, _shap_values):
 
 with header2:
     st.header('Visual Method for XAI')
-    st.markdown('''In this part, a new method of Explainability was implemented using more visual techniques for communicating of the model
+    st.markdown('''In this part, another method of Explainability was implemented using more visual techniques for communicating the model
     predictions and the features influence. The values showed when clicked on each feature (title, Age, deck, ...) were obtained using the SHAP algorithm. 
     Let yourself play with it and tell us how easy it was to understand the model prediciton and the influence of the features!
 

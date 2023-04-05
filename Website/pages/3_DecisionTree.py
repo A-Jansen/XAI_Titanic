@@ -46,7 +46,7 @@ name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
 
 header1, header2, header3 = st.columns([1,2,1])
-characteristics1, characteristics2, characteristics3 = st.columns([1,2,1])
+characteristics1, characteristics2, characteristics3 = st.columns([1,5,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1,2,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
