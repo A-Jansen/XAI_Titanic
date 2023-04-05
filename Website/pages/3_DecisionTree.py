@@ -71,38 +71,38 @@ def trainModel(X_train,Y_train):
     return model
 
 # @st.cache_resource
-def createTree(_model, X_train, Y_train, X_test):
-    # X, y = make_moons(n_samples=20, noise=0.25, random_state=3)
-    # treeclf = DecisionTreeClassifier(random_state=0)
-    # treeclf.fit(X, y)
-    # viz_model= dtreeviz(treeclf, X, y, target_name="Classes",
-    #     feature_names=["f0", "f1"], class_names=["c0", "c1"])
-    # clf = DecisionTreeClassifier(max_depth=3)
-    # clf.fit(X_train, Y_train)
+# def createTree(_model, X_train, Y_train, X_test):
+#     # X, y = make_moons(n_samples=20, noise=0.25, random_state=3)
+#     # treeclf = DecisionTreeClassifier(random_state=0)
+#     # treeclf.fit(X, y)
+#     # viz_model= dtreeviz(treeclf, X, y, target_name="Classes",
+#     #     feature_names=["f0", "f1"], class_names=["c0", "c1"])
+#     # clf = DecisionTreeClassifier(max_depth=3)
+#     # clf.fit(X_train, Y_train)
 
-    # Y_pred = clf.predict(X_test)  
-    # acc_decision_tree2 = round(clf.score(X_train, Y_train) * 100, 2)
-    # viz_model = dtreeviz(clf,
-    #                      X_train, Y_train,
-    #                     feature_names=X_train.columns,
-    #                     target_name='Survived',
-    #                     class_names=['Dead', 'Alive'],
-    #                     X=X_test.iloc[1]  
-    # ) 
-    viz_model = dtreeviz(_model, 
-                         X_train, Y_train,
-                         tree_index=0,
-                         feature_names=list(X_train.columns),
-                         target_name='Survived',
-                         class_names=['Dead', 'Alive'],
-                         X=X_test.iloc[st.session_state.profileIndex],
-                        #depth_range_to_display=(0, 2),
-                        show_just_path=True,
-                        # orientation ='LR',
-                         )
-    path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
-    viz_model.save(path) 
-    return viz_model
+#     # Y_pred = clf.predict(X_test)  
+#     # acc_decision_tree2 = round(clf.score(X_train, Y_train) * 100, 2)
+#     # viz_model = dtreeviz(clf,
+#     #                      X_train, Y_train,
+#     #                     feature_names=X_train.columns,
+#     #                     target_name='Survived',
+#     #                     class_names=['Dead', 'Alive'],
+#     #                     X=X_test.iloc[1]  
+#     # ) 
+#     viz_model = dtreeviz(_model, 
+#                          X_train, Y_train,
+#                          tree_index=0,
+#                          feature_names=list(X_train.columns),
+#                          target_name='Survived',
+#                          class_names=['Dead', 'Alive'],
+#                          X=X_test.iloc[st.session_state.profileIndex],
+#                         #depth_range_to_display=(0, 2),
+#                         show_just_path=True,
+#                         # orientation ='LR',
+#                          )
+#     path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
+#     viz_model.save(path) 
+#     return viz_model
 
 def render_svg(svg):
     """Renders the given svg string."""
