@@ -37,6 +37,7 @@ if 'profileIndex' not in st.session_state:
 header1, header2, header3 = st.columns([1,2,1])
 characteristics1, characteristics2, characteristics3 = st.columns([3,8,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
+title1, title2, title3 = st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1.5,3,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
@@ -104,10 +105,10 @@ with explanation1:
     st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
     st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
 
-
+with title2: 
+    st.subheader("Explanation")
 
 with explanation2:
-    st.subheader("Explanation")
     # with st.spinner("Please be patient, we are generating a new explanation"):
     shap_values= getSHAPvalues(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
     st.set_option('deprecation.showPyplotGlobalUse', False)
