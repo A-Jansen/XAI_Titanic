@@ -83,8 +83,6 @@ def Counterfactualsplot(X_test, explainer):
     e1 = explainer.generate_counterfactuals(X_test[1:2], total_CFs=4, desired_class="opposite")
     name_new = name[1:].replace(' ', '_')
     url_counter = f'https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/counterfactuals_{name_new}.csv'
-    st.markdown(url_counter)
-    st.markdown(name_new)
     # e1.cf_examples_list[0].final_cfs_df.to_csv(path_or_buf=url_counter, index=False)
     counter_csv = pd.read_csv(url_counter, index_col=None)
     return st.dataframe(counter_csv, width=10000)
