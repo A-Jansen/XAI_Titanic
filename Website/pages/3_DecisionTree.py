@@ -46,7 +46,11 @@ name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
 
 header1, header2, header3 = st.columns([1,2,1])
+<<<<<<< Updated upstream
 characteristics1, characteristics2, characteristics3 = st.columns([1,8,1])
+=======
+characteristics1, characteristics2, characteristics3 = st.columns([1,10,1])
+>>>>>>> Stashed changes
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
 title1, title2, title3 = st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([2,3,1])
@@ -120,8 +124,17 @@ with header2: #header2
      end of the path the final prediction (survived/not survived). 
     ''')
 
+<<<<<<< Updated upstream
     # st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/Decision_tree.jpg?raw=true',caption = 'Example of a decision tree')
   
+=======
+    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/Decision_tree.jpg?raw=true',caption = 'Example of a decision tree')
+
+    st.markdown('''Decision tree models show the decisions made to come to a final prediction. 
+    At each point it needs to go to go left or right based on the value of one of the attributes (e.g. sex or age) and below the final path it took to come to a decision is shown.
+     ''')
+    
+>>>>>>> Stashed changes
     st.subheader(name)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     # st.write("For debugging:")

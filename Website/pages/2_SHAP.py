@@ -67,12 +67,17 @@ def shapPlot(X_test, _shap_values):
 
 with header2:
     st.header('Explanation - SHAP Values')
+<<<<<<< Updated upstream
     st.markdown('''  The SHAP value algorithm (SHapley Additive exPlanations) is a way to reverse-engineer the output of any predictive machine learning model.
     the technique helps to understand the decision took by a complex model. The classical models will typically answer the question 'how much' whereas the SHAP
     model will focus on the 'why'.
 
     Finally, the representation of the SHAP value will show how much each feature are contributing to the final prediction made by the model. Blue bars 
     represent positive contribution to the prediction (survived) and red bars negative contribution.  
+=======
+    st.markdown(''' One form of explanations is using SHAP values, these values indicate how much each attribute (e.g. sex or age) contributed to the prediction. 
+    Blue bars represent a contribution to a negative prediction (dead) and red bars a contribution towards the positive outcome (survived).
+>>>>>>> Stashed changes
     ''')
     st.subheader(name, anchor='top')
     # st.write("For debugging:")
