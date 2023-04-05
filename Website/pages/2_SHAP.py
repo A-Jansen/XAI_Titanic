@@ -112,7 +112,7 @@ with explanation2:
     # st.dataframe(st.session_state.ports_df)
     # st.dataframe(st.session_state.title_df)
     # st.dataframe(st.session_state.gender_df)
-    st.dataframe(data_indices)
+    # st.dataframe(data_indices)
 
 with presentation1: 
     st.dataframe(st.session_state.ports_df.set_index('Ports indices'))

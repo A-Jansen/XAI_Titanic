@@ -133,8 +133,8 @@ with explanation2:
     explainer= getcounterfactual_values(random_forest, prediction_all, st.session_state.X_test)
     st.set_option('deprecation.showPyplotGlobalUse', False)
     e1=Counterfactualsplot(st.session_state.X_test, explainer)
-    data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
-    st.dataframe(data_indices)
+    # data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
+    # st.dataframe(data_indices)
 
 with presentation1: 
     st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
