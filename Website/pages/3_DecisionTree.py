@@ -112,7 +112,7 @@ def render_svg(svg):
 
 
 with header2: #header2
-    st.header("Explanation - Decision Tree")
+    st.header("Decision Tree")
     st.markdown('''Decision tree models show the decisions made to come to a final prediction. 
     At each point it needs to go to go left or right based on the value of one of the attributes (e.g. sex or age) and below the final path it took to come to a decision is shown.
      ''')
@@ -141,7 +141,7 @@ with prediction2:
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
 with title2: 
-    st.subheader("Visualization - Decision Tree")
+    st.subheader("Explanation - Decision Tree")
 
 
 with explanation2: 

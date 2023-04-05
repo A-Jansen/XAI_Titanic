@@ -64,7 +64,7 @@ def shapPlot(X_test, _shap_values):
 
 
 with header2:
-    st.header('Visual Method for XAI')
+    st.header('Visual map')
     st.markdown('''In this part, the explanation is given using a combination of SHAP values, values that indicate how much each attribute (e.g. sex or age) contributed to the prediction, were combined with visual representing the different attributes. 
     When you click on the image the attributes will change color (blue for contributing towards a negative prediction (dead) and red for positive) and the size tells you the importance. 
 
@@ -97,7 +97,7 @@ with characteristics2:
 #     st.markdown("Click on the image to see how each attribute contributed and hover over them to see the SHAP values")
 
 with explanation2:
-    st.subheader("Visual map")
+    st.subheader("Explanation - visual map")
     st.write("This might take a moment to load, please be patient")
     # st.write("Click on the image to see the shap values")
     components.iframe("https://observablehq.com/embed/d177ef99668b6553@1222?cells=name%2Cimg%2Cpredictoin%2Cchart2%2Cviewof+button", scrolling=False, height=683)

@@ -89,7 +89,7 @@ def Counterfactualsplot(X_test, explainer):
 
 
 with header2:
-    st.header("Explanation - Counterfactuals")
+    st.header("Counterfactuals")
     st.markdown('''A counterfactual is used to showcase which attributes (e.g. sex or age) would need to change to get the opposite outcome, i.e. to survive when the prediction is not survive. 
     Multiple changes are shown but all have the opposite outcome from the current prediction. ''')
 
@@ -123,7 +123,7 @@ with prediction2:
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
 with explanation2:
-    st.subheader("Explanation")
+    st.subheader("Explanation - counterfactuals ")
  
 
     # with st.spinner("Please be patient, we are generating a new explanation"):
