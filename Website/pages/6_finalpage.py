@@ -13,7 +13,7 @@ with header2:
     st.markdown("This is the final section of this experiment, please rate and compare the different methods")
 
 with image2:
-    st.image('assets/images/overview methods.png')
+    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/images/overview%20methods.png?raw=true')
 
 with body2:
     with st.form("my_form"):
