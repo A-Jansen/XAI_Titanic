@@ -187,7 +187,7 @@ with explanation2:
     #     svg = f.read()
     if(st.session_state.profileIndex ==25 ):
         url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_robins.svg"
-    elif (st.session_state.profileIndex== 112):
+    else:
         url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_robins.svg"
     st.image(url)
     
