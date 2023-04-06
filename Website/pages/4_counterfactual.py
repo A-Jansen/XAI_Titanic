@@ -59,10 +59,14 @@ name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
 
 @st.cache_resource
-def trainModel(X_train,Y_train):
+def trainModelRF(X_train,Y_train):
     model_1 = RandomForestClassifier().fit(X_train, Y_train)  ## Random forest because XGBoost doesn't work with counterfactuals
     return model_1
 
+@st.cache_resource
+def trainModel(X_train,Y_train):
+    model = xgb.XGBClassifier().fit(X_train, Y_train)
+    return model
 
 @st.cache_resource
 def getcounterfactual_values(_model,X_prediction, X_train):
@@ -100,7 +104,8 @@ with header2:
     st.subheader(name, anchor='top')
     # st.write("For debugging:")
     # st.write(st.session_state.participantID)
-    random_forest= trainModel(st.session_state.X_train, st.session_state.Y_train)
+    random_forest= trainModelRF(st.session_state.X_train, st.session_state.Y_train)
+    XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
 with characteristics2:
     # initialize list of lists
@@ -114,7 +119,7 @@ with prediction2:
     # st.header("Prediction")
     prediction =  random_forest.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     prediction_all = random_forest.predict(st.session_state.X_test.values)
-    probability = random_forest.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
+    probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     if prediction == 0:
         prob = round((probability[0][0]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :red[**not survive**]".format(prob, name) )
