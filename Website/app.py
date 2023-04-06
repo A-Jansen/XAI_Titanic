@@ -78,7 +78,7 @@ with consent_form2:
     st.markdown("The study does not involve any risks, detrimental side effects, or cause discomfort.")
 
     st.subheader("Duration")
-    st.markdown("The instructions, measurements and debriefing will take approximately 15 minutes.")
+    st.markdown("The instructions, measurements and debriefing will take approximately 10 minutes.")
 
     st.subheader("Voluntary")
     st.markdown('''Your participation is completely voluntary. You can refuse to participate without giving any reasons and you can stop your participation at any time during the study. You can also withdraw your permission to use your data immediately after completing the study. None of this will have any negative consequences for you whatsoever.''')
