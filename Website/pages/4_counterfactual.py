@@ -47,6 +47,7 @@ if 'profileIndex' not in st.session_state:
 header1, header2, header3 = st.columns([1,2,1])
 characteristics1, characteristics2, characteristics3 = st.columns([3,8,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
+title1, title2, title3 = st.columns([1,2,1])
 explanation1, explanation2, explanation3 = st.columns([1,10,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
@@ -80,12 +81,11 @@ def getcounterfactual_values(_model,X_prediction, X_train):
 
 
 def Counterfactualsplot(X_test, explainer):
-    e1 = explainer.generate_counterfactuals(X_test[1:2], total_CFs=4, desired_class="opposite")
-    name_new = name[1:].replace(' ', '_')
-    url_counter = f'https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/counterfactuals_{name_new}.csv'
-    # e1.cf_examples_list[0].final_cfs_df.to_csv(path_or_buf=url_counter, index=False)
-    counter_csv = pd.read_csv(url_counter, index_col=None)
-    return st.dataframe(counter_csv, width=10000)
+    e1 = explainer.generate_counterfactuals(X_test[st.session_state.profileIndex:st.session_state.profileIndex+1], total_CFs=4, desired_class="opposite")
+    # name_new = name[1:].replace(' ', '_')
+    # url_counter = f'https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/counterfactuals_{name_new}.csv'
+    # counter_csv = pd.read_csv(url_counter, index_col=None)
+    return st.dataframe(e1.cf_examples_list[0].final_cfs_df)
 
 
 with header2:
@@ -122,10 +122,11 @@ with prediction2:
         prob = round((probability[0][1]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
-with explanation2:
+with title2: 
     st.subheader("Explanation - counterfactuals ")
- 
 
+
+with explanation2:
     # with st.spinner("Please be patient, we are generating a new explanation"):
     explainer= getcounterfactual_values(random_forest, prediction_all, st.session_state.X_test)
     st.set_option('deprecation.showPyplotGlobalUse', False)
