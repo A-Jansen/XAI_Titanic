@@ -38,7 +38,7 @@ import json
 if 'participantID' not in st.session_state:
     st.session_state.participantID= "P" + uuid4().__str__().replace('-', '')[0:10]
     st.session_state.pages =['SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
-    st.session_state.profileIndices=[25,112]
+    st.session_state.profileIndices=[25, 23, 125, 112]
 
 if 'oocsi' not in st.session_state:
     st.session_state.oocsi = OOCSI('','oocsi.id.tue.nl')
