@@ -64,46 +64,48 @@ with body2:
     This prediction is accompanied by each time a different type of explanation.''')
     st.markdown("After seeing 2 profiles, you will be asked to evaluate the explanation you have just seen.")
 
-    st.subheader('Demographic information')
-    st.markdown("Before you start with the study we would like to ask you to first answer these questions")
+    # st.subheader('Demographic information')
+    # st.markdown("Before you start with the study we would like to ask you to first answer these questions")
 
 
 
 with footer2:
-    with st.form("demographic_form", clear_on_submit=True):
-        gender = st.radio("How do you identify your gender", ('Female', 'Male', 'Non-binary', 'Other', 'Prefer not to say'))
-        age  = st.radio("How old are you?", ('18-25', '26-35', '36-45', '46-55', '56-65', '66-75', '75+'))
-        educationlevel = st.radio("What is your highest level of education?",
-        ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
-        st.markdown('**AI literacy**')
-        st.markdown('Please rate to what extent you have the skills/knowledge listed below. 0 means that he ability is hardly or not at all pronounced, whereas a value of 10 means that the ability is very well or almost perfectly pronounced')
-        q1 = st.slider('I know the most important concepts of the topic "artificial intelligence"', 0, 10)
-        q2 = st.slider("I know definitions of artificial intelligence", 0, 10 )
-        q3 = st.slider("I can assess what the limitations and opportunities of using an AI are", 0, 10)
-        q4 = st.slider("I can assess what advantages and disadvantages the  use of an artificial intelligence entails", 0, 10)
-        q5 = st.slider("I can think of new uses for AI.", 0, 10)
-        q6 = st.slider("I can imagine possible future uses of AI", 0, 10)
+    if st.button("Start the experiment "):
+        switch_page(st.session_state.pages[st.session_state.nextPage])
+#     with st.form("demographic_form", clear_on_submit=True):
+#         gender = st.radio("How do you identify your gender", ('Female', 'Male', 'Non-binary', 'Other', 'Prefer not to say'))
+#         age  = st.radio("How old are you?", ('18-25', '26-35', '36-45', '46-55', '56-65', '66-75', '75+'))
+#         educationlevel = st.radio("What is your highest level of education?",
+#         ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
+#         st.markdown('**AI literacy**')
+#         st.markdown('Please rate to what extent you have the skills/knowledge listed below. 0 means that he ability is hardly or not at all pronounced, whereas a value of 10 means that the ability is very well or almost perfectly pronounced')
+#         q1 = st.slider('I know the most important concepts of the topic "artificial intelligence"', 0, 10)
+#         q2 = st.slider("I know definitions of artificial intelligence", 0, 10 )
+#         q3 = st.slider("I can assess what the limitations and opportunities of using an AI are", 0, 10)
+#         q4 = st.slider("I can assess what advantages and disadvantages the  use of an artificial intelligence entails", 0, 10)
+#         q5 = st.slider("I can think of new uses for AI.", 0, 10)
+#         q6 = st.slider("I can imagine possible future uses of AI", 0, 10)
 
-        st.markdown('''On the next page you will see a profile of one of the passengers of the Titanic,
-        a prediction of whether they would have survived and an explanation for why the model made this prediction. Have a look at this and then generate a new profile by clicking on the button.
-        You can look at 2 profiles, next you will be asked to evaluate the explanation. 
-        These steps will be repeated in total 4 times after which you will be asked some final questions.  ''')
+#         st.markdown('''On the next page you will see a profile of one of the passengers of the Titanic,
+#         a prediction of whether they would have survived and an explanation for why the model made this prediction. Have a look at this and then generate a new profile by clicking on the button.
+#         You can look at 2 profiles, next you will be asked to evaluate the explanation. 
+#         These steps will be repeated in total 4 times after which you will be asked some final questions.  ''')
 
-        submitted = st.form_submit_button("Start the experiment")
+#         submitted = st.form_submit_button("Start the experiment")
 
-        if submitted:
-            st.session_state.oocsi.send('EngD_HAII_demographics', {
-                    'participant_ID': st.session_state.participantID,
-                    'gender': gender,
-                    'age': age,
-                    'educationLevel': educationlevel,
-                    'q1': q1,
-                    'q2': q2,
-                    'q3': q3,
-                    'q4': q4,
-                    'q5': q5,
-                    'q6': q6,                  
-                    })
-        # if st.button("Start the experiment "):
+#         if submitted:
+#             st.session_state.oocsi.send('XAI_demograhphics', {
+#                     'participant_ID': st.session_state.participantID,
+#                     'gender': gender,
+#                     'age': age,
+#                     'educationLevel': educationlevel,
+#                     'q1': q1,
+#                     'q2': q2,
+#                     'q3': q3,
+#                     'q4': q4,
+#                     'q5': q5,
+#                     'q6': q6,                  
+#                     })
+#         # if st.button("Start the experiment "):
 
-            switch_page(st.session_state.pages[st.session_state.nextPage])
+#             switch_page(st.session_state.pages[st.session_state.nextPage])

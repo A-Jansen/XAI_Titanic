@@ -153,7 +153,7 @@ with footer2:
             submitted = st.form_submit_button("Submit")
             if submitted:
                 #st.write("question 1", q1)
-                st.session_state.oocsi.send('EngD_HAII', {
+                st.session_state.oocsi.send('XAImethods_evaluation', {
                     'participant_ID': st.session_state.participantID,
                     'type of explanation': 'visualmap',
                     'q1': q1,

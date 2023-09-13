@@ -133,7 +133,7 @@ with consent_form2:
      
         st.write('Thank you! Please continue to the next page to start the experiment')
         if st.button("Next page"):
-            st.session_state.oocsi.send('EngD_HAII_consent', {
+            st.session_state.oocsi.send('XAI_consent', {
             'participant_ID': st.session_state.participantID,
             'consent': 'yes',
             'consentForOSF': consentforOSF
