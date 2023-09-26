@@ -33,6 +33,7 @@ if 'index1' not in st.session_state:
 if 'profileIndex' not in st.session_state:
     st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index1]   
 
+
 header1, header2, header3 = st.columns([1,2,1])
 characteristics1, characteristics2, characteristics3 = st.columns([1,2,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
@@ -75,7 +76,9 @@ with characteristics2:
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
-    st.dataframe(df)
+    st.dataframe(df.style.hide_index())
+    # df_values = df.values.tolist()
+    # st.table(df_values)    
 
 
 
