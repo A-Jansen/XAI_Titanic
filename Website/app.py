@@ -31,12 +31,14 @@ import requests
 import json
 
 
+
+
 # Check if 'participantID' already exists in session_state
 # If not, then initialize it
 if 'participantID' not in st.session_state:
     st.session_state.participantID= "P" + uuid4().__str__().replace('-', '')[0:10]
     st.session_state.pages =['SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
-    st.session_state.profileIndices=[1 ,0, 12, 35]
+    st.session_state.profileIndices=[25, 112]
 
 if 'oocsi' not in st.session_state:
     st.session_state.oocsi = OOCSI('','oocsi.id.tue.nl')
@@ -76,7 +78,7 @@ with consent_form2:
     st.markdown("The study does not involve any risks, detrimental side effects, or cause discomfort.")
 
     st.subheader("Duration")
-    st.markdown("The instructions, measurements and debriefing will take approximately 15 minutes.")
+    st.markdown("The instructions, measurements and debriefing will take approximately 10 minutes.")
 
     st.subheader("Voluntary")
     st.markdown('''Your participation is completely voluntary. You can refuse to participate without giving any reasons and you can stop your participation at any time during the study. You can also withdraw your permission to use your data immediately after completing the study. None of this will have any negative consequences for you whatsoever.''')
@@ -131,7 +133,7 @@ with consent_form2:
      
         st.write('Thank you! Please continue to the next page to start the experiment')
         if st.button("Next page"):
-            st.session_state.oocsi.send('EngD_HAII_consent', {
+            st.session_state.oocsi.send('XAI_consent', {
             'participant_ID': st.session_state.participantID,
             'consent': 'yes',
             'consentForOSF': consentforOSF

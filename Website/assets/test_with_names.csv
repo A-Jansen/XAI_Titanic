@@ -1,419 +1,419 @@
-PassengerId,Pclass,Sex,Age,SibSp,Fare,Embarked,relatives,Deck,Title,Age_Class,Fare_Per_Person,Name
-892,3,0,22,0,0,2,0,8,1,66,0,"Kelly, Mr. James"
-893,3,1,38,1,0,0,1,8,3,114,0,"Wilkes, Mrs. James (Ellen Needs)"
-894,2,0,26,0,1,2,0,8,1,52,1,"Myles, Mr. Thomas Francis"
-895,3,0,35,0,1,0,0,8,1,105,1,"Wirz, Mr. Albert"
-896,3,1,35,1,1,0,2,8,3,105,0,"Hirvonen, Mrs. Alexander (Helga E Lindqvist)"
-897,3,0,20,0,1,0,0,8,1,60,1,"Svensson, Mr. Johan Cervin"
-898,3,1,54,0,0,2,0,8,2,162,0,"Connolly, Miss. Kate"
-899,2,0,2,1,2,0,2,8,1,4,0,"Caldwell, Mr. Albert Francis"
-900,3,1,27,0,0,1,0,8,3,81,0,"Abrahim, Mrs. Joseph (Sophie Halaut Easu)"
-901,3,0,14,2,2,0,2,8,1,42,0,"Davies, Mr. John Samuel"
-902,3,0,4,0,0,0,0,8,1,12,0,"Ilieff, Mr. Ylio"
-903,1,0,58,0,2,0,0,8,1,58,2,"Jones, Mr. Charles Cresson"
-904,1,1,20,1,3,0,1,2,3,20,1,"Snyder, Mrs. John Pillsbury (Nelle Stevenson)"
-905,2,0,39,1,2,0,1,8,1,78,1,"Howard, Mr. Benjamin"
-906,1,1,14,1,3,0,1,5,3,14,1,"Chaffee, Mrs. Herbert Fuller (Carrie Constance Toogood)"
-907,2,1,55,1,2,1,1,8,3,110,1,"del Carlo, Mrs. Sebastiano (Argenia Genovesi)"
-908,2,0,2,0,1,2,0,8,1,4,1,"Keane, Mr. Daniel"
-909,3,0,18,0,0,1,0,8,1,54,0,"Assaf, Mr. Gerios"
-910,3,1,31,1,0,0,1,8,2,93,0,"Ilmakangas, Miss. Ida Livija"
-911,3,1,29,0,0,1,0,8,3,87,0,"Assaf Khalil, Mrs. Mariana (Miriam"")"""
-912,1,0,35,1,3,1,1,8,1,35,1,"Rothschild, Mr. Martin"
-913,3,0,34,0,0,0,1,8,4,102,0,"Olsen, Master. Artur Karl"
-914,1,1,15,0,2,0,0,8,3,15,2,"Flegenheim, Mrs. Alfred (Antoinette)"
-915,1,0,28,0,3,1,1,8,1,28,1,"Williams, Mr. Richard Norris II"
-916,1,1,8,1,5,1,4,2,3,8,1,"Ryerson, Mrs. Arthur Larned (Emily Maria Borie)"
-917,3,0,38,1,1,0,1,8,1,114,0,"Robins, Mr. Alexander A"
-918,1,1,20,0,3,1,1,2,2,20,1,"Ostby, Miss. Helene Ragnhild"
-919,3,0,19,0,0,1,0,8,1,57,0,"Daher, Mr. Shedid"
-920,1,0,29,0,2,0,0,1,1,29,2,"Brady, Mr. John Bertram"
-921,3,0,30,2,2,1,2,8,1,90,0,"Samaan, Mr. Elias"
-922,2,0,40,1,2,0,1,8,1,80,1,"Louch, Mr. Charles Alexander"
-923,2,0,20,2,2,0,2,8,1,40,0,"Jefferys, Mr. Clifford Thomas"
-924,3,1,16,1,2,0,3,8,3,48,0,"Dean, Mrs. Bertram (Eva Georgetta Light)"
-925,3,1,66,1,2,0,3,8,3,198,0,"Johnston, Mrs. Andrew G (Elizabeth Lily"" Watson)"""
-926,1,0,28,1,3,1,1,3,1,28,1,"Mock, Mr. Philipp Edmund"
-927,3,0,42,0,0,1,0,8,1,126,0,"Katavelas, Mr. Vassilios (Catavelas Vassilios"")"""
-928,3,1,35,0,1,0,0,8,2,105,1,"Roth, Miss. Sarah A"
-929,3,1,21,0,1,0,0,8,2,63,1,"Cacic, Miss. Manda"
-930,3,0,18,0,1,0,0,8,1,54,1,"Sap, Mr. Julius"
-931,3,0,14,0,3,0,0,8,1,42,3,"Hee, Mr. Ling"
-932,3,0,40,0,1,1,1,8,1,120,0,"Karun, Mr. Franz"
-933,1,0,27,0,2,0,0,4,1,27,2,"Franklin, Mr. Thomas Parham"
-934,3,0,30,0,0,0,0,8,1,90,0,"Goldsmith, Mr. Nathan"
-935,2,1,3,0,1,0,0,8,3,6,1,"Corbett, Mrs. Walter H (Irene Colvin)"
-936,1,1,19,1,3,0,1,4,3,19,1,"Kimball, Mrs. Edwin Nelson Jr (Gertrude Parsons)"
-937,3,0,35,0,0,0,0,8,1,105,0,"Peltomaki, Mr. Nikolai Johannes"
-938,1,0,15,0,2,1,0,1,1,15,2,"Chevre, Mr. Paul Romaine"
-939,3,0,34,0,0,2,0,8,1,102,0,"Shaughnessy, Mr. Patrick"
-940,1,1,25,0,3,1,0,4,3,25,3,"Bucknell, Mrs. William Robert (Emma Eliza Ward)"
-941,3,1,18,0,2,0,2,8,3,54,0,"Coutts, Mrs. William (Winnie Minnie"" Treanor)"""
-942,1,0,7,1,3,0,1,3,1,7,1,"Smith, Mr. Lucien Philip"
-943,2,0,21,0,2,1,0,8,1,42,2,"Pulbaum, Mr. Franz"
-944,2,1,49,2,2,0,3,8,2,98,0,"Hocking, Miss. Ellen Nellie"""""
-945,1,1,29,3,5,0,5,3,2,29,0,"Fortune, Miss. Ethel Flora"
-946,2,0,65,0,2,1,0,8,1,130,2,"Mangiavacchi, Mr. Serafino Emilio"
-947,3,0,25,4,2,2,5,8,4,75,0,"Rice, Master. Albert"
-948,3,0,21,0,0,0,0,8,1,63,0,"Cor, Mr. Bartol"
-949,3,0,28,0,0,0,0,6,1,84,0,"Abelseth, Mr. Olaus Jorgensen"
-950,3,0,5,1,2,0,1,8,1,15,1,"Davison, Mr. Thomas Henry"
-951,1,1,11,0,5,1,0,2,2,11,5,"Chaudanson, Miss. Victorine"
-952,3,0,22,0,0,0,0,8,1,66,0,"Dika, Mr. Mirko"
-953,2,0,38,0,1,0,0,8,1,76,1,"McCrae, Mr. Arthur Gordon"
-954,3,0,45,0,0,0,0,8,1,135,0,"Bjorklund, Mr. Ernst Herbert"
-955,3,1,4,0,0,2,0,8,2,12,0,"Bradley, Miss. Bridget Delia"
-956,1,0,40,2,5,1,4,2,4,40,1,"Ryerson, Master. John Borie"
-957,2,1,34,0,2,0,0,8,3,68,2,"Corey, Mrs. Percy C (Mary Phyllis Elizabeth Miller)"
-958,3,1,29,0,0,2,0,8,2,87,0,"Burns, Miss. Mary Delia"
-959,1,0,19,0,3,0,0,8,1,19,3,"Moore, Mr. Clarence Bloomfield"
-960,1,0,17,0,2,1,0,3,1,17,2,"Tucker, Mr. Gilbert Milligan Jr"
-961,1,1,26,1,5,0,5,3,3,26,0,"Fortune, Mrs. Mark (Mary McDougald)"
-962,3,1,32,0,0,2,0,8,2,96,0,"Mulvihill, Miss. Bertha E"
-963,3,0,16,0,0,0,0,8,1,48,0,"Minkoff, Mr. Lazar"
-964,3,1,21,0,0,0,0,8,2,63,0,"Nieminen, Miss. Manta Josefina"
-965,1,0,26,0,2,1,0,4,1,26,2,"Ovies y Rodriguez, Mr. Servando"
-966,1,1,32,0,4,1,0,3,2,32,4,"Geiger, Miss. Amalie"
-967,1,0,25,0,4,1,0,3,1,25,4,"Keeping, Mr. Edwin"
-968,3,0,37,0,1,0,0,8,1,111,1,"Miles, Mr. Frank"
-969,1,1,28,2,2,0,2,3,3,28,0,"Cornell, Mrs. Robert Clifford (Malvina Helen Lamson)"
-970,2,0,0,0,1,0,0,8,1,0,1,"Aldworth, Mr. Charles Augustus"
-971,3,1,30,0,0,2,0,8,2,90,0,"Doyle, Miss. Elizabeth"
-972,3,0,22,1,2,1,2,8,4,66,0,"Boulos, Master. Akar"
-973,1,0,29,1,4,0,1,3,1,29,2,"Straus, Mr. Isidor"
-974,1,0,27,0,2,0,0,8,1,27,2,"Case, Mr. Howard Brown"
-975,3,0,28,0,0,0,0,8,1,84,0,"Demetri, Mr. Marinko"
-976,2,0,17,0,1,2,0,8,1,34,1,"Lamb, Mr. John Joseph"
-977,3,0,33,1,1,1,1,8,1,99,0,"Khalil, Mr. Betros"
-978,3,1,16,0,0,2,0,8,2,48,0,"Barry, Miss. Julia"
-979,3,1,26,0,1,0,0,8,2,78,1,"Badman, Miss. Emily Louisa"
-980,3,1,23,0,0,2,0,8,2,69,0,"O'Donoghue, Ms. Bridget"
-981,2,0,24,1,2,0,2,8,4,48,0,"Wells, Master. Ralph Lester"
-982,3,1,29,1,1,0,1,8,3,87,0,"Dyker, Mrs. Adolf Fredrik (Anna Elisabeth Judith Andersson)"
-983,3,0,20,0,0,0,0,8,1,60,0,"Pedersen, Mr. Olaf"
-984,1,1,46,1,3,0,3,2,3,46,0,"Davidson, Mrs. Thornton (Orian Hays)"
-985,3,0,26,0,1,0,0,8,1,78,1,"Guest, Mr. Robert"
-986,1,0,59,0,2,1,0,8,1,59,2,"Birnbaum, Mr. Jakob"
-987,3,0,39,0,0,0,0,8,1,117,0,"Tenglin, Mr. Gunnar Isidor"
-988,1,1,71,1,3,0,1,3,3,71,1,"Cavendish, Mrs. Tyrell William (Julia Florence Siegel)"
-989,3,0,23,0,0,0,0,8,1,69,0,"Makinen, Mr. Kalle Edvard"
-990,3,1,34,0,0,0,0,8,2,102,0,"Braf, Miss. Elin Ester Maria"
-991,3,0,34,0,1,0,0,8,1,102,1,"Nancarrow, Mr. William Henry"
-992,1,1,28,1,3,1,1,3,3,28,1,"Stengel, Mrs. Charles Emil Henry (Annie May Morris)"
-993,2,0,32,1,2,0,1,8,1,64,1,"Weisz, Mr. Leopold"
-994,3,0,21,0,0,2,0,8,1,63,0,"Foley, Mr. William"
-995,3,0,33,0,0,0,0,8,1,99,0,"Johansson Palmquist, Mr. Oskar Leander"
-996,3,1,37,1,1,1,2,8,3,111,0,"Thomas, Mrs. Alexander (Thamine Thelma"")"""
-997,3,0,28,0,2,0,0,8,1,84,2,"Holthen, Mr. Johan Martin"
-998,3,0,21,0,0,2,0,8,1,63,0,"Buckley, Mr. Daniel"
-999,3,0,37,0,0,2,0,8,1,111,0,"Ryan, Mr. Edward"
-1000,3,0,38,0,1,0,0,8,1,114,1,"Willer, Mr. Aaron (Abi Weller"")"""
-1001,2,0,22,0,1,0,0,6,1,44,1,"Swane, Mr. George"
-1002,2,0,47,0,2,1,0,8,1,94,2,"Stanton, Mr. Samuel Ward"
-1003,3,1,14,0,0,2,0,8,2,42,0,"Shine, Miss. Ellen Natalia"
-1004,1,1,22,0,2,1,0,1,2,22,2,"Evans, Miss. Edith Corse"
-1005,3,1,20,0,0,2,0,8,2,60,0,"Buckley, Miss. Katherine"
-1006,1,1,17,1,4,0,1,3,3,17,2,"Straus, Mrs. Isidor (Rosalie Ida Blun)"
-1007,3,0,21,1,1,1,1,8,1,63,0,"Chronopoulos, Mr. Demetrios"
-1008,3,0,70,0,0,1,0,8,1,210,0,"Thomas, Mr. John"
-1009,3,1,29,1,2,0,2,7,2,87,0,"Sandstrom, Miss. Beatrice Irene"
-1010,1,0,24,0,3,1,0,3,1,24,3,"Beattie, Mr. Thomson"
-1011,2,1,2,1,2,0,1,8,3,4,1,"Chapman, Mrs. John Henry (Sara Elizabeth Lawry)"
-1012,2,1,21,0,2,0,0,8,2,42,2,"Watt, Miss. Bertha J"
-1013,3,0,24,1,0,2,1,8,1,72,0,"Kiernan, Mr. John"
-1014,1,1,32,1,3,1,1,3,3,32,1,"Schabert, Mrs. Paul (Emma Mock)"
-1015,3,0,32,0,0,0,0,8,1,96,0,"Carver, Mr. Alfred John"
-1016,3,0,54,0,0,2,0,8,1,162,0,"Kennedy, Mr. John"
-1017,3,1,12,0,2,0,1,8,2,36,1,"Cribb, Miss. Laura Alice"
-1018,3,0,38,0,0,0,0,8,1,114,0,"Brobeck, Mr. Karl Rudolf"
-1019,3,1,24,2,2,2,2,8,2,72,0,"McCoy, Miss. Alicia"
-1020,2,0,40,0,1,0,0,8,1,80,1,"Bowenur, Mr. Solomon"
-1021,3,0,45,0,1,0,0,8,1,135,1,"Petersen, Mr. Marius"
-1022,3,0,33,0,1,0,0,8,1,99,1,"Spinner, Mr. Henry John"
-1023,1,0,20,0,2,1,0,3,5,20,2,"Gracie, Col. Archibald IV"
-1024,3,1,47,0,2,0,4,8,3,141,0,"Lefebre, Mrs. Frank (Frances)"
-1025,3,0,29,1,0,1,1,8,1,87,0,"Thomas, Mr. Charles P"
-1026,3,0,25,0,0,0,0,8,1,75,0,"Dintcheff, Mr. Valtcho"
-1027,3,0,23,0,0,0,0,8,1,69,0,"Carlsson, Mr. Carl Robert"
-1028,3,0,19,0,0,1,0,8,1,57,0,"Zakarian, Mr. Mapriededer"
-1029,2,0,37,0,1,0,0,8,1,74,1,"Schmidt, Mr. August"
-1030,3,1,16,0,1,0,0,8,2,48,1,"Drapkin, Miss. Jennie"
-1031,3,0,24,1,3,0,7,8,1,72,0,"Goodwin, Mr. Charles Frederick"
-1032,3,1,24,5,3,0,7,8,2,72,0,"Goodwin, Miss. Jessie Allis"
-1033,1,1,22,0,4,0,0,8,2,22,4,"Daniels, Miss. Sarah"
-1034,1,0,24,1,5,1,4,2,1,24,1,"Ryerson, Mr. Arthur Larned"
-1035,2,0,19,0,2,0,0,8,1,38,2,"Beauchamp, Mr. Henry James"
-1036,1,0,18,0,2,0,0,8,1,18,2,"Lindeberg-Lind, Mr. Erik Gustaf (Mr Edward Lingrey"")"""
-1037,3,0,19,3,2,0,3,8,1,57,0,"Vander Planke, Mr. Julius"
-1038,1,0,27,0,3,0,0,5,1,27,3,"Hilliard, Mr. Herbert Henry"
-1039,3,0,9,0,1,0,0,8,1,27,1,"Davies, Mr. Evan"
-1040,1,0,36,0,2,0,0,8,1,36,2,"Crafton, Mr. John Bertram"
-1041,2,0,42,1,2,0,2,8,5,84,0,"Lahtinen, Rev. William"
-1042,1,1,51,0,3,1,1,3,3,51,1,"Earnshaw, Mrs. Boulton (Olive Potter)"
-1043,3,0,22,0,0,1,0,8,1,66,0,"Matinoff, Mr. Nicola"
-1044,3,0,55,0,0,0,0,8,1,165,0,"Storey, Mr. Thomas"
-1045,3,1,40,0,1,0,2,8,3,120,0,"Klasen, Mrs. (Hulda Kristina Eugenia Lofqvist)"
-1046,3,0,29,4,2,0,6,8,4,87,0,"Asplund, Master. Filip Oscar"
-1047,3,0,51,0,0,0,0,8,1,153,0,"Duquemin, Mr. Joseph"
-1048,1,1,16,0,4,0,0,3,2,16,4,"Bird, Miss. Ellen"
-1049,3,1,30,0,0,0,0,8,2,90,0,"Lundin, Miss. Olga Elida"
-1050,1,0,32,0,2,0,0,4,1,32,2,"Borebank, Mr. John James"
-1051,3,1,42,0,1,0,2,8,3,126,0,"Peacock, Mrs. Benjamin (Edith Nile)"
-1052,3,1,44,0,0,2,0,8,2,132,0,"Smyth, Miss. Julia"
-1053,3,0,40,1,2,1,2,8,4,120,0,"Touma, Master. Georges Youssef"
-1054,2,1,26,0,1,0,0,8,2,52,1,"Wright, Miss. Marion"
-1055,3,0,17,0,0,0,0,8,1,51,0,"Pearce, Mr. Ernest"
-1056,2,0,1,0,1,0,0,8,5,2,1,"Peruschitz, Rev. Joseph Maria"
-1057,3,1,9,1,2,0,2,8,3,27,0,"Kink-Heilmann, Mrs. Anton (Luise Heilmann)"
-1058,1,0,15,0,3,1,0,2,1,15,3,"Brandeis, Mr. Emil"
-1059,3,0,45,2,3,0,4,8,1,135,0,"Ford, Mr. Edward Watson"
-1060,1,1,21,0,2,1,0,8,3,21,2,"Cassebeer, Mrs. Henry Arthur Jr (Eleanor Genevieve Fosdick)"
-1061,3,1,28,0,1,0,0,8,2,84,1,"Hellstrom, Miss. Hilda Maria"
-1062,3,0,61,0,0,0,0,8,1,183,0,"Lithman, Mr. Simon"
-1063,3,0,4,0,0,1,0,8,1,12,0,"Zakarian, Mr. Ortin"
-1064,3,0,1,1,1,0,1,8,1,3,0,"Dyker, Mr. Adolf Fredrik"
-1065,3,0,21,0,0,1,0,8,1,63,0,"Torfa, Mr. Assad"
-1066,3,0,56,1,2,0,6,8,1,168,0,"Asplund, Mr. Carl Oscar Vilhelm Gustafsson"
-1067,2,1,18,0,3,0,2,8,2,36,1,"Brown, Miss. Edith Eileen"
-1068,2,1,34,0,3,0,0,8,2,68,3,"Sincock, Miss. Maude"
-1069,1,0,50,1,3,1,1,3,1,50,1,"Stengel, Mr. Charles Emil Henry"
-1070,2,1,30,0,3,0,3,6,3,60,0,"Becker, Mrs. Allen Oliver (Nellie E Baumgardner)"
-1071,1,1,36,0,3,1,2,5,3,36,1,"Compton, Mrs. Alexander Taylor (Mary Eliza Ingersoll)"
-1072,2,0,26,0,1,0,0,8,1,52,1,"McCrie, Mr. James Matthew"
-1073,1,0,25,1,3,1,2,5,1,25,1,"Compton, Mr. Alexander Taylor Jr"
-1074,1,1,9,1,3,0,1,4,3,9,1,"Marvin, Mrs. Daniel Warner (Mary Graham Carmichael Farquarson)"
-1075,3,0,1,0,0,2,0,8,1,3,0,"Lane, Mr. Patrick"
-1076,1,1,4,1,4,1,2,2,3,4,1,"Douglas, Mrs. Frederick Charles (Mary Helene Baxter)"
-1077,2,0,27,0,2,0,0,8,1,54,2,"Maybery, Mr. Frank Hubert"
-1078,2,1,20,0,2,0,1,8,2,40,1,"Phillips, Miss. Alice Frances Louisa"
-1079,3,0,45,2,1,0,2,8,1,135,0,"Davies, Mr. Joseph"
-1080,3,1,40,8,3,0,10,8,2,120,0,"Sage, Miss. Ada"
-1081,2,0,36,0,1,0,0,8,1,72,1,"Veal, Mr. James"
-1082,2,0,32,1,2,0,1,8,1,64,1,"Angle, Mr. William A"
-1083,1,0,19,0,2,0,0,8,1,19,2,"Salomon, Mr. Abraham L"
-1084,3,0,19,1,1,0,2,8,4,57,0,"van Billiard, Master. Walter John"
-1085,2,0,3,0,1,2,0,8,1,6,1,"Lingane, Mr. John"
-1086,2,0,44,0,3,0,2,8,4,88,1,"Drew, Master. Marshall Brines"
-1087,3,0,58,0,0,0,0,8,1,174,0,"Karlsson, Mr. Julius Konrad Eugen"
-1088,1,0,18,0,4,1,2,5,4,18,1,"Spedden, Master. Robert Douglas"
-1089,3,1,42,0,0,0,0,8,2,126,0,"Nilsson, Miss. Berta Olivia"
-1090,2,0,22,0,1,0,0,8,1,44,1,"Baimbrigge, Mr. Charles Robert"
-1091,3,1,24,0,1,0,0,8,3,72,1,"Rasmussen, Mrs. (Lena Jacobsen Solvang)"
-1092,3,1,28,0,2,2,0,8,2,84,2,"Murphy, Miss. Nora"
-1093,3,0,26,0,1,0,2,8,4,78,0,"Danbom, Master. Gilbert Sigvard Emanuel"
-1094,1,0,34,1,4,1,1,3,5,34,2,"Astor, Col. John Jacob"
-1095,2,1,45,1,2,0,2,8,2,90,0,"Quick, Miss. Winifred Vera"
-1096,2,0,18,0,1,0,0,8,1,36,1,"Andrew, Mr. Frank Thomas"
-1097,1,0,2,0,2,1,0,8,1,2,2,"Omont, Mr. Alfred Fernand"
-1098,3,1,32,0,0,2,0,8,2,96,0,"McGowan, Miss. Katherine"
-1099,2,0,26,0,1,0,0,8,1,52,1,"Collett, Mr. Sidney C Stuart"
-1100,1,1,16,0,2,1,0,1,2,16,2,"Rosenbaum, Miss. Edith Louise"
-1101,3,0,40,0,0,0,0,8,1,120,0,"Delalic, Mr. Redjo"
-1102,3,0,24,0,2,0,0,8,1,72,2,"Andersen, Mr. Albert Karvin"
-1103,3,0,35,0,0,0,0,8,1,105,0,"Finoli, Mr. Luigi"
-1104,2,0,22,0,3,0,0,8,1,44,3,"Deacon, Mr. Percy William"
-1105,2,1,30,1,2,0,1,8,3,60,1,"Howard, Mrs. Benjamin (Ellen Truelove Arman)"
-1106,3,1,35,4,0,0,6,8,2,105,0,"Andersson, Miss. Ida Augusta Margareta"
-1107,1,0,31,0,3,0,0,2,1,31,3,"Head, Mr. Christopher"
-1108,3,1,27,0,0,2,0,8,2,81,0,"Mahon, Miss. Bridget Delia"
-1109,1,0,42,1,4,0,2,8,1,42,1,"Wick, Mr. George Dennick"
-1110,1,1,32,1,4,1,2,3,3,32,1,"Widener, Mrs. George Dunton (Eleanor Elkins)"
-1111,3,0,30,0,1,0,0,8,1,90,1,"Thomson, Mr. Alexander Morrison"
-1112,2,1,16,1,1,1,1,8,2,32,0,"Duran y More, Miss. Florentina"
-1113,3,0,27,0,1,0,0,8,1,81,1,"Reynolds, Mr. Harold J"
-1114,2,1,51,0,1,0,0,6,3,102,1,"Cook, Mrs. (Selena Rogers)"
-1115,3,0,38,0,0,0,0,8,1,114,0,"Karlsson, Mr. Einar Gervasius"
-1116,1,1,38,0,2,1,0,8,3,38,2,"Candee, Mrs. Edward (Helen Churchill Hungerford)"
-1117,3,1,22,0,2,1,2,8,3,66,0,"Moubarek, Mrs. George (Omine Amenia"" Alexander)"""
-1118,3,0,19,0,0,0,0,8,1,57,0,"Asplund, Mr. Johan Charles"
-1119,3,1,20,0,0,2,0,8,2,60,0,"McNeill, Miss. Bridget"
-1120,3,0,18,0,2,0,0,8,1,54,2,"Everett, Mr. Thomas James"
-1121,2,0,36,0,1,0,0,8,1,72,1,"Hocking, Mr. Samuel James Metcalfe"
-1122,2,0,35,0,3,0,0,8,1,70,3,"Sweet, Mr. George Frederick"
-1123,1,1,29,0,2,0,0,8,2,29,2,"Willard, Miss. Constance"
-1124,3,0,59,1,0,0,1,8,1,177,0,"Wiklund, Mr. Karl Johan"
-1125,3,0,5,0,0,2,0,8,1,15,0,"Linehan, Mr. Michael"
-1126,1,0,24,1,3,1,1,3,1,24,1,"Cumings, Mr. John Bradley"
-1127,3,0,33,0,0,0,0,8,1,99,0,"Vendel, Mr. Olof Edvin"
-1128,1,0,44,1,3,1,1,4,1,44,1,"Warren, Mr. Frank Manley"
-1129,3,0,8,0,0,1,0,8,1,24,0,"Baccos, Mr. Raffull"
-1130,2,1,19,1,1,0,2,8,2,38,0,"Hiltunen, Miss. Marta"
-1131,1,1,33,1,4,1,1,3,3,33,2,"Douglas, Mrs. Walter Donald (Mahala Dutton)"
-1132,1,1,29,0,2,1,0,8,3,29,2,"Lindstrom, Mrs. Carl Johan (Sigrid Posse)"
-1133,2,1,34,0,2,0,2,8,3,68,0,"Christy, Mrs. (Alice Frances)"
-1134,1,0,29,1,4,1,2,5,1,29,1,"Spedden, Mr. Frederic Oakley"
-1135,3,0,22,0,0,0,0,8,1,66,0,"Hyman, Mr. Abraham"
-1136,3,0,30,1,2,0,3,8,4,90,0,"Johnston, Master. William Arthur Willie"""""
-1137,1,0,44,1,3,0,1,4,1,44,1,"Kenyon, Mr. Frederick R"
-1138,2,1,25,0,2,0,0,8,3,50,2,"Karnes, Mrs. J Frank (Claire Bennett)"
-1139,2,0,24,1,3,0,2,8,1,48,1,"Drew, Mr. James Vivian"
-1140,2,1,37,1,2,0,1,8,3,74,1,"Hold, Mrs. Stephen (Annie Margaret Hill)"
-1141,3,1,54,1,1,1,1,8,3,162,0,"Khalil, Mrs. Betros (Zahie Maria"" Elias)"""
-1142,2,1,40,1,2,0,3,8,2,80,0,"West, Miss. Barbara J"
-1143,3,0,29,0,0,0,0,8,1,87,0,"Abrahamsson, Mr. Abraham August Johannes"
-1144,1,0,62,1,4,1,1,3,1,62,2,"Clark, Mr. Walter Miller"
-1145,3,0,30,0,1,0,0,8,1,90,1,"Salander, Mr. Karl Johan"
-1146,3,0,41,0,1,0,0,8,1,123,1,"Wenzel, Mr. Linhart"
-1147,3,0,29,0,0,0,0,8,1,87,0,"MacKay, Mr. George William"
-1148,3,0,27,0,0,2,0,8,1,81,0,"Mahon, Mr. John"
-1149,3,0,30,0,1,0,0,8,1,90,1,"Niklasson, Mr. Samuel"
-1150,2,1,35,0,1,0,0,8,2,70,1,"Bentham, Miss. Lilian W"
-1151,3,0,50,0,0,0,0,8,1,150,0,"Midtsjo, Mr. Karl Albert"
-1152,3,0,21,1,2,0,1,8,1,63,1,"de Messemaeker, Mr. Guillaume Joseph"
-1153,3,0,3,0,0,0,0,8,1,9,0,"Nilsson, Mr. August Ferdinand"
-1154,2,1,52,0,2,0,2,8,3,104,0,"Wells, Mrs. Arthur Henry (Addie"" Dart Trevaskis)"""
-1155,3,1,40,1,1,0,2,8,2,120,0,"Klasen, Miss. Gertrud Emilia"
-1156,2,0,32,0,1,1,0,8,1,64,1,"Portaluppi, Mr. Emilio Ilario Giuseppe"
-1157,3,0,36,0,0,0,0,8,1,108,0,"Lyntakoff, Mr. Stanko"
-1158,1,0,16,0,0,0,0,8,1,16,0,"Chisholm, Mr. Roderick Robert Crispin"
-1159,3,0,25,0,0,0,0,8,1,75,0,"Warren, Mr. Charles William"
-1160,3,1,58,0,1,0,0,8,2,174,1,"Howard, Miss. May Elizabeth"
-1161,3,0,35,0,1,0,0,8,1,105,1,"Pokrnic, Mr. Mate"
-1162,1,0,40,0,3,1,0,3,1,40,3,"McCaffry, Mr. Thomas Francis"
-1163,3,0,25,0,0,2,0,8,1,75,0,"Fox, Mr. Patrick"
-1164,1,1,41,1,4,1,1,3,3,41,2,"Clark, Mrs. Walter Miller (Virginia McDowell)"
-1165,3,1,37,1,2,2,1,8,2,111,1,"Lennon, Miss. Mary"
-1166,3,0,27,0,0,1,0,8,1,81,0,"Saade, Mr. Jean Nassr"
-1167,2,1,63,1,2,0,1,8,2,126,1,"Bryhl, Miss. Dagmar Jenny Ingeborg "
-1168,2,0,45,0,1,0,0,8,1,90,1,"Parker, Mr. Clifford Richard"
-1169,2,0,39,1,2,0,1,8,1,78,1,"Faunthorpe, Mr. Harry"
-1170,2,0,7,1,2,0,1,8,1,14,1,"Ware, Mr. John James"
-1171,2,0,35,0,1,0,0,8,1,70,1,"Oxenham, Mr. Percy Thomas"
-1172,3,1,65,0,1,0,0,8,2,195,1,"Oreskovic, Miss. Jelka"
-1173,3,0,28,1,1,0,2,8,4,84,0,"Peacock, Master. Alfred Edward"
-1174,3,1,16,0,0,2,0,8,2,48,0,"Fleming, Miss. Honora"
-1175,3,1,19,1,2,1,2,8,2,57,0,"Touma, Miss. Maria Youssef"
-1176,3,1,16,1,2,0,2,8,2,48,0,"Rosblom, Miss. Salli Helena"
-1177,3,0,33,0,0,0,0,8,1,99,0,"Dennis, Mr. William"
-1178,3,0,30,0,0,0,0,8,1,90,0,"Franklin, Mr. Charles (Charles Fardon)"
-1179,1,0,22,1,3,0,1,2,1,22,1,"Snyder, Mr. John Pillsbury"
-1180,3,0,42,0,0,1,0,6,1,126,0,"Mardirosian, Mr. Sarkis"
-1181,3,0,22,0,1,0,0,8,1,66,1,"Ford, Mr. Arthur"
-1182,1,0,26,0,3,0,0,8,1,26,3,"Rheims, Mr. George Alexander Lucien"
-1183,3,1,19,0,0,2,0,8,2,57,0,"Daly, Miss. Margaret Marcella Maggie"""""
-1184,3,0,36,0,0,1,0,8,1,108,0,"Nasr, Mr. Mustafa"
-1185,1,0,24,1,3,0,2,1,5,24,1,"Dodge, Dr. Washington"
-1186,3,0,24,0,1,0,0,8,1,72,1,"Wittevrongel, Mr. Camille"
-1187,3,0,26,0,0,0,0,8,1,78,0,"Angheloff, Mr. Minko"
-1188,2,1,23,1,3,1,3,8,2,46,0,"Laroche, Miss. Louise"
-1189,3,0,2,2,2,1,2,8,1,6,0,"Samaan, Mr. Hanna"
-1190,1,0,19,0,3,0,0,8,1,19,3,"Loring, Mr. Joseph Holland"
-1191,3,0,50,0,0,0,0,8,1,150,0,"Johansson, Mr. Nils"
-1192,3,0,41,0,0,0,0,8,1,123,0,"Olsson, Mr. Oscar Wilhelm"
-1193,2,0,23,0,2,1,0,4,1,46,2,"Malachard, Mr. Noel"
-1194,2,0,19,0,2,0,1,8,1,38,1,"Phillips, Mr. Escott Robert"
-1195,3,0,35,0,1,0,0,8,1,105,1,"Pokrnic, Mr. Tome"
-1196,3,1,24,0,0,2,0,8,2,72,0,"McCarthy, Miss. Catherine Katie"""""
-1197,1,1,0,1,2,0,2,2,3,0,0,"Crosby, Mrs. Edward Gifford (Catherine Elizabeth Halstead)"
-1198,1,0,21,1,4,0,3,3,1,21,1,"Allison, Mr. Hudson Joshua Creighton"
-1199,3,0,17,0,1,0,1,8,4,51,0,"Aks, Master. Philip Frank"
-1200,1,0,30,1,3,0,2,2,1,30,1,"Hays, Mr. Charles Melville"
-1201,3,1,30,1,1,0,1,8,3,90,0,"Hansen, Mrs. Claus Peter (Jennie L Howard)"
-1202,3,0,24,0,1,0,0,8,1,72,1,"Cacic, Mr. Jego Grga"
-1203,3,0,18,0,0,1,0,8,1,54,0,"Vartanian, Mr. David"
-1204,3,0,26,0,0,0,0,8,1,78,0,"Sadowitz, Mr. Harry"
-1205,3,1,28,0,0,2,0,8,2,84,0,"Carr, Miss. Jeannie"
-1206,1,1,43,0,4,1,0,3,3,43,4,"White, Mrs. John Stuart (Ella Holmes)"
-1207,3,1,26,0,0,2,0,8,2,78,0,"Hagardon, Miss. Kate"
-1208,1,0,24,1,4,1,1,2,1,24,2,"Spencer, Mr. William Augustus"
-1209,2,0,54,0,1,0,0,8,1,108,1,"Rogers, Mr. Reginald Harry"
-1210,3,0,31,0,0,0,0,8,1,93,0,"Jonsson, Mr. Nils Hilding"
-1211,2,0,40,2,2,0,2,8,1,80,0,"Jefferys, Mr. Ernest Wilfred"
-1212,3,0,22,0,0,0,0,8,1,66,0,"Andersson, Mr. Johan Samuel"
-1213,3,0,27,0,0,1,0,6,1,81,0,"Krekorian, Mr. Neshan"
-1214,2,0,30,0,1,0,0,6,1,60,1,"Nesson, Mr. Israel"
-1215,1,0,22,0,2,0,0,8,1,22,2,"Rowe, Mr. Alfred G"
-1216,1,1,41,0,4,0,0,8,2,41,4,"Kreuchen, Miss. Emilie"
-1217,3,0,36,0,0,0,0,8,1,108,0,"Assam, Mr. Ali"
-1218,2,1,61,2,3,0,3,6,2,122,0,"Becker, Miss. Ruth Elizabeth"
-1219,1,0,36,0,3,1,0,8,1,36,3,"Rosenshine, Mr. George (Mr George Thorne"")"""
-1220,2,0,31,1,2,0,1,8,1,62,1,"Clarke, Mr. Charles Valentine"
-1221,2,0,16,0,1,0,0,8,1,32,1,"Enander, Mr. Ingvar"
-1222,2,1,16,0,3,0,2,8,3,32,1,"Davies, Mrs. John Morgan (Elizabeth Agnes Mary White) "
-1223,1,0,45,0,2,1,0,1,1,45,2,"Dulles, Mr. William Crothers"
-1224,3,0,38,0,0,1,0,8,1,114,0,"Thomas, Mr. Tannous"
-1225,3,1,16,1,2,1,2,8,3,48,0,"Nakid, Mrs. Said (Waika Mary"" Mowad)"""
-1226,3,0,38,0,0,0,0,8,1,114,0,"Cor, Mr. Ivan"
-1227,1,0,23,0,2,0,0,3,1,23,2,"Maguire, Mr. John Edward"
-1228,2,0,29,0,1,0,0,8,1,58,1,"de Brito, Mr. Jose Joaquim"
-1229,3,0,41,0,0,1,2,8,1,123,0,"Elias, Mr. Joseph"
-1230,2,0,45,0,2,0,0,8,1,90,2,"Denbury, Mr. Herbert"
-1231,3,0,45,0,0,1,0,8,4,135,0,"Betros, Master. Seman"
-1232,2,0,2,0,1,0,0,8,1,4,1,"Fillbrook, Mr. Joseph Charles"
-1233,3,0,24,0,0,0,0,8,1,72,0,"Lundstrom, Mr. Thure Edvin"
-1234,3,0,28,1,3,0,10,8,1,84,0,"Sage, Mr. John George"
-1235,1,1,25,0,5,1,1,2,3,25,2,"Cardeza, Mrs. James Warburton Martinez (Charlotte Wardle Drake)"
-1236,3,0,36,1,1,0,2,8,4,108,0,"van Billiard, Master. James William"
-1237,3,1,24,0,0,0,0,8,2,72,0,"Abelseth, Miss. Karen Marie"
-1238,2,0,40,0,1,0,0,8,1,80,1,"Botsford, Mr. William Hull"
-1239,3,1,24,0,0,1,0,8,3,72,0,"Whabee, Mrs. George Joseph (Shawneene Abi-Saab)"
-1240,2,0,3,0,1,0,0,8,1,6,1,"Giles, Mr. Ralph"
-1241,2,1,42,0,2,0,0,8,2,84,2,"Walcroft, Miss. Nellie"
-1242,1,1,23,0,3,1,1,4,3,23,1,"Greenfield, Mrs. Leo David (Blanche Strouse)"
-1243,2,0,27,0,1,0,0,8,1,54,1,"Stokes, Mr. Philip Joseph"
-1244,2,0,15,0,3,0,0,8,1,30,3,"Dibden, Mr. William"
-1245,2,0,25,1,3,0,3,8,1,50,0,"Herman, Mr. Samuel"
-1246,3,1,25,1,2,0,3,8,2,75,0,"Dean, Miss. Elizabeth Gladys Millvina"""""
-1247,1,0,28,0,2,0,0,5,1,28,2,"Julian, Mr. Henry Forbes"
-1248,1,1,22,2,3,0,2,3,3,22,1,"Brown, Mrs. John Murray (Caroline Lane Lamson)"
-1249,3,0,38,0,0,0,0,8,1,114,0,"Lockyer, Mr. Edward"
-1250,3,0,17,0,0,2,0,8,1,51,0,"O'Keefe, Mr. Patrick"
-1251,3,1,38,1,2,0,1,8,3,114,1,"Lindell, Mrs. Edvard Bengtsson (Elin Gerda Persson)"
-1252,3,0,40,8,3,0,10,8,4,120,0,"Sage, Master. William Henry"
-1253,2,1,29,1,3,1,2,8,3,58,1,"Mallet, Mrs. Albert (Antoinette Magnin)"
-1254,2,1,45,0,2,0,0,8,3,90,2,"Ware, Mrs. John James (Florence Louise Long)"
-1255,3,0,35,0,1,0,0,8,1,105,1,"Strilic, Mr. Ivan"
-1256,1,1,34,1,3,1,1,5,3,34,1,"Harder, Mrs. George Achilles (Dorothy Annan)"
-1257,3,1,30,1,3,0,10,8,3,90,0,"Sage, Mrs. John (Annie Bullen)"
-1258,3,0,60,1,1,1,1,8,1,180,0,"Caram, Mr. Joseph"
-1259,3,1,36,0,3,0,0,8,2,108,3,"Riihivouri, Miss. Susanna Juhantytar Sanni"""""
-1260,1,1,34,0,3,1,1,8,3,34,1,"Gibson, Mrs. Leonard (Pauline C Boeson)"
-1261,2,0,24,0,1,1,0,8,1,48,1,"Pallas y Castello, Mr. Emilio"
-1262,2,0,25,1,1,0,1,8,1,50,0,"Giles, Mr. Edgar"
-1263,1,1,18,0,4,1,0,5,2,18,4,"Wilson, Miss. Helen Alice"
-1264,1,0,19,0,0,0,0,2,1,19,0,"Ismay, Mr. Joseph Bruce"
-1265,2,0,22,0,1,0,0,8,1,44,1,"Harbeck, Mr. William H"
-1266,1,1,3,1,3,0,2,1,3,3,1,"Dodge, Mrs. Washington (Ruth Vidaver)"
-1267,1,1,23,0,5,1,0,8,2,23,5,"Bowen, Miss. Grace Scott"
-1268,3,1,22,2,1,0,2,8,2,66,0,"Kink, Miss. Maria"
-1269,2,0,27,0,1,0,0,8,1,54,1,"Cotterill, Mr. Henry Harry"""""
-1270,1,0,20,0,3,0,0,3,1,20,3,"Hipkins, Mr. William Edward"
-1271,3,0,19,4,2,0,6,8,4,57,0,"Asplund, Master. Carl Edgar"
-1272,3,0,42,0,0,2,0,8,1,126,0,"O'Connor, Mr. Patrick"
-1273,3,0,1,0,0,2,0,8,1,3,0,"Foley, Mr. Joseph"
-1274,3,1,32,0,1,0,0,8,3,96,1,"Risien, Mrs. Samuel (Emma)"
-1275,3,1,35,1,2,0,1,8,3,105,1,"McNamee, Mrs. Neal (Eileen O'Leary)"
-1276,2,0,29,0,1,0,0,8,1,58,1,"Wheeler, Mr. Edwin Frederick"""""
-1277,2,1,18,1,3,0,3,8,2,36,0,"Herman, Miss. Kate"
-1278,3,0,1,0,0,0,0,8,1,3,0,"Aronsson, Mr. Ernst Axel Algot"
-1279,2,0,36,0,1,0,0,8,1,72,1,"Ashby, Mr. John"
-1280,3,0,33,0,0,2,0,8,1,99,0,"Canavan, Mr. Patrick"
-1281,3,0,17,3,2,0,4,8,4,51,0,"Palsson, Master. Paul Folke"
-1282,1,0,36,0,3,0,0,2,1,36,3,"Payne, Mr. Vivian Ponsonby"
-1283,1,1,21,0,3,0,1,4,3,21,1,"Lines, Mrs. Ernest H (Elizabeth Lindsey James)"
-1284,3,0,28,0,2,0,2,8,4,84,0,"Abbott, Master. Eugene Joseph"
-1285,2,0,23,0,1,0,0,8,1,46,1,"Gilbert, Mr. William"
-1286,3,0,24,3,2,0,4,8,1,72,0,"Kink-Heilmann, Mr. Anton"
-1287,1,1,22,1,3,0,1,3,3,22,1,"Smith, Mrs. Lucien Philip (Mary Eloise Hughes)"
-1288,3,0,31,0,0,2,0,8,1,93,0,"Colbert, Mr. Patrick"
-1289,1,1,46,1,3,1,2,2,3,46,1,"Frolicher-Stehli, Mrs. Maxmillian (Margaretha Emerentia Stehli)"
-1290,3,0,23,0,0,0,0,8,1,69,0,"Larsson-Rondberg, Mr. Edvard A"
-1291,3,0,28,0,0,2,0,8,1,84,0,"Conlon, Mr. Thomas Henry"
-1292,1,1,39,0,4,0,0,3,2,39,4,"Bonnell, Miss. Caroline"
-1293,2,0,26,1,2,0,1,8,1,52,1,"Gale, Mr. Harry"
-1294,1,1,21,0,3,1,1,8,2,21,1,"Gibson, Miss. Dorothy Winifred"
-1295,1,0,28,0,3,0,0,8,1,28,3,"Carrau, Mr. Jose Pedro"
-1296,1,0,20,1,2,1,1,4,1,20,1,"Frauenthal, Mr. Isaac Gerald"
-1297,2,0,34,0,1,1,0,4,1,68,1,"Nourney, Mr. Alfred (Baron von Drachstedt"")"""
-1298,2,0,51,1,1,0,1,8,1,102,0,"Ware, Mr. William Jeffery"
-1299,1,0,3,1,4,1,2,3,1,3,1,"Widener, Mr. George Dunton"
-1300,3,1,21,0,0,2,0,8,2,63,0,"Riordan, Miss. Johanna Hannah"""""
-1301,3,1,28,1,1,0,2,8,2,84,0,"Peacock, Miss. Treasteall"
-1302,3,1,28,0,0,2,0,8,2,84,0,"Naughton, Miss. Hannah"
-1303,1,1,33,1,3,2,1,3,3,33,1,"Minahan, Mrs. William Edward (Lillian E Thorpe)"
-1304,3,1,33,0,0,0,0,8,2,99,0,"Henriksson, Miss. Jenny Lovisa"
-1305,3,0,33,0,1,0,0,8,1,99,1,"Spector, Mr. Woolf"
-1306,1,1,44,0,4,1,0,3,5,44,4,"Oliva y Ocana, Dona. Fermina"
-1307,3,0,32,0,0,0,0,8,1,96,0,"Saether, Mr. Simon Sivertsen"
-1308,3,0,34,0,1,0,0,8,1,102,1,"Ware, Mr. Frederick"
-1309,3,0,18,1,2,1,2,8,4,54,0,"Peter, Master. Michael J"
+PassengerId,Pclass,Sex,Age,Siblings_spouses,Parents_children,Fare,Embarked,relatives,Deck,Title,Name
+892,3,Male,34,0,0,7,Queenstown,0,H,Mr, James Kelly
+893,3,Female,47,1,0,7,Southampton,1,H,Mrs, James (Ellen Needs) Wilkes
+894,2,Male,62,0,0,9,Queenstown,0,H,Mr, Thomas Francis Myles
+895,3,Male,27,0,0,8,Southampton,0,H,Mr, Albert Wirz
+896,3,Female,22,1,1,12,Southampton,2,H,Mrs, Alexander (Helga E Lindqvist) Hirvonen
+897,3,Male,14,0,0,9,Southampton,0,H,Mr, Johan Cervin Svensson
+898,3,Female,30,0,0,7,Queenstown,0,H,Miss, Kate Connolly
+899,2,Male,26,1,1,29,Southampton,2,H,Mr, Albert Francis Caldwell
+900,3,Female,18,0,0,7,Cherbourg,0,H,Mrs, Joseph (Sophie Halaut Easu) Abrahim
+901,3,Male,21,2,0,24,Southampton,2,H,Mr, John Samuel Davies
+902,3,Male,24,0,0,7,Southampton,0,H,Mr, Ylio Ilieff
+903,1,Male,46,0,0,26,Southampton,0,H,Mr, Charles Cresson Jones
+904,1,Female,23,1,0,82,Southampton,1,B,Mrs, John Pillsbury (Nelle Stevenson) Snyder
+905,2,Male,63,1,0,26,Southampton,1,H,Mr, Benjamin Howard
+906,1,Female,47,1,0,61,Southampton,1,E,Mrs, Herbert Fuller (Carrie Constance Toogood) Chaffee
+907,2,Female,24,1,0,27,Cherbourg,1,H,Mrs, Sebastiano (Argenia Genovesi) del Carlo
+908,2,Male,35,0,0,12,Queenstown,0,H,Mr, Daniel Keane
+909,3,Male,21,0,0,7,Cherbourg,0,H,Mr, Gerios Assaf
+910,3,Female,27,1,0,7,Southampton,1,H,Miss, Ida Livija Ilmakangas
+911,3,Female,45,0,0,7,Cherbourg,0,H,Mrs," Mariana (Miriam"")"" Assaf Khalil"
+912,1,Male,55,1,0,59,Cherbourg,1,H,Mr, Martin Rothschild
+913,3,Male,9,0,1,3,Southampton,1,H,Master, Artur Karl Olsen
+914,1,Female,39,0,0,31,Southampton,0,H,Mrs, Alfred (Antoinette) Flegenheim
+915,1,Male,21,0,1,61,Cherbourg,1,H,Mr, Richard Norris II Williams
+916,1,Female,48,1,3,262,Cherbourg,4,B,Mrs, Arthur Larned (Emily Maria Borie) Ryerson
+917,3,Male,50,1,0,14,Southampton,1,H,Mr, Alexander A Robins
+918,1,Female,22,0,1,61,Cherbourg,1,B,Miss, Helene Ragnhild Ostby
+919,3,Male,22,0,0,7,Cherbourg,0,H,Mr, Shedid Daher
+920,1,Male,41,0,0,30,Southampton,0,A,Mr, John Bertram Brady
+921,3,Male,41,2,0,21,Cherbourg,2,H,Mr, Elias Samaan
+922,2,Male,50,1,0,26,Southampton,1,H,Mr, Charles Alexander Louch
+923,2,Male,24,2,0,31,Southampton,2,H,Mr, Clifford Thomas Jefferys
+924,3,Female,33,1,2,20,Southampton,3,H,Mrs, Bertram (Eva Georgetta Light) Dean
+925,3,Female,30,1,2,23,Southampton,3,H,Mrs," Andrew G (Elizabeth Lily"" Watson)"" Johnston"
+926,1,Male,30,1,0,57,Cherbourg,1,C,Mr, Philipp Edmund Mock
+927,3,Male,18,0,0,7,Cherbourg,0,H,Mr," Vassilios (Catavelas Vassilios"")"" Katavelas"
+928,3,Female,29,0,0,8,Southampton,0,H,Miss, Sarah A Roth
+929,3,Female,21,0,0,8,Southampton,0,H,Miss, Manda Cacic
+930,3,Male,25,0,0,9,Southampton,0,H,Mr, Julius Sap
+931,3,Male,43,0,0,56,Southampton,0,H,Mr, Ling Hee
+932,3,Male,39,0,1,13,Cherbourg,1,H,Mr, Franz Karun
+933,1,Male,21,0,0,26,Southampton,0,D,Mr, Thomas Parham Franklin
+934,3,Male,41,0,0,7,Southampton,0,H,Mr, Nathan Goldsmith
+935,2,Female,30,0,0,13,Southampton,0,H,Mrs, Walter H (Irene Colvin) Corbett
+936,1,Female,45,1,0,52,Southampton,1,D,Mrs, Edwin Nelson Jr (Gertrude Parsons) Kimball
+937,3,Male,25,0,0,7,Southampton,0,H,Mr, Nikolai Johannes Peltomaki
+938,1,Male,45,0,0,29,Cherbourg,0,A,Mr, Paul Romaine Chevre
+939,3,Male,22,0,0,7,Queenstown,0,H,Mr, Patrick Shaughnessy
+940,1,Female,60,0,0,76,Cherbourg,0,D,Mrs, William Robert (Emma Eliza Ward) Bucknell
+941,3,Female,36,0,2,15,Southampton,2,H,Mrs," William (Winnie Minnie"" Treanor)"" Coutts"
+942,1,Male,24,1,0,60,Southampton,1,C,Mr, Lucien Philip Smith
+943,2,Male,27,0,0,15,Cherbourg,0,H,Mr, Franz Pulbaum
+944,2,Female,20,2,1,23,Southampton,3,H,Miss," Ellen Nellie"""" Hocking"
+945,1,Female,28,3,2,263,Southampton,5,C,Miss, Ethel Flora Fortune
+946,2,Male,27,0,0,15,Cherbourg,0,H,Mr, Serafino Emilio Mangiavacchi
+947,3,Male,10,4,1,29,Queenstown,5,H,Master, Albert Rice
+948,3,Male,35,0,0,7,Southampton,0,H,Mr, Bartol Cor
+949,3,Male,25,0,0,7,Southampton,0,F,Mr, Olaus Jorgensen Abelseth
+950,3,Male,29,1,0,16,Southampton,1,H,Mr, Thomas Henry Davison
+951,1,Female,36,0,0,262,Cherbourg,0,B,Miss, Victorine Chaudanson
+952,3,Male,17,0,0,7,Southampton,0,H,Mr, Mirko Dika
+953,2,Male,32,0,0,13,Southampton,0,H,Mr, Arthur Gordon McCrae
+954,3,Male,18,0,0,7,Southampton,0,H,Mr, Ernst Herbert Bjorklund
+955,3,Female,22,0,0,7,Queenstown,0,H,Miss, Bridget Delia Bradley
+956,1,Male,13,2,2,262,Cherbourg,4,B,Master, John Borie Ryerson
+957,2,Female,35,0,0,21,Southampton,0,H,Mrs, Percy C (Mary Phyllis Elizabeth Miller) Corey
+958,3,Female,18,0,0,7,Queenstown,0,H,Miss, Mary Delia Burns
+959,1,Male,47,0,0,42,Southampton,0,H,Mr, Clarence Bloomfield Moore
+960,1,Male,31,0,0,28,Cherbourg,0,C,Mr, Gilbert Milligan Jr Tucker
+961,1,Female,60,1,4,263,Southampton,5,C,Mrs, Mark (Mary McDougald) Fortune
+962,3,Female,24,0,0,7,Queenstown,0,H,Miss, Bertha E Mulvihill
+963,3,Male,21,0,0,7,Southampton,0,H,Mr, Lazar Minkoff
+964,3,Female,29,0,0,7,Southampton,0,H,Miss, Manta Josefina Nieminen
+965,1,Male,28,0,0,27,Cherbourg,0,D,Mr, Servando Ovies y Rodriguez
+966,1,Female,35,0,0,211,Cherbourg,0,C,Miss, Amalie Geiger
+967,1,Male,32,0,0,211,Cherbourg,0,C,Mr, Edwin Keeping
+968,3,Male,32,0,0,8,Southampton,0,H,Mr, Frank Miles
+969,1,Female,55,2,0,25,Southampton,2,C,Mrs, Robert Clifford (Malvina Helen Lamson) Cornell
+970,2,Male,30,0,0,13,Southampton,0,H,Mr, Charles Augustus Aldworth
+971,3,Female,24,0,0,7,Queenstown,0,H,Miss, Elizabeth Doyle
+972,3,Male,6,1,1,15,Cherbourg,2,H,Master, Akar Boulos
+973,1,Male,67,1,0,221,Southampton,1,C,Mr, Isidor Straus
+974,1,Male,49,0,0,26,Southampton,0,H,Mr, Howard Brown Case
+975,3,Male,38,0,0,7,Southampton,0,H,Mr, Marinko Demetri
+976,2,Male,29,0,0,10,Queenstown,0,H,Mr, John Joseph Lamb
+977,3,Male,24,1,0,14,Cherbourg,1,H,Mr, Betros Khalil
+978,3,Female,27,0,0,7,Queenstown,0,H,Miss, Julia Barry
+979,3,Female,18,0,0,8,Southampton,0,H,Miss, Emily Louisa Badman
+980,3,Female,37,0,0,7,Queenstown,0,H,Ms, Bridget O'Donoghue
+981,2,Male,2,1,1,23,Southampton,2,H,Master, Ralph Lester Wells
+982,3,Female,22,1,0,13,Southampton,1,H,Mrs, Adolf Fredrik (Anna Elisabeth Judith Andersson) Dyker
+983,3,Male,37,0,0,7,Southampton,0,H,Mr, Olaf Pedersen
+984,1,Female,27,1,2,52,Southampton,3,B,Mrs, Thornton (Orian Hays) Davidson
+985,3,Male,40,0,0,8,Southampton,0,H,Mr, Robert Guest
+986,1,Male,25,0,0,26,Cherbourg,0,H,Mr, Jakob Birnbaum
+987,3,Male,25,0,0,7,Southampton,0,H,Mr, Gunnar Isidor Tenglin
+988,1,Female,76,1,0,78,Southampton,1,C,Mrs, Tyrell William (Julia Florence Siegel) Cavendish
+989,3,Male,29,0,0,7,Southampton,0,H,Mr, Kalle Edvard Makinen
+990,3,Female,20,0,0,7,Southampton,0,H,Miss, Elin Ester Maria Braf
+991,3,Male,33,0,0,8,Southampton,0,H,Mr, William Henry Nancarrow
+992,1,Female,43,1,0,55,Cherbourg,1,C,Mrs, Charles Emil Henry (Annie May Morris) Stengel
+993,2,Male,27,1,0,26,Southampton,1,H,Mr, Leopold Weisz
+994,3,Male,32,0,0,7,Queenstown,0,H,Mr, William Foley
+995,3,Male,26,0,0,7,Southampton,0,H,Mr, Oskar Leander Johansson Palmquist
+996,3,Female,16,1,1,8,Cherbourg,2,H,Mrs," Alexander (Thamine Thelma"")"" Thomas"
+997,3,Male,28,0,0,22,Southampton,0,H,Mr, Johan Martin Holthen
+998,3,Male,21,0,0,7,Queenstown,0,H,Mr, Daniel Buckley
+999,3,Male,25,0,0,7,Queenstown,0,H,Mr, Edward Ryan
+1000,3,Male,36,0,0,8,Southampton,0,H,Mr," Aaron (Abi Weller"")"" Willer"
+1001,2,Male,18,0,0,13,Southampton,0,F,Mr, George Swane
+1002,2,Male,41,0,0,15,Cherbourg,0,H,Mr, Samuel Ward Stanton
+1003,3,Female,29,0,0,7,Queenstown,0,H,Miss, Ellen Natalia Shine
+1004,1,Female,36,0,0,31,Cherbourg,0,A,Miss, Edith Corse Evans
+1005,3,Female,18,0,0,7,Queenstown,0,H,Miss, Katherine Buckley
+1006,1,Female,63,1,0,221,Southampton,1,C,Mrs, Isidor (Rosalie Ida Blun) Straus
+1007,3,Male,18,1,0,14,Cherbourg,1,H,Mr, Demetrios Chronopoulos
+1008,3,Male,20,0,0,6,Cherbourg,0,H,Mr, John Thomas
+1009,3,Female,1,1,1,16,Southampton,2,G,Miss, Beatrice Irene Sandstrom
+1010,1,Male,36,0,0,75,Cherbourg,0,C,Mr, Thomson Beattie
+1011,2,Female,29,1,0,26,Southampton,1,H,Mrs, John Henry (Sara Elizabeth Lawry) Chapman
+1012,2,Female,12,0,0,15,Southampton,0,H,Miss, Bertha J Watt
+1013,3,Male,16,1,0,7,Queenstown,1,H,Mr, John Kiernan
+1014,1,Female,35,1,0,57,Cherbourg,1,C,Mrs, Paul (Emma Mock) Schabert
+1015,3,Male,28,0,0,7,Southampton,0,H,Mr, Alfred John Carver
+1016,3,Male,31,0,0,7,Queenstown,0,H,Mr, John Kennedy
+1017,3,Female,17,0,1,16,Southampton,1,H,Miss, Laura Alice Cribb
+1018,3,Male,22,0,0,7,Southampton,0,H,Mr, Karl Rudolf Brobeck
+1019,3,Female,26,2,0,23,Queenstown,2,H,Miss, Alicia McCoy
+1020,2,Male,42,0,0,13,Southampton,0,H,Mr, Solomon Bowenur
+1021,3,Male,24,0,0,8,Southampton,0,H,Mr, Marius Petersen
+1022,3,Male,32,0,0,8,Southampton,0,H,Mr, Henry John Spinner
+1023,1,Male,53,0,0,28,Cherbourg,0,C,Col, Archibald IV Gracie
+1024,3,Female,37,0,4,25,Southampton,4,H,Mrs, Frank (Frances) Lefebre
+1025,3,Male,39,1,0,6,Cherbourg,1,H,Mr, Charles P Thomas
+1026,3,Male,43,0,0,7,Southampton,0,H,Mr, Valtcho Dintcheff
+1027,3,Male,24,0,0,7,Southampton,0,H,Mr, Carl Robert Carlsson
+1028,3,Male,26,0,0,7,Cherbourg,0,H,Mr, Mapriededer Zakarian
+1029,2,Male,26,0,0,13,Southampton,0,H,Mr, August Schmidt
+1030,3,Female,23,0,0,8,Southampton,0,H,Miss, Jennie Drapkin
+1031,3,Male,40,1,6,46,Southampton,7,H,Mr, Charles Frederick Goodwin
+1032,3,Female,10,5,2,46,Southampton,7,H,Miss, Jessie Allis Goodwin
+1033,1,Female,33,0,0,151,Southampton,0,H,Miss, Sarah Daniels
+1034,1,Male,61,1,3,262,Cherbourg,4,B,Mr, Arthur Larned Ryerson
+1035,2,Male,28,0,0,26,Southampton,0,H,Mr, Henry James Beauchamp
+1036,1,Male,42,0,0,26,Southampton,0,H,Mr," Erik Gustaf (Mr Edward Lingrey"")"" Lindeberg-Lind"
+1037,3,Male,31,3,0,18,Southampton,3,H,Mr, Julius Vander Planke
+1038,1,Male,40,0,0,51,Southampton,0,E,Mr, Herbert Henry Hilliard
+1039,3,Male,22,0,0,8,Southampton,0,H,Mr, Evan Davies
+1040,1,Male,40,0,0,26,Southampton,0,H,Mr, John Bertram Crafton
+1041,2,Male,30,1,1,26,Southampton,2,H,Rev, William Lahtinen
+1042,1,Female,23,0,1,83,Cherbourg,1,C,Mrs, Boulton (Olive Potter) Earnshaw
+1043,3,Male,37,0,0,7,Cherbourg,0,H,Mr, Nicola Matinoff
+1044,3,Male,60,0,0,0,Southampton,0,H,Mr, Thomas Storey
+1045,3,Female,36,0,2,12,Southampton,2,H,Mrs, (Hulda Kristina Eugenia Lofqvist) Klasen
+1046,3,Male,13,4,2,31,Southampton,6,H,Master, Filip Oscar Asplund
+1047,3,Male,24,0,0,7,Southampton,0,H,Mr, Joseph Duquemin
+1048,1,Female,29,0,0,221,Southampton,0,C,Miss, Ellen Bird
+1049,3,Female,23,0,0,7,Southampton,0,H,Miss, Olga Elida Lundin
+1050,1,Male,42,0,0,26,Southampton,0,D,Mr, John James Borebank
+1051,3,Female,26,0,2,13,Southampton,2,H,Mrs, Benjamin (Edith Nile) Peacock
+1052,3,Female,20,0,0,7,Queenstown,0,H,Miss, Julia Smyth
+1053,3,Male,7,1,1,15,Cherbourg,2,H,Master, Georges Youssef Touma
+1054,2,Female,26,0,0,13,Southampton,0,H,Miss, Marion Wright
+1055,3,Male,35,0,0,7,Southampton,0,H,Mr, Ernest Pearce
+1056,2,Male,41,0,0,13,Southampton,0,H,Rev, Joseph Maria Peruschitz
+1057,3,Female,26,1,1,22,Southampton,2,H,Mrs, Anton (Luise Heilmann) Kink-Heilmann
+1058,1,Male,48,0,0,50,Cherbourg,0,B,Mr, Emil Brandeis
+1059,3,Male,18,2,2,34,Southampton,4,H,Mr, Edward Watson Ford
+1060,1,Female,21,0,0,27,Cherbourg,0,H,Mrs, Henry Arthur Jr (Eleanor Genevieve Fosdick) Cassebeer
+1061,3,Female,22,0,0,8,Southampton,0,H,Miss, Hilda Maria Hellstrom
+1062,3,Male,27,0,0,7,Southampton,0,H,Mr, Simon Lithman
+1063,3,Male,27,0,0,7,Cherbourg,0,H,Mr, Ortin Zakarian
+1064,3,Male,23,1,0,13,Southampton,1,H,Mr, Adolf Fredrik Dyker
+1065,3,Male,43,0,0,7,Cherbourg,0,H,Mr, Assad Torfa
+1066,3,Male,40,1,5,31,Southampton,6,H,Mr, Carl Oscar Vilhelm Gustafsson Asplund
+1067,2,Female,15,0,2,39,Southampton,2,H,Miss, Edith Eileen Brown
+1068,2,Female,20,0,0,36,Southampton,0,H,Miss, Maude Sincock
+1069,1,Male,54,1,0,55,Cherbourg,1,C,Mr, Charles Emil Henry Stengel
+1070,2,Female,36,0,3,39,Southampton,3,F,Mrs, Allen Oliver (Nellie E Baumgardner) Becker
+1071,1,Female,64,0,2,83,Cherbourg,2,E,Mrs, Alexander Taylor (Mary Eliza Ingersoll) Compton
+1072,2,Male,30,0,0,13,Southampton,0,H,Mr, James Matthew McCrie
+1073,1,Male,37,1,1,83,Cherbourg,2,E,Mr, Alexander Taylor Jr Compton
+1074,1,Female,18,1,0,53,Southampton,1,D,Mrs, Daniel Warner (Mary Graham Carmichael Farquarson) Marvin
+1075,3,Male,30,0,0,7,Queenstown,0,H,Mr, Patrick Lane
+1076,1,Female,27,1,1,247,Cherbourg,2,B,Mrs, Frederick Charles (Mary Helene Baxter) Douglas
+1077,2,Male,40,0,0,16,Southampton,0,H,Mr, Frank Hubert Maybery
+1078,2,Female,21,0,1,21,Southampton,1,H,Miss, Alice Frances Louisa Phillips
+1079,3,Male,17,2,0,8,Southampton,2,H,Mr, Joseph Davies
+1080,3,Female,24,8,2,69,Southampton,10,H,Miss, Ada Sage
+1081,2,Male,40,0,0,13,Southampton,0,H,Mr, James Veal
+1082,2,Male,34,1,0,26,Southampton,1,H,Mr, William A Angle
+1083,1,Male,37,0,0,26,Southampton,0,H,Mr, Abraham L Salomon
+1084,3,Male,11,1,1,14,Southampton,2,H,Master, Walter John van Billiard
+1085,2,Male,61,0,0,12,Queenstown,0,H,Mr, John Lingane
+1086,2,Male,8,0,2,32,Southampton,2,H,Master, Marshall Brines Drew
+1087,3,Male,33,0,0,7,Southampton,0,H,Mr, Julius Konrad Eugen Karlsson
+1088,1,Male,6,0,2,134,Cherbourg,2,E,Master, Robert Douglas Spedden
+1089,3,Female,18,0,0,7,Southampton,0,H,Miss, Berta Olivia Nilsson
+1090,2,Male,23,0,0,10,Southampton,0,H,Mr, Charles Robert Baimbrigge
+1091,3,Female,39,0,0,8,Southampton,0,H,Mrs, (Lena Jacobsen Solvang) Rasmussen
+1092,3,Female,36,0,0,15,Queenstown,0,H,Miss, Nora Murphy
+1093,3,Male,0,0,2,14,Southampton,2,H,Master, Gilbert Sigvard Emanuel Danbom
+1094,1,Male,47,1,0,227,Cherbourg,1,C,Col, John Jacob Astor
+1095,2,Female,8,1,1,26,Southampton,2,H,Miss, Winifred Vera Quick
+1096,2,Male,25,0,0,10,Southampton,0,H,Mr, Frank Thomas Andrew
+1097,1,Male,29,0,0,25,Cherbourg,0,H,Mr, Alfred Fernand Omont
+1098,3,Female,35,0,0,7,Queenstown,0,H,Miss, Katherine McGowan
+1099,2,Male,24,0,0,10,Southampton,0,H,Mr, Sidney C Stuart Collett
+1100,1,Female,33,0,0,27,Cherbourg,0,A,Miss, Edith Louise Rosenbaum
+1101,3,Male,25,0,0,7,Southampton,0,H,Mr, Redjo Delalic
+1102,3,Male,32,0,0,22,Southampton,0,H,Mr, Albert Karvin Andersen
+1103,3,Male,41,0,0,7,Southampton,0,H,Mr, Luigi Finoli
+1104,2,Male,17,0,0,73,Southampton,0,H,Mr, Percy William Deacon
+1105,2,Female,60,1,0,26,Southampton,1,H,Mrs, Benjamin (Ellen Truelove Arman) Howard
+1106,3,Female,38,4,2,7,Southampton,6,H,Miss, Ida Augusta Margareta Andersson
+1107,1,Male,42,0,0,42,Southampton,0,B,Mr, Christopher Head
+1108,3,Female,32,0,0,7,Queenstown,0,H,Miss, Bridget Delia Mahon
+1109,1,Male,57,1,1,164,Southampton,2,H,Mr, George Dennick Wick
+1110,1,Female,50,1,1,211,Cherbourg,2,C,Mrs, George Dunton (Eleanor Elkins) Widener
+1111,3,Male,17,0,0,8,Southampton,0,H,Mr, Alexander Morrison Thomson
+1112,2,Female,30,1,0,13,Cherbourg,1,H,Miss, Florentina Duran y More
+1113,3,Male,21,0,0,8,Southampton,0,H,Mr, Harold J Reynolds
+1114,2,Female,22,0,0,10,Southampton,0,F,Mrs, (Selena Rogers) Cook
+1115,3,Male,21,0,0,7,Southampton,0,H,Mr, Einar Gervasius Karlsson
+1116,1,Female,53,0,0,27,Cherbourg,0,H,Mrs, Edward (Helen Churchill Hungerford) Candee
+1117,3,Female,26,0,2,15,Cherbourg,2,H,Mrs," George (Omine Amenia"" Alexander)"" Moubarek"
+1118,3,Male,23,0,0,7,Southampton,0,H,Mr, Johan Charles Asplund
+1119,3,Female,40,0,0,7,Queenstown,0,H,Miss, Bridget McNeill
+1120,3,Male,40,0,0,15,Southampton,0,H,Mr, Thomas James Everett
+1121,2,Male,36,0,0,13,Southampton,0,H,Mr, Samuel James Metcalfe Hocking
+1122,2,Male,14,0,0,65,Southampton,0,H,Mr, George Frederick Sweet
+1123,1,Female,21,0,0,26,Southampton,0,H,Miss, Constance Willard
+1124,3,Male,21,1,0,6,Southampton,1,H,Mr, Karl Johan Wiklund
+1125,3,Male,36,0,0,7,Queenstown,0,H,Mr, Michael Linehan
+1126,1,Male,39,1,0,71,Cherbourg,1,C,Mr, John Bradley Cumings
+1127,3,Male,20,0,0,7,Southampton,0,H,Mr, Olof Edvin Vendel
+1128,1,Male,64,1,0,75,Cherbourg,1,D,Mr, Frank Manley Warren
+1129,3,Male,20,0,0,7,Cherbourg,0,H,Mr, Raffull Baccos
+1130,2,Female,18,1,1,13,Southampton,2,H,Miss, Marta Hiltunen
+1131,1,Female,48,1,0,106,Cherbourg,1,C,Mrs, Walter Donald (Mahala Dutton) Douglas
+1132,1,Female,55,0,0,27,Cherbourg,0,H,Mrs, Carl Johan (Sigrid Posse) Lindstrom
+1133,2,Female,45,0,2,30,Southampton,2,H,Mrs, (Alice Frances) Christy
+1134,1,Male,45,1,1,134,Cherbourg,2,E,Mr, Frederic Oakley Spedden
+1135,3,Male,36,0,0,7,Southampton,0,H,Mr, Abraham Hyman
+1136,3,Male,25,1,2,23,Southampton,3,H,Master," William Arthur Willie"""" Johnston"
+1137,1,Male,41,1,0,51,Southampton,1,D,Mr, Frederick R Kenyon
+1138,2,Female,22,0,0,21,Southampton,0,H,Mrs, J Frank (Claire Bennett) Karnes
+1139,2,Male,42,1,1,32,Southampton,2,H,Mr, James Vivian Drew
+1140,2,Female,29,1,0,26,Southampton,1,H,Mrs, Stephen (Annie Margaret Hill) Hold
+1141,3,Female,19,1,0,14,Cherbourg,1,H,Mrs," Betros (Zahie Maria"" Elias)"" Khalil"
+1142,2,Female,0,1,2,27,Southampton,3,H,Miss, Barbara J West
+1143,3,Male,20,0,0,7,Southampton,0,H,Mr, Abraham August Johannes Abrahamsson
+1144,1,Male,27,1,0,136,Cherbourg,1,C,Mr, Walter Miller Clark
+1145,3,Male,24,0,0,9,Southampton,0,H,Mr, Karl Johan Salander
+1146,3,Male,32,0,0,9,Southampton,0,H,Mr, Linhart Wenzel
+1147,3,Male,25,0,0,7,Southampton,0,H,Mr, George William MacKay
+1148,3,Male,21,0,0,7,Queenstown,0,H,Mr, John Mahon
+1149,3,Male,28,0,0,8,Southampton,0,H,Mr, Samuel Niklasson
+1150,2,Female,19,0,0,13,Southampton,0,H,Miss, Lilian W Bentham
+1151,3,Male,21,0,0,7,Southampton,0,H,Mr, Karl Albert Midtsjo
+1152,3,Male,36,1,0,17,Southampton,1,H,Mr, Guillaume Joseph de Messemaeker
+1153,3,Male,21,0,0,7,Southampton,0,H,Mr, August Ferdinand Nilsson
+1154,2,Female,29,0,2,23,Southampton,2,H,Mrs," Arthur Henry (Addie"" Dart Trevaskis)"" Wells"
+1155,3,Female,1,1,1,12,Southampton,2,H,Miss, Gertrud Emilia Klasen
+1156,2,Male,30,0,0,12,Cherbourg,0,H,Mr, Emilio Ilario Giuseppe Portaluppi
+1157,3,Male,29,0,0,7,Southampton,0,H,Mr, Stanko Lyntakoff
+1158,1,Male,16,0,0,0,Southampton,0,H,Mr, Roderick Robert Crispin Chisholm
+1159,3,Male,18,0,0,7,Southampton,0,H,Mr, Charles William Warren
+1160,3,Female,38,0,0,8,Southampton,0,H,Miss, May Elizabeth Howard
+1161,3,Male,17,0,0,8,Southampton,0,H,Mr, Mate Pokrnic
+1162,1,Male,46,0,0,75,Cherbourg,0,C,Mr, Thomas Francis McCaffry
+1163,3,Male,23,0,0,7,Queenstown,0,H,Mr, Patrick Fox
+1164,1,Female,26,1,0,136,Cherbourg,1,C,Mrs, Walter Miller (Virginia McDowell) Clark
+1165,3,Female,25,1,0,15,Queenstown,1,H,Miss, Mary Lennon
+1166,3,Male,39,0,0,7,Cherbourg,0,H,Mr, Jean Nassr Saade
+1167,2,Female,20,1,0,26,Southampton,1,H,Miss, Dagmar Jenny Ingeborg  Bryhl
+1168,2,Male,28,0,0,10,Southampton,0,H,Mr, Clifford Richard Parker
+1169,2,Male,40,1,0,26,Southampton,1,H,Mr, Harry Faunthorpe
+1170,2,Male,30,1,0,21,Southampton,1,H,Mr, John James Ware
+1171,2,Male,22,0,0,10,Southampton,0,H,Mr, Percy Thomas Oxenham
+1172,3,Female,23,0,0,8,Southampton,0,H,Miss, Jelka Oreskovic
+1173,3,Male,0,1,1,13,Southampton,2,H,Master, Alfred Edward Peacock
+1174,3,Female,35,0,0,7,Queenstown,0,H,Miss, Honora Fleming
+1175,3,Female,9,1,1,15,Cherbourg,2,H,Miss, Maria Youssef Touma
+1176,3,Female,2,1,1,20,Southampton,2,H,Miss, Salli Helena Rosblom
+1177,3,Male,36,0,0,7,Southampton,0,H,Mr, William Dennis
+1178,3,Male,35,0,0,7,Southampton,0,H,Mr, Charles (Charles Fardon) Franklin
+1179,1,Male,24,1,0,82,Southampton,1,B,Mr, John Pillsbury Snyder
+1180,3,Male,29,0,0,7,Cherbourg,0,F,Mr, Sarkis Mardirosian
+1181,3,Male,17,0,0,8,Southampton,0,H,Mr, Arthur Ford
+1182,1,Male,41,0,0,39,Southampton,0,H,Mr, George Alexander Lucien Rheims
+1183,3,Female,30,0,0,6,Queenstown,0,H,Miss," Margaret Marcella Maggie"""" Daly"
+1184,3,Male,19,0,0,7,Cherbourg,0,H,Mr, Mustafa Nasr
+1185,1,Male,53,1,1,81,Southampton,2,A,Dr, Washington Dodge
+1186,3,Male,36,0,0,9,Southampton,0,H,Mr, Camille Wittevrongel
+1187,3,Male,26,0,0,7,Southampton,0,H,Mr, Minko Angheloff
+1188,2,Female,1,1,2,41,Cherbourg,3,H,Miss, Louise Laroche
+1189,3,Male,22,2,0,21,Cherbourg,2,H,Mr, Hanna Samaan
+1190,1,Male,30,0,0,45,Southampton,0,H,Mr, Joseph Holland Loring
+1191,3,Male,29,0,0,7,Southampton,0,H,Mr, Nils Johansson
+1192,3,Male,32,0,0,7,Southampton,0,H,Mr, Oscar Wilhelm Olsson
+1193,2,Male,30,0,0,15,Cherbourg,0,D,Mr, Noel Malachard
+1194,2,Male,43,0,1,21,Southampton,1,H,Mr, Escott Robert Phillips
+1195,3,Male,24,0,0,8,Southampton,0,H,Mr, Tome Pokrnic
+1196,3,Female,30,0,0,7,Queenstown,0,H,Miss," Catherine Katie"""" McCarthy"
+1197,1,Female,64,1,1,26,Southampton,2,B,Mrs, Edward Gifford (Catherine Elizabeth Halstead) Crosby
+1198,1,Male,30,1,2,151,Southampton,3,C,Mr, Hudson Joshua Creighton Allison
+1199,3,Male,0,0,1,9,Southampton,1,H,Master, Philip Frank Aks
+1200,1,Male,55,1,1,93,Southampton,2,B,Mr, Charles Melville Hays
+1201,3,Female,45,1,0,14,Southampton,1,H,Mrs, Claus Peter (Jennie L Howard) Hansen
+1202,3,Male,18,0,0,8,Southampton,0,H,Mr, Jego Grga Cacic
+1203,3,Male,22,0,0,7,Cherbourg,0,H,Mr, David Vartanian
+1204,3,Male,20,0,0,7,Southampton,0,H,Mr, Harry Sadowitz
+1205,3,Female,37,0,0,7,Queenstown,0,H,Miss, Jeannie Carr
+1206,1,Female,55,0,0,135,Cherbourg,0,C,Mrs, John Stuart (Ella Holmes) White
+1207,3,Female,17,0,0,7,Queenstown,0,H,Miss, Kate Hagardon
+1208,1,Male,57,1,0,146,Cherbourg,1,B,Mr, William Augustus Spencer
+1209,2,Male,19,0,0,10,Southampton,0,H,Mr, Reginald Harry Rogers
+1210,3,Male,27,0,0,7,Southampton,0,H,Mr, Nils Hilding Jonsson
+1211,2,Male,22,2,0,31,Southampton,2,H,Mr, Ernest Wilfred Jefferys
+1212,3,Male,26,0,0,7,Southampton,0,H,Mr, Johan Samuel Andersson
+1213,3,Male,25,0,0,7,Cherbourg,0,F,Mr, Neshan Krekorian
+1214,2,Male,26,0,0,13,Southampton,0,F,Mr, Israel Nesson
+1215,1,Male,33,0,0,26,Southampton,0,H,Mr, Alfred G Rowe
+1216,1,Female,39,0,0,211,Southampton,0,H,Miss, Emilie Kreuchen
+1217,3,Male,23,0,0,7,Southampton,0,H,Mr, Ali Assam
+1218,2,Female,12,2,1,39,Southampton,3,F,Miss, Ruth Elizabeth Becker
+1219,1,Male,46,0,0,79,Cherbourg,0,H,Mr," George (Mr George Thorne"")"" Rosenshine"
+1220,2,Male,29,1,0,26,Southampton,1,H,Mr, Charles Valentine Clarke
+1221,2,Male,21,0,0,13,Southampton,0,H,Mr, Ingvar Enander
+1222,2,Female,48,0,2,36,Southampton,2,H,Mrs, John Morgan (Elizabeth Agnes Mary White)  Davies
+1223,1,Male,39,0,0,29,Cherbourg,0,A,Mr, William Crothers Dulles
+1224,3,Male,43,0,0,7,Cherbourg,0,H,Mr, Tannous Thomas
+1225,3,Female,19,1,1,15,Cherbourg,2,H,Mrs," Said (Waika Mary"" Mowad)"" Nakid"
+1226,3,Male,27,0,0,7,Southampton,0,H,Mr, Ivan Cor
+1227,1,Male,30,0,0,26,Southampton,0,C,Mr, John Edward Maguire
+1228,2,Male,32,0,0,13,Southampton,0,H,Mr, Jose Joaquim de Brito
+1229,3,Male,39,0,2,7,Cherbourg,2,H,Mr, Joseph Elias
+1230,2,Male,25,0,0,31,Southampton,0,H,Mr, Herbert Denbury
+1231,3,Male,20,0,0,7,Cherbourg,0,H,Master, Seman Betros
+1232,2,Male,18,0,0,10,Southampton,0,H,Mr, Joseph Charles Fillbrook
+1233,3,Male,32,0,0,7,Southampton,0,H,Mr, Thure Edvin Lundstrom
+1234,3,Male,27,1,9,69,Southampton,10,H,Mr, John George Sage
+1235,1,Female,58,0,1,512,Cherbourg,1,B,Mrs, James Warburton Martinez (Charlotte Wardle Drake) Cardeza
+1236,3,Male,42,1,1,14,Southampton,2,H,Master, James William van Billiard
+1237,3,Female,16,0,0,7,Southampton,0,H,Miss, Karen Marie Abelseth
+1238,2,Male,26,0,0,13,Southampton,0,H,Mr, William Hull Botsford
+1239,3,Female,38,0,0,7,Cherbourg,0,H,Mrs, George Joseph (Shawneene Abi-Saab) Whabee
+1240,2,Male,24,0,0,13,Southampton,0,H,Mr, Ralph Giles
+1241,2,Female,31,0,0,21,Southampton,0,H,Miss, Nellie Walcroft
+1242,1,Female,45,0,1,63,Cherbourg,1,D,Mrs, Leo David (Blanche Strouse) Greenfield
+1243,2,Male,25,0,0,10,Southampton,0,H,Mr, Philip Joseph Stokes
+1244,2,Male,18,0,0,73,Southampton,0,H,Mr, William Dibden
+1245,2,Male,49,1,2,65,Southampton,3,H,Mr, Samuel Herman
+1246,3,Female,0,1,2,20,Southampton,3,H,Miss," Elizabeth Gladys Millvina"""" Dean"
+1247,1,Male,50,0,0,26,Southampton,0,E,Mr, Henry Forbes Julian
+1248,1,Female,59,2,0,51,Southampton,2,C,Mrs, John Murray (Caroline Lane Lamson) Brown
+1249,3,Male,31,0,0,7,Southampton,0,H,Mr, Edward Lockyer
+1250,3,Male,27,0,0,7,Queenstown,0,H,Mr, Patrick O'Keefe
+1251,3,Female,30,1,0,15,Southampton,1,H,Mrs, Edvard Bengtsson (Elin Gerda Persson) Lindell
+1252,3,Male,14,8,2,69,Southampton,10,H,Master, William Henry Sage
+1253,2,Female,24,1,1,37,Cherbourg,2,H,Mrs, Albert (Antoinette Magnin) Mallet
+1254,2,Female,31,0,0,21,Southampton,0,H,Mrs, John James (Florence Louise Long) Ware
+1255,3,Male,27,0,0,8,Southampton,0,H,Mr, Ivan Strilic
+1256,1,Female,25,1,0,55,Cherbourg,1,E,Mrs, George Achilles (Dorothy Annan) Harder
+1257,3,Female,22,1,9,69,Southampton,10,H,Mrs, John (Annie Bullen) Sage
+1258,3,Male,17,1,0,14,Cherbourg,1,H,Mr, Joseph Caram
+1259,3,Female,22,0,0,39,Southampton,0,H,Miss," Susanna Juhantytar Sanni"""" Riihivouri"
+1260,1,Female,45,0,1,59,Cherbourg,1,H,Mrs, Leonard (Pauline C Boeson) Gibson
+1261,2,Male,29,0,0,13,Cherbourg,0,H,Mr, Emilio Pallas y Castello
+1262,2,Male,21,1,0,11,Southampton,1,H,Mr, Edgar Giles
+1263,1,Female,31,0,0,134,Cherbourg,0,E,Miss, Helen Alice Wilson
+1264,1,Male,49,0,0,0,Southampton,0,B,Mr, Joseph Bruce Ismay
+1265,2,Male,44,0,0,13,Southampton,0,H,Mr, William H Harbeck
+1266,1,Female,54,1,1,81,Southampton,2,A,Mrs, Washington (Ruth Vidaver) Dodge
+1267,1,Female,45,0,0,262,Cherbourg,0,H,Miss, Grace Scott Bowen
+1268,3,Female,22,2,0,8,Southampton,2,H,Miss, Maria Kink
+1269,2,Male,21,0,0,11,Southampton,0,H,Mr," Henry Harry"""" Cotterill"
+1270,1,Male,55,0,0,50,Southampton,0,C,Mr, William Edward Hipkins
+1271,3,Male,5,4,2,31,Southampton,6,H,Master, Carl Edgar Asplund
+1272,3,Male,30,0,0,7,Queenstown,0,H,Mr, Patrick O'Connor
+1273,3,Male,26,0,0,7,Queenstown,0,H,Mr, Joseph Foley
+1274,3,Female,20,0,0,14,Southampton,0,H,Mrs, Samuel (Emma) Risien
+1275,3,Female,19,1,0,16,Southampton,1,H,Mrs, Neal (Eileen O'Leary) McNamee
+1276,2,Male,17,0,0,12,Southampton,0,H,Mr," Edwin Frederick"""" Wheeler"
+1277,2,Female,24,1,2,65,Southampton,3,H,Miss, Kate Herman
+1278,3,Male,24,0,0,7,Southampton,0,H,Mr, Ernst Axel Algot Aronsson
+1279,2,Male,57,0,0,13,Southampton,0,H,Mr, John Ashby
+1280,3,Male,21,0,0,7,Queenstown,0,H,Mr, Patrick Canavan
+1281,3,Male,6,3,1,21,Southampton,4,H,Master, Paul Folke Palsson
+1282,1,Male,23,0,0,93,Southampton,0,B,Mr, Vivian Ponsonby Payne
+1283,1,Female,51,0,1,39,Southampton,1,D,Mrs, Ernest H (Elizabeth Lindsey James) Lines
+1284,3,Male,13,0,2,20,Southampton,2,H,Master, Eugene Joseph Abbott
+1285,2,Male,47,0,0,10,Southampton,0,H,Mr, William Gilbert
+1286,3,Male,29,3,1,22,Southampton,4,H,Mr, Anton Kink-Heilmann
+1287,1,Female,18,1,0,60,Southampton,1,C,Mrs, Lucien Philip (Mary Eloise Hughes) Smith
+1288,3,Male,24,0,0,7,Queenstown,0,H,Mr, Patrick Colbert
+1289,1,Female,48,1,1,79,Cherbourg,2,B,Mrs, Maxmillian (Margaretha Emerentia Stehli) Frolicher-Stehli
+1290,3,Male,22,0,0,7,Southampton,0,H,Mr, Edvard A Larsson-Rondberg
+1291,3,Male,31,0,0,7,Queenstown,0,H,Mr, Thomas Henry Conlon
+1292,1,Female,30,0,0,164,Southampton,0,C,Miss, Caroline Bonnell
+1293,2,Male,38,1,0,21,Southampton,1,H,Mr, Harry Gale
+1294,1,Female,22,0,1,59,Cherbourg,1,H,Miss, Dorothy Winifred Gibson
+1295,1,Male,17,0,0,47,Southampton,0,H,Mr, Jose Pedro Carrau
+1296,1,Male,43,1,0,27,Cherbourg,1,D,Mr, Isaac Gerald Frauenthal
+1297,2,Male,20,0,0,13,Cherbourg,0,D,Mr," Alfred (Baron von Drachstedt"")"" Nourney"
+1298,2,Male,23,1,0,10,Southampton,1,H,Mr, William Jeffery Ware
+1299,1,Male,50,1,1,211,Cherbourg,2,C,Mr, George Dunton Widener
+1300,3,Female,16,0,0,7,Queenstown,0,H,Miss," Johanna Hannah"""" Riordan"
+1301,3,Female,3,1,1,13,Southampton,2,H,Miss, Treasteall Peacock
+1302,3,Female,25,0,0,7,Queenstown,0,H,Miss, Hannah Naughton
+1303,1,Female,37,1,0,90,Queenstown,1,C,Mrs, William Edward (Lillian E Thorpe) Minahan
+1304,3,Female,28,0,0,7,Southampton,0,H,Miss, Jenny Lovisa Henriksson
+1305,3,Male,32,0,0,8,Southampton,0,H,Mr, Woolf Spector
+1306,1,Female,39,0,0,108,Cherbourg,0,C,Dona, Fermina Oliva y Ocana
+1307,3,Male,38,0,0,7,Southampton,0,H,Mr, Simon Sivertsen Saether
+1308,3,Male,32,0,0,8,Southampton,0,H,Mr, Frederick Ware
+1309,3,Male,25,1,1,22,Cherbourg,2,H,Master, Michael J Peter
