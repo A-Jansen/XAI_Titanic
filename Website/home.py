@@ -5,7 +5,7 @@ Course: Human AI interaction
 
 Instructions:
 (For Anniek: conda activate py (activate local environment where the right packages are installed))
-1. Pip install streamlit, oocsi in your python environment
+1. Pip install streamlit, oocsi, streamlit_extras in your python environment
 2. Save this file somewhere on your computer
 3. In the command line, cd to where your file is: "cd/...../folder
 
