@@ -74,10 +74,10 @@ def getcounterfactual_values(_model,X_prediction, X_train):
     url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
     # train_df = pd.read_csv('/assets/train_df.csv')
     train_df=pd.read_csv(url_traindf, index_col=None)
-    continous_col=["Age", 'Fare', 'Siblings_spouses', 'Title', 'Parents_children','relatives' ]
+    continuous_col=["Age", 'Fare', 'Siblings_spouses', 'Title', 'Parents_children','relatives' ]
     # test_df_counter = X_test.copy()
     # test_df_counter['Survived'] = X_prediction
-    dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continous_col, outcome_name='Survived')
+    dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continuous_col, outcome_name='Survived')
     dice_model= dice_ml.Model(model=_model, backend="sklearn")
     explainer = dice_ml.Dice(dice_data, dice_model, method="random")
     return explainer
@@ -85,11 +85,12 @@ def getcounterfactual_values(_model,X_prediction, X_train):
 
 
 def Counterfactualsplot(X_test, explainer):
-    e1 = explainer.generate_counterfactuals(X_test[st.session_state.profileIndex:st.session_state.profileIndex+1], total_CFs=4, desired_class="opposite")
+    e1 = explainer.generate_counterfactuals(X_test[st.session_state.profileIndex:st.session_state.profileIndex+1], total_CFs=2, desired_class="opposite")
     # name_new = name[1:].replace(' ', '_')
     # url_counter = f'https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/counterfactuals_{name_new}.csv'
     # counter_csv = pd.read_csv(url_counter, index_col=None)
     return st.dataframe(e1.cf_examples_list[0].final_cfs_df)
+    # return st.dataframe(e1.visualize_as_dataframe(show_only_changes = True))
 
 
 with header2:
