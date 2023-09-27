@@ -203,7 +203,7 @@ with explanation2:
         url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_robins.svg"
     else:
         url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_evans.svg"
-    st.image(url)
+    st.image(url, width=650)
     
     st.text("")
 
