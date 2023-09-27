@@ -143,7 +143,7 @@ with footer2:
                                   ["very, very low mental effort", "very low mental effort", "low mental effort",
                                    "rather low mental effort", "neither low nor high mental effort", "rather high mental effort", 
                                    "high mental effort", "very high mental effort", "very, very high mental effort"],
-                                    horizontal=True)
+                                    horizontal=False)
 
                 q1 = st.select_slider(
                 '**1**- From the explanation, I **understand** how the algorithm works:',
