@@ -95,25 +95,28 @@ def trainModel(X_train,Y_train):
 def getcounterfactual_values(_model,X_prediction, X_train):
     # compute counterfactual values
     url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
-    # train_df = pd.read_csv('/assets/train_df.csv')
     train_df=pd.read_csv(url_traindf, index_col=None)
     continuous_col=["Age", 'Fare', 'Siblings_spouses', 'Title', 'Parents_children','relatives' ]
-    # test_df_counter = X_test.copy()
-    # test_df_counter['Survived'] = X_prediction
     dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continuous_col, outcome_name='Survived')
     dice_model= dice_ml.Model(model=_model, backend="sklearn")
     explainer = dice_ml.Dice(dice_data, dice_model, method="random")
     return explainer
 
-
+def highlight_changes(val):
+    color = 'background-color: yellow' if isinstance(val, float) else ''
+    return color
 
 def Counterfactualsplot(X_test, explainer):
-    e1 = explainer.generate_counterfactuals(X_test[st.session_state.profileIndex:st.session_state.profileIndex+1], total_CFs=2, desired_class="opposite")
-    # name_new = name[1:].replace(' ', '_')
-    # url_counter = f'https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/counterfactuals_{name_new}.csv'
-    # counter_csv = pd.read_csv(url_counter, index_col=None)
-    return st.dataframe(e1.cf_examples_list[0].final_cfs_df)
-    # return st.dataframe(e1.visualize_as_dataframe(show_only_changes = True))
+    e1 = explainer.generate_counterfactuals(X_test[st.session_state.profileIndex:st.session_state.profileIndex+1], total_CFs=3, 
+                                            features_to_vary = ['Age','Siblings_spouses','Title','Parents_children','relatives','Pclass','Embarked','Deck','Sex'], desired_class="opposite")
+    
+        # Extract the original and counterfactual instances
+    # original_instance = X_test.iloc[st.session_state.profileIndex]
+    # st.dataframe(original_instance)
+    counterfactual_instance = e1.cf_examples_list[0].final_cfs_df
+    # Display the DataFrame with highlighted changes
+    return st.dataframe(counterfactual_instance)
+    # return st.dataframe(e1.cf_examples_list[0].final_cfs_df)
 
 
 with header2:
@@ -121,13 +124,10 @@ with header2:
     st.markdown('''A counterfactual is used to showcase which attributes (e.g. sex or age) would need to change to get the opposite outcome, i.e. to survive when the prediction is not survive. 
     Multiple changes are shown but all have the opposite outcome from the current prediction. ''')
 
-#     st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/counterfactual.jpg?raw=true', caption = 'Causal relation between inputs and predictions', use_column_width = 'always' )
 
     st.markdown('''A counterfactual explanation of a prediction will then describe the smallest amount of change that is necessary for a passenger of the titanic
      to have an opposite outcome to the orignial one (survived/not survived).''')
     st.subheader(name, anchor='top')
-    # st.write("For debugging:")
-    # st.write(st.session_state.participantID)
     random_forest= trainModelRF(st.session_state.X_train, st.session_state.Y_train)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
