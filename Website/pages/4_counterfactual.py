@@ -6,12 +6,13 @@ from oocsi_source import OOCSI
 from uuid import uuid4
 from streamlit_extras.switch_page_button import switch_page
 import random
-# import shap
+import datetime
 import dice_ml
 from dice_ml.utils import helpers
 import xgboost as xgb
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
+from datetime import datetime
 
 
 # st.markdown("""<style> 
@@ -25,6 +26,28 @@ from sklearn.ensemble import RandomForestClassifier
 # st.session_state.X_test
 # st.session_state.X_test_names
 
+def record_page_start_time():
+    global page_start_time
+    page_start_time = datetime.now()
+
+# Function to record page duration and send to Data Foundry
+def record_page_duration_and_send():
+    current_page_title = st.session_state.current_page_title
+    if page_start_time:
+        page_end_time = datetime.now()
+        page_duration = page_end_time - page_start_time
+        st.write(f"Time spent on {current_page_title}: {page_duration}")
+        
+        # Send data to Data Foundry via OOCSI
+        data = {
+            "page_name": current_page_title,
+            "duration_seconds": page_duration.total_seconds()
+        }
+        st.session_state.oocsi.send('Time_data', data)
+
+st.session_state.current_page_title = "Introduction"
+page_start_time = None
+record_page_start_time()
 
 #Delete this page from the array of pages to visit, this way it cannot be visited twice
 if 'profile3' not in st.session_state:
@@ -208,6 +231,9 @@ with footer2:
                 # Every form must have a submit button.
                 submitted = st.form_submit_button("Submit")
                 if submitted:
+                    if page_start_time:
+                        record_page_duration_and_send()    
+                    # record_page_start_time()
                     # st.write("question 1", q1)
                     st.session_state.oocsi.send('XAImethods_evaluation', {
                         'participant_ID': st.session_state.participantID,

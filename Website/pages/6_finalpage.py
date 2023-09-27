@@ -2,11 +2,35 @@ import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_extras.switch_page_button import switch_page
 from oocsi_source import OOCSI
+import datetime
+from datetime import datetime
 
 header1, header2, header3 = st.columns([1,4,1])
 image1, image2, image3 = st.columns([1,50,1])
 body1, body2, body3 =st.columns([1,50,1])
 
+def record_page_start_time():
+    global page_start_time
+    page_start_time = datetime.now()
+
+# Function to record page duration and send to Data Foundry
+def record_page_duration_and_send():
+    current_page_title = st.session_state.current_page_title
+    if page_start_time:
+        page_end_time = datetime.now()
+        page_duration = page_end_time - page_start_time
+        st.write(f"Time spent on {current_page_title}: {page_duration}")
+        
+        # Send data to Data Foundry via OOCSI
+        data = {
+            "page_name": current_page_title,
+            "duration_seconds": page_duration.total_seconds()
+        }
+        st.session_state.oocsi.send('Time_data', data)
+
+st.session_state.current_page_title = "Introduction"
+page_start_time = None
+record_page_start_time()
 
 with header2:
     st.title("Comparing the different methods")
@@ -136,6 +160,9 @@ with body2:
 
         submitted = st.form_submit_button("Submit")
         if submitted:
+            if page_start_time:
+                record_page_duration_and_send(selected_page)
+            # record_page_start_time()
             st.session_state.oocsi.send('XAI_endcomparison', {#                     'participant_ID': st.session_state.participantID,
                     'gender': gender,
                     'age': age,
