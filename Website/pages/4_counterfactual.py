@@ -167,6 +167,11 @@ with footer2:
             with st.form("my_form3", clear_on_submit=True):
                 st.subheader("Evaluation")
                 st.write("These questions only ask for your opinion about this specific explanation")
+                c_load = st.radio("Please rate your mental effort required to understand this type of explanation",
+                                  ["very, very low mental effort", "very low mental effort", "low mental effort",
+                                   "rather low mental effort", "neither low nor high mental effort", "rather high mental effort", 
+                                   "high mental effort", "very high mental effort", "very, very high mental effort"],
+                                    horizontal=True)
                 q1 = st.select_slider(
                 '**1**- From the explanation, I **understand** how the algorithm works:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
@@ -206,6 +211,7 @@ with footer2:
                     st.session_state.oocsi.send('XAImethods_evaluation', {
                         'participant_ID': st.session_state.participantID,
                         'type of explanation': 'counterfactual',
+                        'cognitive load': c_load,
                         'q1': q1,
                         'q2': q2,
                         'q3': q3,
