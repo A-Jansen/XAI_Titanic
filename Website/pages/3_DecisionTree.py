@@ -272,6 +272,8 @@ with footer2:
                 # Every form must have a submit button.
                 submitted = st.form_submit_button("Submit")
                 if submitted:
+                    if page_start_time:
+                        record_page_duration_and_send()    
                     # st.write("question 1", q1)
                     st.session_state.oocsi.send('XAImethods_evaluation', {
                         'participant_ID': st.session_state.participantID,
