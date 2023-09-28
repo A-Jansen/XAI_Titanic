@@ -31,7 +31,7 @@ def record_page_duration_and_send():
             "page_name": current_page_title,
             "duration_seconds": page_duration.total_seconds()
         }
-        st.session_state.oocsi.send('Time_data', data)
+        st.session_state.oocsi.send('Time_XAI', data)
 
 st.session_state.current_page_title = "Explanantion Page"
 page_start_time = None
