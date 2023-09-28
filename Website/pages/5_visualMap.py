@@ -31,7 +31,7 @@ def record_page_duration_and_send():
         }
         st.session_state.oocsi.send('Time_XAI', data)
 
-st.session_state.current_page_title = "Introduction"
+st.session_state.current_page_title = "Visual Map"
 page_start_time = None
 record_page_start_time()
         
