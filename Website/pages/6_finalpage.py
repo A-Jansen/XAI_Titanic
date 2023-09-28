@@ -161,7 +161,7 @@ with body2:
         submitted = st.form_submit_button("Submit")
         if submitted:
             if page_start_time:
-                record_page_duration_and_send(selected_page)
+                record_page_duration_and_send()
             # record_page_start_time()
             st.session_state.oocsi.send('XAI_endcomparison', {#                     'participant_ID': st.session_state.participantID,
                     'gender': gender,
