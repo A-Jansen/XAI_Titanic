@@ -89,22 +89,25 @@ with body2:
     st.markdown('''In this experiment we will show you two different profiles of passengers. 
     Using Machine Learning (ML) we will show a prediction whether they would have survived the disaster. 
     This prediction is accompanied by each time a different type of explanation.''')
-    st.markdown("After seeing 2 profiles, you will be asked to evaluate the explanation you have just seen.")
-    df = pd.DataFrame(np.random.randn(10, 5), columns=("col %d" % i for i in range(5)))
-    st.table(df)
-    st.markdown('''pclass: A proxy for socio-economic status (SES)
-1st = Upper
-2nd = Middle
-3rd = Lower
-age: Age is fractional if less than 1. If the age is estimated, is it in the form of xx.5
-sibsp: The dataset defines family relations in this way...
-Sibling = brother, sister, stepbrother, stepsister
-Spouse = husband, wife (mistresses and fiancés were ignored)
-parch: The dataset defines family relations in this way...
-Parent = mother, father
-Child = daughter, son, stepdaughter, stepson
-Some children travelled only with a nanny, therefore parch=0 for them.
-                ''')
+    st.markdown("After seeing four profiles, you will be asked to evaluate the explanation you have just seen.")
+    
+    st.subheader('Features')
+    st.markdown('''We know certain \"features\" of the passengers that embarked the Titanic. A feature describes something about them, for example their age or how much they paid for the ticket. 
+                These features are used by the ML model to predict whether someone would survive or not. The following features are used.
+                In the following explanations you will see these coming back.''')
+    df = pd.DataFrame({'Feature':['pclass','Sex','Age', 'Title', 'Siblings_spouses', 'Parents_children', 'Relatives', 'Fare', 'Embarked', 'Deck'],
+                       'Description':['Gives the ticket class (1st, 2nd or 3rd). Is a proxy for socioeconomic status',
+                                      'Male or Female passenger',
+                                      'Age of the passenger',
+                                      'Title of the passenger (Mr, Miss, Mrs, Master, rare )',
+                                      'Number of siblings and spouses aboard the Titanic',
+                                      'Number of parents and children aboard the Titanic',
+                                      'Total number of relatives',
+                                      'Price of the ticket (no currency indicated)',
+                                      'Part of embarkation between Cherbourg, Queenstown and Southampton',
+                                      'The deck on which the passenger\'s cabin was located']})
+    st.dataframe(df.set_index(df.columns[0]), use_container_width= True)
+
     # st.subheader('Demographic information')
     # st.markdown("Before you start with the study we would like to ask you to first answer these questions")
 

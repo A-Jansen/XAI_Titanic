@@ -84,22 +84,22 @@ with consent_form2:
     
     st.subheader('Aim and benefit of the study')
     st.write('''The aim of this study is to measure the satisfaction of users with different types of XAI methods. 
-    This information is used to have better understandable/ more satisfying type of explanations in future application.  ''')
-    st.write('''This study is performed by Rachel Wang, François Leborgne and Anniek Jansen, all EngD trainees of the Designing Human-System Interaction program and for this course under the supervision of Chao Zhang of the Human-Technology Interaction group.''')
+    This information is used to have better understandable/ more satisfying type of explanations in future applications.  ''')
+    st.write('''This study is performed by Rachel Wang, François Leborgne and Anniek Jansen, all EngD trainees of the Designing Human-System Interaction program and for this study under the supervision of Chao Zhang of the Human-Technology Interaction group.''')
     
     st.subheader('Procedure')
     st.markdown('''During this project we ask you to: 
 -	Look at different predictions from an AI model (predicting the survival of passengers of the titanic)
--	Complete a survey at the start of the study with demographic information
--	Complete a short survey (8 questions) for four types of explanation method
--	Complete a survey in the end to compare the explanation methods and explain why certain methods had your preference.
+-	Complete a short survey (9 questions) for four types of explanation method
+-	Complete a survey at the end of the study with demographic information
+-	Complete a second survey in the end to compare the explanation methods and explain why certain methods had your preference.
 ''')
     
     st.subheader('Risks')
     st.markdown("The study does not involve any risks, detrimental side effects, or cause discomfort.")
 
     st.subheader("Duration")
-    st.markdown("The instructions, measurements and debriefing will take approximately 10 minutes.")
+    st.markdown("The instructions, measurements and debriefing will take approximately 30 minutes.")
 
     st.subheader("Voluntary")
     st.markdown('''Your participation is completely voluntary. You can refuse to participate without giving any reasons and you can stop your participation at any time during the study. You can also withdraw your permission to use your data immediately after completing the study. None of this will have any negative consequences for you whatsoever.''')
@@ -139,7 +139,7 @@ with consent_form2:
 
     OSF= st.radio("I ... (please select below) give permission to make my anonymized recorded data available to others in a public online data repository, and allow others to use this data for future research projects unrelated to this study.",
                          ('do', 
-                              'do not'))
+                              'do not'), index=1)
 
     st.subheader("Consent")
     agree = st.checkbox('I consent to processing my personal data gathered during the research in the way described in the information sheet.')

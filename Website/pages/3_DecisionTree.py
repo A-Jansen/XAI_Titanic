@@ -231,11 +231,10 @@ with footer2:
                 st.subheader("Evaluation")
                 st.write("These questions only ask for your opinion about this specific explanation")
 
-                c_load = st.radio("Please rate your mental effort required to understand this type of explanation",
-                                  ["very, very low mental effort", "very low mental effort", "low mental effort",
+                c_load = st.select_slider('Please rate your mental effort required to understand this type of explanation',
+                                          options=["very, very low mental effort", "very low mental effort", "low mental effort",
                                    "rather low mental effort", "neither low nor high mental effort", "rather high mental effort", 
-                                   "high mental effort", "very high mental effort", "very, very high mental effort"],
-                                    horizontal=False)
+                                   "high mental effort", "very high mental effort", "very, very high mental effort"], index=5 )
         
                 q1 = st.select_slider(
                 '**1**- From the explanation, I **understand** how the model works:',
