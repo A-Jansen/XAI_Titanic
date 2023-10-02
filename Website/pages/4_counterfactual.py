@@ -194,7 +194,7 @@ with footer2:
                 c_load = st.select_slider('Please rate your mental effort required to understand this type of explanation',
                                           options=["very, very low mental effort", "very low mental effort", "low mental effort",
                                    "rather low mental effort", "neither low nor high mental effort", "rather high mental effort", 
-                                   "high mental effort", "very high mental effort", "very, very high mental effort"], index=5 )
+                                   "high mental effort", "very high mental effort", "very, very high mental effort"])
                 q1 = st.select_slider(
                 '**1**- From the explanation, I **understand** how the model works:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
