@@ -8,6 +8,7 @@ import xgboost as xgb
 import copy
 from PIL import Image
 from datetime import datetime
+import numpy as np
 
 header1, header2, header3 = st.columns([1,2,1])
 body1, body2, body3 =st.columns([1,2,1])
