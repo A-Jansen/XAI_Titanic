@@ -89,7 +89,19 @@ with body2:
     Using Machine Learning (ML) we will show a prediction whether they would have survived the disaster. 
     This prediction is accompanied by each time a different type of explanation.''')
     st.markdown("After seeing 2 profiles, you will be asked to evaluate the explanation you have just seen.")
-
+    st.markdown('''pclass: A proxy for socio-economic status (SES)
+1st = Upper
+2nd = Middle
+3rd = Lower
+age: Age is fractional if less than 1. If the age is estimated, is it in the form of xx.5
+sibsp: The dataset defines family relations in this way...
+Sibling = brother, sister, stepbrother, stepsister
+Spouse = husband, wife (mistresses and fiancés were ignored)
+parch: The dataset defines family relations in this way...
+Parent = mother, father
+Child = daughter, son, stepdaughter, stepson
+Some children travelled only with a nanny, therefore parch=0 for them.
+                ''')
     # st.subheader('Demographic information')
     # st.markdown("Before you start with the study we would like to ask you to first answer these questions")
 

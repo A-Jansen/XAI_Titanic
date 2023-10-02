@@ -197,35 +197,35 @@ with footer2:
                                    "high mental effort", "very high mental effort", "very, very high mental effort"],
                                     horizontal=False)
                 q1 = st.select_slider(
-                '**1**- From the explanation, I **understand** how the algorithm works:',
+                '**1**- From the explanation, I **understand** how the model works:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q2 = st.select_slider(
-                '**2**- This explanation of how the algorithm works is **satisfying**:',
+                '**2**- This explanation of how the model works is **satisfying**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q3 = st.select_slider(
-                '**3**- This explanation of how the algorithm works has **sufficient detail**:',
+                '**3**- This explanation of how the model works has **sufficient detail**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q4 = st.select_slider(
-                '**4**- This explanation of how the algorithm works seems **complete**:',
+                '**4**- This explanation of how the model works seems **complete**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q5 = st.select_slider(
-                '**5**- This explanation of how the algorithm works **tells me how to use it**:',
+                '**5**- This explanation of how the model works **tells me how to use it**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q6 = st.select_slider(
-                '**6**- This explanation of how the algorithm works is **useful to my goals**:',
+                '**6**- This explanation of how the model works is **useful to my goals**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q7 = st.select_slider(
-                '**7**- This explanation of the algorithm shows me how **accurate** the algorithm is:',
+                '**7**- This explanation of the model shows me how **accurate** the model is:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q8 = st.select_slider(
-                '**8**- This explanation lets me judge when I should **trust and not trust** the algorithm:',
+                '**8**- This explanation lets me judge when I should **trust and not trust** the model:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 # Every form must have a submit button.
