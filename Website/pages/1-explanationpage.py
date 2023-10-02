@@ -89,6 +89,8 @@ with body2:
     Using Machine Learning (ML) we will show a prediction whether they would have survived the disaster. 
     This prediction is accompanied by each time a different type of explanation.''')
     st.markdown("After seeing 2 profiles, you will be asked to evaluate the explanation you have just seen.")
+    pd.DataFrame(np.random.randn(10, 5), columns=("col %d" % i for i in range(5)))
+    st.table(df)
     st.markdown('''pclass: A proxy for socio-economic status (SES)
 1st = Upper
 2nd = Middle
