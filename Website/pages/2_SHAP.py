@@ -58,8 +58,8 @@ if 'index1' not in st.session_state:
 
 
 
-if 'profileIndex' not in st.session_state:
-    st.session_state.profileIndex= st.session_state.profileIndices_SHAP[st.session_state.index1]   
+# if 'profileIndex' not in st.session_state:
+st.session_state.profileIndex= st.session_state.profileIndices_SHAP[st.session_state.index1]   
 
 
 header1, header2, header3 = st.columns([1,2,1])
@@ -230,7 +230,7 @@ with footer2:
                     if (st.session_state.lastQuestion =='yes'): 
                         switch_page('finalPage')
                     else: 
-                        st.session_state.profileIndex =st.session_state.profileIndices[0]
+                        # st.session_state.profileIndex =st.session_state.profileIndices[0]
                         switch_page(st.session_state.pages[st.session_state.nextPage1])
         else:
             if st.button('Continue to evaluation'):
