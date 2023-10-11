@@ -199,10 +199,15 @@ with explanation2:
     # # st.success("Done!")
     # with open(path, "r") as f:
     #     svg = f.read()
-    if(st.session_state.profileIndex ==25 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_robins.svg"
+    if(st.session_state.profileIndex ==27 ):
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_27_shedid.svg"
+    elif(st.session_state.profileIndex ==24 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_24_emily.svg"
+    elif(st.session_state.profileIndex ==114 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_114_isidor.svg"
     else:
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_evans.svg"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_58_thomas.svg"
+
     st.image(url, width=650)
     
     st.text("")
