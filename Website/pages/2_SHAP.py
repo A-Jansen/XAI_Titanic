@@ -56,8 +56,10 @@ if 'profile1' not in st.session_state:
 if 'index1' not in st.session_state:
     st.session_state.index1= 0    
 
-if 'profileIndex' not in st.session_state:
-    st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index1]   
+
+
+# if 'profileIndex' not in st.session_state:
+st.session_state.profileIndex= st.session_state.profileIndices_SHAP[st.session_state.index1]   
 
 
 header1, header2, header3 = st.columns([1,2,1])
@@ -148,11 +150,11 @@ with explanation2:
 
 with footer2:
 
-    if (st.session_state.index1 < len(st.session_state.profileIndices)-1):
+    if (st.session_state.index1 < len(st.session_state.profileIndices_SHAP)-1):
         if st.button("New profile"):
   
             st.session_state.index1 = st.session_state.index1+1
-            st.session_state.profileIndex = st.session_state.profileIndices[st.session_state.index1]
+            st.session_state.profileIndex = st.session_state.profileIndices_SHAP[st.session_state.index1]
             st.experimental_rerun()
     else:
         def is_user_active():
@@ -232,9 +234,13 @@ with footer2:
                     if (st.session_state.lastQuestion =='yes'): 
                         switch_page('finalPage')
                     else: 
-                        st.session_state.profileIndex =st.session_state.profileIndices[0]
+                        # st.session_state.profileIndex =st.session_state.profileIndices[0]
                         switch_page(st.session_state.pages[st.session_state.nextPage1])
         else:
             if st.button('Continue to evaluation'):
                 st.session_state['user_active1']=True
                 st.experimental_rerun()
+
+
+
+                

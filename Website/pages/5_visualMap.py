@@ -49,8 +49,8 @@ if 'profile4' not in st.session_state:
 if 'index4' not in st.session_state:
     st.session_state.index4= 0    
 
-if 'profileIndex' not in st.session_state:
-    st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index4]       
+# if 'profileIndex' not in st.session_state:
+st.session_state.profileIndex= st.session_state.profileIndices_visual[st.session_state.index4]       
     
     
 
@@ -201,7 +201,7 @@ with footer2:
                 if (st.session_state.lastQuestion =='yes'): 
                     switch_page('finalPage')
                 else: 
-                    st.session_state.profileIndex =st.session_state.profileIndices[0]
+                    # st.session_state.profileIndex =st.session_stateC:\Users\FrancoisLeborgne\OneDrive - Mentech\Documents\GitHub\XAI_Titanic\Website.profileIndices[0]
                     switch_page(st.session_state.pages[st.session_state.nextPage4])
     else:
         if st.button('Continue to evaluation'):

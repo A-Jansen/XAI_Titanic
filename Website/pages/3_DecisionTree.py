@@ -63,8 +63,8 @@ if 'index2' not in st.session_state:
     st.session_state.index2= 0    
 
 
-if 'profileIndex' not in st.session_state:
-    st.session_state.profileIndex= st.session_state.profileIndices[st.session_state.index2]       
+# if 'profileIndex' not in st.session_state:
+st.session_state.profileIndex= st.session_state.profileIndices_Tree[st.session_state.index2]       
     
 name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
@@ -199,10 +199,15 @@ with explanation2:
     # # st.success("Done!")
     # with open(path, "r") as f:
     #     svg = f.read()
-    if(st.session_state.profileIndex ==25 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_robins.svg"
+    if(st.session_state.profileIndex ==27 ):
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_27_shedid.svg"
+    elif(st.session_state.profileIndex ==24 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_24_emily.svg"
+    elif(st.session_state.profileIndex ==114 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_114_isidor.svg"
     else:
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_evans.svg"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_58_thomas.svg"
+
     st.image(url, width=650)
     
     st.text("")
@@ -213,10 +218,10 @@ with explanation1:
     st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
 
 with footer2:
-    if (st.session_state.index2 < len(st.session_state.profileIndices)-1):
+    if (st.session_state.index2 < len(st.session_state.profileIndices_Tree)-1):
         if st.button("New profile"):
             st.session_state.index2 = st.session_state.index2+1
-            st.session_state.profileIndex = st.session_state.profileIndices[st.session_state.index2]
+            st.session_state.profileIndex = st.session_state.profileIndices_Tree[st.session_state.index2]
             st.experimental_rerun()
     else:
         def is_user_active():
@@ -290,7 +295,7 @@ with footer2:
                     if (st.session_state.lastQuestion =='yes'): 
                         switch_page('finalPage')
                     else: 
-                        st.session_state.profileIndex =st.session_state.profileIndices[0]
+                        # st.session_state.profileIndex =st.session_state.profileIndices[0]
                         switch_page(st.session_state.pages[st.session_state.nextPage2])
         else:
             if st.button('Continue to evaluation'):
