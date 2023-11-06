@@ -15,17 +15,6 @@ from sklearn.ensemble import RandomForestClassifier
 from datetime import datetime
 
 
-# st.markdown("""<style> 
-# .stSlider {
-#     padding-bottom: 20px;    
-#     }
-#     </style> """, 
-#     unsafe_allow_html=True)
-
-# st.session_state.Y_train
-# st.session_state.X_test
-# st.session_state.X_test_names
-
 def record_page_start_time():
     global page_start_time
     page_start_time = datetime.now()
@@ -96,7 +85,11 @@ def getcounterfactual_values(_model,X_prediction, X_train):
     # compute counterfactual values
     url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
     train_df=pd.read_csv(url_traindf, index_col=None)
-    continuous_col=["Age", 'Fare', 'Siblings_spouses', 'Title', 'Parents_children','relatives' ]
+    # train_df['Sex'] = train_df['Sex'].replace(sex_mapping)
+    # train_df['Title'] = train_df['Title'].replace(title_mapping)
+    # train_df['Embarked'] = train_df['Embarked'].replace(port_mapping) 
+    # st.dataframe(train_df)
+    continuous_col=["Age", 'Fare']
     dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continuous_col, outcome_name='Survived')
     dice_model= dice_ml.Model(model=_model, backend="sklearn")
     explainer = dice_ml.Dice(dice_data, dice_model, method="random")
@@ -110,13 +103,11 @@ def Counterfactualsplot(X_test, explainer):
     e1 = explainer.generate_counterfactuals(X_test[st.session_state.profileIndex:st.session_state.profileIndex+1], total_CFs=3, 
                                             features_to_vary = ['Age','Siblings_spouses','Title','Parents_children','relatives','Pclass','Embarked','Deck','Sex'], desired_class="opposite")
     
-        # Extract the original and counterfactual instances
-    # original_instance = X_test.iloc[st.session_state.profileIndex]
-    # st.dataframe(original_instance)
     counterfactual_instance = e1.cf_examples_list[0].final_cfs_df
-    # Display the DataFrame with highlighted changes
+    counterfactual_instance['Sex'] = counterfactual_instance['Sex'].replace(sex_mapping)
+    counterfactual_instance['Title'] = counterfactual_instance['Title'].replace(title_mapping)
+    counterfactual_instance['Embarked'] = counterfactual_instance['Embarked'].replace(port_mapping) 
     return st.dataframe(counterfactual_instance)
-    # return st.dataframe(e1.cf_examples_list[0].final_cfs_df)
 
 
 with header2:
@@ -132,11 +123,18 @@ with header2:
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
 with characteristics2:
+    sex_mapping = {0: 'Male', 1: 'Female'}
+    title_mapping = {1: 'Mr', 2: 'Miss', 3: 'Mrs', 4: 'Master', 5: 'Rare'}
+    port_mapping = {0: 'Southampton', 1: 'Cherbourg', 2: 'Queenstown'}
     # initialize list of lists
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
-    st.dataframe(df)
+    df['Sex'] = df['Sex'].replace(sex_mapping)
+    df['Title'] = df['Title'].replace(title_mapping)
+    df['Embarked'] = df['Embarked'].replace(port_mapping)  
+    st.dataframe(df.set_index(df.columns[0]), use_container_width= False)
+
 
 
 with prediction2:
@@ -162,15 +160,6 @@ with explanation2:
     e1=Counterfactualsplot(st.session_state.X_test, explainer)
     # data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
     # st.dataframe(data_indices)
-
-with presentation1: 
-    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
-
-with presentation2: 
-    st.dataframe(st.session_state.title_df.set_index('Title indices'))
-
-with presentation3: 
-    st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
 
 
 with footer2:

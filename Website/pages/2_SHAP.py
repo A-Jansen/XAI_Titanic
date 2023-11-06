@@ -95,7 +95,10 @@ def shapPlot(X_test, _shap_values):
 
 with header2:
     st.header('Explanation - SHAP Values')
-    st.markdown(''' One form of explanations is using SHAP values, these values indicate how much each attribute (e.g. sex or age) contributed to the prediction. 
+    st.markdown(''' The SHAP approach attempts to fairly assign the contributions of each features. This method can provide both local
+                 and global explanations for machine learning models. Local explanations refer to the contribution of each feature
+                to the prediction of a specific instance, while global explanations refer to the overall importance of each feature
+                across the entire dataset. They corresponding values indicate how much each attribute (e.g. sex or age) contributed to the prediction. 
     Blue bars represent a contribution to a negative prediction (dead) and red bars a contribution towards the positive outcome (survived).
 
     ''')
@@ -105,13 +108,18 @@ with header2:
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
 with characteristics2:
+    sex_mapping = {0: 'Male', 1: 'Female'}
+    title_mapping = {1: 'Mr', 2: 'Miss', 3: 'Mrs', 4: 'Master', 5: 'Rare'}
+    port_mapping = {0: 'Southampton', 1: 'Cherbourg', 2: 'Queenstown'}
     # initialize list of lists
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
-    st.dataframe(df.style.hide_index())
-    # df_values = df.values.tolist()
-    # st.table(df_values)    
+    df['Sex'] = df['Sex'].replace(sex_mapping)
+    df['Title'] = df['Title'].replace(title_mapping)
+    df['Embarked'] = df['Embarked'].replace(port_mapping)  
+    st.dataframe(df.set_index(df.columns[0]), use_container_width= False)
+ 
 
 with prediction2:
     # st.header("Prediction")
@@ -126,10 +134,6 @@ with prediction2:
         prob = round((probability[0][1]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
-with explanation1: 
-    st.dataframe(st.session_state.title_df.set_index('Title indices'))
-    st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
-    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
 
 with title2: 
     st.subheader("Explanation")
