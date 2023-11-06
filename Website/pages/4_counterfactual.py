@@ -132,11 +132,18 @@ with header2:
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
 with characteristics2:
+    sex_mapping = {0: 'Male', 1: 'Female'}
+    title_mapping = {1: 'Mr', 2: 'Miss', 3: 'Mrs', 4: 'Master', 5: 'Rare'}
+    port_mapping = {0: 'Southampton', 1: 'Cherbourg', 2: 'Queenstown'}
     # initialize list of lists
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
-    st.dataframe(df)
+    df['Sex'] = df['Sex'].replace(sex_mapping)
+    df['Title'] = df['Title'].replace(title_mapping)
+    df['Embarked'] = df['Embarked'].replace(port_mapping)  
+    st.dataframe(df.set_index(df.columns[0]), use_container_width= False)
+
 
 
 with prediction2:
@@ -162,15 +169,6 @@ with explanation2:
     e1=Counterfactualsplot(st.session_state.X_test, explainer)
     # data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
     # st.dataframe(data_indices)
-
-with presentation1: 
-    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
-
-with presentation2: 
-    st.dataframe(st.session_state.title_df.set_index('Title indices'))
-
-with presentation3: 
-    st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
 
 
 with footer2:

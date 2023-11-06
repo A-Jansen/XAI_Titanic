@@ -148,11 +148,18 @@ with header2: #header2
     # st.write(st.session_state.participantID)
     
 with characteristics2:
+    sex_mapping = {0: 'Male', 1: 'Female'}
+    title_mapping = {1: 'Mr', 2: 'Miss', 3: 'Mrs', 4: 'Master', 5: 'Rare'}
+    port_mapping = {0: 'Southampton', 1: 'Cherbourg', 2: 'Queenstown'}
     # initialize list of lists
     data = st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1)
     # Create the pandas DataFrame
     df = pd.DataFrame(data, columns=st.session_state.X_test.columns)
-    st.dataframe(df)
+    df['Sex'] = df['Sex'].replace(sex_mapping)
+    df['Title'] = df['Title'].replace(title_mapping)
+    df['Embarked'] = df['Embarked'].replace(port_mapping)  
+    st.dataframe(df.set_index(df.columns[0]), use_container_width= False)
+
 
 
 with prediction2:
@@ -212,10 +219,6 @@ with explanation2:
     
     st.text("")
 
-with explanation1: 
-    st.dataframe(st.session_state.title_df.set_index('Title indices'))
-    st.dataframe(st.session_state.gender_df.set_index('Gender indices'))
-    st.dataframe(st.session_state.ports_df.set_index('Ports indices'))
 
 with footer2:
     if (st.session_state.index2 < len(st.session_state.profileIndices_Tree)-1):
