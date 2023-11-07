@@ -65,7 +65,9 @@ footer1, footer2, footer3 =st.columns([1,2,1])
 evaluation1, evaluation2, evaluation3 = st.columns([1,2,1])
 presentation1, presentation2, presentation3 = st.columns([2,2,2])
 
-
+# sex_mapping = {0: 'Male', 1: 'Female'}
+# title_mapping = {1: 'Mr', 2: 'Miss', 3: 'Mrs', 4: 'Master', 5: 'Rare'}
+# port_mapping = {0: 'Southampton', 1: 'Cherbourg', 2: 'Queenstown'}
 
 name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
@@ -85,10 +87,6 @@ def getcounterfactual_values(_model,X_prediction, X_train):
     # compute counterfactual values
     url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
     train_df=pd.read_csv(url_traindf, index_col=None)
-    # train_df['Sex'] = train_df['Sex'].replace(sex_mapping)
-    # train_df['Title'] = train_df['Title'].replace(title_mapping)
-    # train_df['Embarked'] = train_df['Embarked'].replace(port_mapping) 
-    # st.dataframe(train_df)
     continuous_col=["Age", 'Fare']
     dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continuous_col, outcome_name='Survived')
     dice_model= dice_ml.Model(model=_model, backend="sklearn")
@@ -100,6 +98,10 @@ def highlight_changes(val):
     return color
 
 def Counterfactualsplot(X_test, explainer):
+    life_mapping = {0: 'Not Survived', 1: 'Survived'}  
+    sex_mapping = {0: 'Male', 1: 'Female', '0': 'Male'}
+    title_mapping = {1: 'Mr','1': 'Mr', 2: 'Miss', 3: 'Mrs', 4: 'Master', 5: 'Rare'}
+    port_mapping = {0: 'Southampton', 1: 'Cherbourg', 2: 'Queenstown'}
     e1 = explainer.generate_counterfactuals(X_test[st.session_state.profileIndex:st.session_state.profileIndex+1], total_CFs=3, 
                                             features_to_vary = ['Age','Siblings_spouses','Title','Parents_children','relatives','Pclass','Embarked','Deck','Sex'], desired_class="opposite")
     
@@ -107,7 +109,8 @@ def Counterfactualsplot(X_test, explainer):
     counterfactual_instance['Sex'] = counterfactual_instance['Sex'].replace(sex_mapping)
     counterfactual_instance['Title'] = counterfactual_instance['Title'].replace(title_mapping)
     counterfactual_instance['Embarked'] = counterfactual_instance['Embarked'].replace(port_mapping) 
-    return st.dataframe(counterfactual_instance)
+    counterfactual_instance['Survived'] = counterfactual_instance['Survived'].replace(life_mapping) 
+    return st.dataframe(counterfactual_instance.set_index(counterfactual_instance.columns[0]), use_container_width= True)
 
 
 with header2:
