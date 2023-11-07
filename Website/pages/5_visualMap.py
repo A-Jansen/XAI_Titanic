@@ -97,6 +97,8 @@ with header2:
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     st.subheader("Explanation - visual map")
     st.write("This might take a moment to load, please be patient")
+
+
     
 with characteristics2:
     # initialize list of lists
