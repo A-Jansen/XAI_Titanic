@@ -9,6 +9,11 @@ header1, header2, header3 = st.columns([1,4,1])
 image1, image2, image3 = st.columns([1,50,1])
 body1, body2, body3 =st.columns([1,50,1])
 
+def check_input_length(text):
+    words = text.split()
+    word_count = len(words)
+    return word_count
+
 def record_page_start_time():
     global page_start_time
     page_start_time = datetime.now()
@@ -50,28 +55,44 @@ with body2:
         visualmap = st.slider("Visual map", 0, 10)
         favourite = st.radio("**What was your favourite type of epxlanation?**", ('SHAP', 'Decision tree', 'Counterfactual', 'Visual map'))
         why = st.text_area('**Please explain what you liked about your favourite XAI method and why**', "")
-        why_2 = st.text_area('**Please shortly mention why you disliked the other ones? Use the format  \nName of method 1: Reason to dislike  \nName of method 2: reason to dislike  \nName of method 3: Reason to dislike**')
+        why_2 = st.text_area('**Please shortly mention why you disliked the other ones?  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
         why_3 = st.text_area('**Please explain how your favourite XAI method helped you to understand the prediction of the ML project**')
         why_4 = st.text_area('**Optional, If you have any remarks regarding the different methods you could input them here**')
         # Every form must have a submit button.
+        word_count_1 = check_input_length(why)
+        word_count_2 = check_input_length(why_2)
+        word_count_3 = check_input_length(why_3)
+        word_count_4 = check_input_length(why_4)
 
         submitted = st.form_submit_button("Submit")
 
+
         if submitted:
-            if page_start_time:
-                record_page_duration_and_send()
-            # record_page_start_time()
-            st.session_state.oocsi.send('XAI_endcomparison', {
-                'participant_ID': st.session_state.participantID,
-                'shap': shap,
-                'decisiontree': dt,
-                'counterfactual': counterfactual,
-                'visualmap': visualmap,
-                'favourite': favourite,
-                'why_1': why, 
-                'why_2': why_2, 
-                'why_3': why_3, 
-                'why_4': why_4
-            })
-            st.balloons()
-            switch_page('thankyou')
+            if word_count_1<7: 
+                st.warning('Please explain more extensively your answer (+10 words)')
+            elif word_count_2<7:
+                st.warning('Please explain more extensively your answer (+10 words)')
+            elif word_count_3<7:
+                st.warning('Please explain more extensively your answer (+10 words)')
+            elif word_count_4<7:
+                st.warning('Please explain more extensively your answer (+10 words)')
+            else: 
+                st.success('Thank you!')
+                if page_start_time:
+                    record_page_duration_and_send()
+                # record_page_start_time()
+                    st.session_state.oocsi.send('XAI_endcomparison', {
+                        'participant_ID': st.session_state.participantID,
+                        'shap': shap,
+                        'decisiontree': dt,
+                        'counterfactual': counterfactual,
+                        'visualmap': visualmap,
+                        'favourite': favourite,
+                        'why_1': why, 
+                        'why_2': why_2, 
+                        'why_3': why_3, 
+                        'why_4': why_4
+                    })
+                    
+                    st.balloons()
+                    switch_page('thankyou')
