@@ -115,7 +115,11 @@ with consent_form2:
     st.markdown('''
      All research conducted at the Human-Technology Interaction Group adheres to the Code of Ethics of the NIP (Nederlands Instituut voor Psychologen – Dutch Institute for Psychologists), and this study has been approved by the Ethical Review Board of the department. 
 
-    In this study demographic data (gender, age, education level, highest level of education, data literacy, AI expertise), experimental data (response to questionnaires and duration of experiment) will be recorded, analyzed, and stored. The goal of collecting, analyzing, and storing this data is to answer the research question and publish the results in the scientific literature. To protect your privacy, all data that can be used to personally identify you will be stored on an encrypted server of the Human Technology Interaction group for at least 10 years that is only accessible by selected HTI staff members. No information that can be used to personally identify you will be shared with others. 
+    In this study demographic data (gender, age, education level, highest level of education, data literacy, AI expertise), experimental data (response to questionnaires and duration of experiment) will be recorded, analyzed, and stored. 
+    The goal of collecting, analyzing, and storing this data is to answer the research question and publish the results in the scientific literature. 
+    Next to the research data, we ask you to leave your email adress if you are willing to participate in a follow up interview and we might need to store your name and bank account in order to compensate you for your participant. 
+    This data will be stored separately from the research data and deleted after the interview/ payment.
+                To protect your privacy, all data that can be used to personally identify you will be stored on an encrypted server of the Human Technology Interaction group for at least 10 years that is only accessible by selected HTI staff members. No information that can be used to personally identify you will be shared with others. 
 
     During the study, the data will be stored on encrypted laptops and DataFoundry  - a platform developed by the department of Industrial Design at TU/e and is GDPR compliant. After the analyses, the data will also be made available on OSF (open science framework, a place to share research data open source).  
 
