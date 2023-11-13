@@ -46,8 +46,8 @@ with body2:
                           'Male', 'Non-binary', 'Other', 'Prefer not to say'))
         age = st.radio("How old are you?", ('18-25', '26-35',
                        '36-45', '46-55', '56-65', '66-75', '75+'))
-        educationlevel = st.radio("What is your highest level of education?",
-                                  ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
+        # educationlevel = st.radio("What is your highest level of education?",
+        #                           ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
         st.markdown('**AI literacy**')
         st.markdown("Please select the right answer at the multiple choice questions below. \
                     A correct answer is awarded with +1 point, an incorrect answer -1 point and the \"I don't know option\" 0 points.")
@@ -159,7 +159,6 @@ with body2:
                 'participant_ID': st.session_state.participantID,
                 'gender': gender,
                 'age': age,
-                'educationLevel': educationlevel,
                 # 'socio1': socio1,
                 # 'socio2': socio2,
                 # 'socio3': socio3,
