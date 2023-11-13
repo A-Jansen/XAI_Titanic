@@ -83,31 +83,15 @@ with body2:
         #  "Image generator break the rule of art ",
         #  "Deep fakes render videos unattributable",
         #  "I don't know"], index =4)
-
-        techUser1 = st.radio(
-            "What is the central disctinction between supervised and unsupervised learning",
-            ["Supervised learning uses labelled datasets",
-             "Unsupervised learning may happen anytime ",
-             "Supervised learning is performed by supervised personnel",
-             "Supervised learning supersedes unsupervised learning ",
+        
+        techCreator4 = st.radio(
+            "What is not part of an ANN?",
+            ["Input layer",
+             "User layer",
+             "Output layer",
+             "Hidden layer",
              "I don't know"], index=4)
-
-        techUser2 = st.radio(
-            "Which of the following statements is true?",
-            ["Machine Learning is part of AI",
-             "Machine Learning and AI are mutually exclusive",
-             "AI and ML are the same ",
-             "AI is a part of ML",
-             "I don't know"], index=4)
-
-        techUser3 = st.radio(
-            "What is a typical application of an AI at which it is usually better than non-AI",
-            ["Hardware space analysis",
-             "Image recognition ",
-             "Creating annual reports",
-             "Undefined processes",
-             "I don't know"], index=4)
-
+        
         techUser4 = st.radio(
             "Running the same request with the same data on the same AI",
             ["increase the computing speed",
@@ -115,21 +99,13 @@ with body2:
              "double the computing time ",
              "could give different results",
              "I don't know"], index=4)
-
-        techCreator1 = st.radio(
-            "What always distinguishes decision trees from support vector machine?",
-            ["Decision trees are trained faster",
-             "Decision trees generate more predictions ",
-             "Decision trees are more implicit",
-             "Decision trees are more interpretable ",
-             "I don't know"], index=4)
-
-        techCreator2 = st.radio(
-            "What is typical split of testing and training data for development purposes",
-            ["80% Training and 20% Testing",
-             "40% Training, 40% Testing, 20% Train-Testing together",
-             "95% Testing and 5% Training",
-             "It does not matter",
+        
+        techUser1 = st.radio(
+            "What is the central disctinction between supervised and unsupervised learning",
+            ["Supervised learning uses labelled datasets",
+             "Unsupervised learning may happen anytime ",
+             "Supervised learning is performed by supervised personnel",
+             "Supervised learning supersedes unsupervised learning ",
              "I don't know"], index=4)
 
         techCreator3 = st.radio(
@@ -139,15 +115,41 @@ with body2:
              "Benchmarking",
              "Training/Learning",
              "I don't know"], index=4)
-
-        techCreator4 = st.radio(
-            "What is not part of an ANN?",
-            ["Input layer",
-             "User layer",
-             "Output layer",
-             "Hidden layer",
-             "I don't know"], index=4)
         
+
+        techUser3 = st.radio(
+            "What is a typical application of an AI at which it is usually better than non-AI",
+            ["Hardware space analysis",
+             "Image recognition ",
+             "Creating annual reports",
+             "Undefined processes",
+             "I don't know"], index=4)
+
+
+
+        techCreator1 = st.radio(
+            "What always distinguishes decision trees from support vector machine?",
+            ["Decision trees are trained faster",
+             "Decision trees generate more predictions ",
+             "Decision trees are more implicit",
+             "Decision trees are more interpretable ",
+             "I don't know"], index=4)
+        techUser2 = st.radio(
+            "Which of the following statements is true?",
+            ["Machine Learning is part of AI",
+             "Machine Learning and AI are mutually exclusive",
+             "AI and ML are the same ",
+             "AI is a part of ML",
+             "I don't know"], index=4)
+        techCreator2 = st.radio(
+            "What is typical split of testing and training data for development purposes",
+            ["80% Training and 20% Testing",
+             "40% Training, 40% Testing, 20% Train-Testing together",
+             "95% Testing and 5% Training",
+             "It does not matter",
+             "I don't know"], index=4)
+
+
         
         email = st.text_input("If you are willing to participate in a follow-up online inteview of 20 minutes, please leave your emailadress and we might reach out.")
         submitted = st.form_submit_button("Submit")
