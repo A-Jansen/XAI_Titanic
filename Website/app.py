@@ -184,6 +184,7 @@ with consent_form2:
             # record_page_start_time()
             st.session_state.oocsi.send('XAI_consent', {
                 'participant_ID': st.session_state.participantID,
+                'expert': "no",
                 'consent': 'yes',
                 'consentForOSF': consentforOSF
             })
