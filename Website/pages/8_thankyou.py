@@ -10,4 +10,5 @@ body1, body2, body3 =st.columns([1,2,1])
 with header2:
     st.balloons()
     st.title("Thank you for completing this survey")
-    st.write("You can now close this tab")
+    # code for the non-experts
+    st.write("https://app.prolific.com/submissions/complete?cc=CH1L2KDU")

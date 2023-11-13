@@ -39,19 +39,22 @@ def record_page_start_time():
     page_start_time = datetime.now()
 
 # Function to record page duration and send to Data Foundry
+
+
 def record_page_duration_and_send():
     current_page_title = st.session_state.current_page_title
     if page_start_time:
         page_end_time = datetime.now()
         page_duration = page_end_time - page_start_time
         st.write(f"Time spent on {current_page_title}: {page_duration}")
-        
+
         # Send data to Data Foundry via OOCSI
         data = {
             "page_name": current_page_title,
             "duration_seconds": page_duration.total_seconds()
         }
         st.session_state.oocsi.send('Time_XAI', data)
+
 
 st.session_state.current_page_title = "Introduction"
 page_start_time = None
@@ -60,40 +63,43 @@ record_page_start_time()
 # Check if 'participantID' already exists in session_state
 # If not, then initialize it
 if 'participantID' not in st.session_state:
-    st.session_state.participantID= "P" + uuid4().__str__().replace('-', '')[0:10]
-    st.session_state.pages =['SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
+    st.session_state.participantID = "P" + \
+        uuid4().__str__().replace('-', '')[0:10]
+    st.session_state.pages = [
+        'SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
     # st.session_state.profileIndices = [25, 112, 56, 22]
     st.session_state.profileIndices_SHAP = [28, 110, 50, 21]
-    st.session_state.profileIndices_counter = [26,113,57,69]
+    st.session_state.profileIndices_counter = [26, 113, 57, 69]
     st.session_state.profileIndices_Tree = [27, 114, 58, 24]
     st.session_state. profileIndices_visual = [25, 112, 56, 22]
 
 if 'oocsi' not in st.session_state:
-    st.session_state.oocsi = OOCSI('','oocsi.id.tue.nl')
+    st.session_state.oocsi = OOCSI('', 'oocsi.id.tue.nl')
 
 
 # st.write(st.session_state.participantID)
 
 st.set_page_config(page_title="XAI research", layout="wide")
 
-header1, header2, header3 = st.columns([1,2,1])
-consent_form1, consent_form2, consent_form3 = st.columns([1,4,1])
+header1, header2, header3 = st.columns([1, 2, 1])
+consent_form1, consent_form2, consent_form3 = st.columns([1, 4, 1])
 
 # with header2:
-    # st.title("Consent form")
-    # st.write("For debugging:")
-    # st.write(st.session_state.participantID)
+# st.title("Consent form")
+# st.write("For debugging:")
+# st.write(st.session_state.participantID)
 
 with consent_form2:
     st.header('Information form for participants')
-    st.write('''Hello and thank you for taking the time to participate in this survey.''')
+    st.write(
+        '''Hello and thank you for taking the time to participate in this survey.''')
     st.write('''This document gives you information about the study Comparing Explainable AI (XAI) methods. Before the study begins, it is important that you learn about the procedure followed in this study and that you give your informed consent for voluntary participation. Please read this document carefully.  ''')
-    
+
     st.subheader('Aim and benefit of the study')
     st.write('''The aim of this study is to measure the satisfaction of users with different types of XAI methods. 
     This information is used to have better understandable/ more satisfying type of explanations in future applications.  ''')
     st.write('''This study is performed by Rachel Wang, François Leborgne and Anniek Jansen, all EngD trainees of the Designing Human-System Interaction program and for this study under the supervision of Chao Zhang of the Human-Technology Interaction group.''')
-    
+
     st.subheader('Procedure')
     st.markdown('''During this project we ask you to: 
 -	Look at different predictions from an AI model (predicting the survival of passengers of the titanic)
@@ -101,12 +107,14 @@ with consent_form2:
 -	Complete a survey at the end of the study with demographic information
 -	Complete a second survey in the end to compare the explanation methods and explain why certain methods had your preference.
 ''')
-    
+
     st.subheader('Risks')
-    st.markdown("The study does not involve any risks, detrimental side effects, or cause discomfort.")
+    st.markdown(
+        "The study does not involve any risks, detrimental side effects, or cause discomfort.")
 
     st.subheader("Duration")
-    st.markdown("The instructions, measurements and debriefing will take approximately 30 minutes.")
+    st.markdown(
+        "The instructions, measurements and debriefing will take approximately 30 minutes.")
 
     st.subheader("Voluntary")
     st.markdown('''Your participation is completely voluntary. You can refuse to participate without giving any reasons and you can stop your participation at any time during the study. You can also withdraw your permission to use your data immediately after completing the study. None of this will have any negative consequences for you whatsoever.''')
@@ -132,7 +140,7 @@ with consent_form2:
     No video or audio recordings are made that could identify you.
     
     ''')
-        
+
     st.subheader("Further information")
     st.markdown('''If you want more information about this study, the study design, or the results, you can contact Anniek Jansen (contact email: a.jansen@tue.nl ). 
     If you have any complaints about this study, please contact the supervisor, Chao Zhang (C.Zhang.5@tue.nl)  You can report irregularities related to scientific integrity to confidential advisors of the TU/e.
@@ -148,22 +156,28 @@ with consent_form2:
     -	I know that no information that can be used to personally identify me or my responses in this study will be shared with anyone outside of the research team.
     ''')
 
-    OSF= st.radio("I ... (please select below) give permission to make my anonymized recorded data available to others in a public online data repository, and allow others to use this data for future research projects unrelated to this study.",
-                         ('do', 
-                              'do not'), index=1)
+    prolificID = st.text_input(
+        "Please enter/paste here your unique prolific ID")
+    st.session_state.participantID = prolificID
+
+    OSF = st.radio("I ... (please select below) give permission to make my anonymized recorded data available to others in a public online data repository, and allow others to use this data for future research projects unrelated to this study.",
+                   ('do',
+                    'do not'), index=1)
 
     st.subheader("Consent")
-    agree = st.checkbox('I consent to processing my personal data gathered during the research in the way described in the information sheet.')
+    agree = st.checkbox(
+        'I consent to processing my personal data gathered during the research in the way described in the information sheet.')
 
-    consentforOSF =""
-    if OSF =='do': 
-        consentforOSF='yes'
+    consentforOSF = ""
+    if OSF == 'do':
+        consentforOSF = 'yes'
     else:
-        consentforOSF='no'
+        consentforOSF = 'no'
 
     if agree:
-     
-        st.write('Thank you! Please continue to the next page to start the experiment')
+
+        st.write(
+            'Thank you! Please continue to the next page to start the experiment')
         if st.button("Next page"):
             if page_start_time:
                 record_page_duration_and_send()
