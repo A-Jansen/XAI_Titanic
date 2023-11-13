@@ -37,6 +37,7 @@ import json
 def record_page_start_time():
     global page_start_time
     page_start_time = datetime.now()
+    
 
 # Function to record page duration and send to Data Foundry
 
@@ -175,17 +176,19 @@ with consent_form2:
         consentforOSF = 'no'
 
     if agree:
-
-        st.write(
-            'Thank you! Please continue to the next page to start the experiment')
-        if st.button("Next page"):
-            if page_start_time:
-                record_page_duration_and_send()
-            # record_page_start_time()
-            st.session_state.oocsi.send('XAI_consent', {
-                'participant_ID': st.session_state.participantID,
-                'expert': "no",
-                'consent': 'yes',
-                'consentForOSF': consentforOSF
-            })
-            switch_page("explanationpage")
+        if len(prolificID) >0:
+            st.write(
+                'Thank you! Please continue to the next page to start the experiment')
+            if st.button("Next page"):
+                if page_start_time:
+                    record_page_duration_and_send()
+                # record_page_start_time()
+                st.session_state.oocsi.send('XAI_consent', {
+                    'participant_ID': st.session_state.participantID,
+                    'expert': "no",
+                    'consent': 'yes',
+                    'consentForOSF': consentforOSF
+                })
+                switch_page("explanationpage")
+        else:
+            st.warning('Please add your prolific ID')
