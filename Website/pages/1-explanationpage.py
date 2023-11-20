@@ -91,6 +91,11 @@ with body2:
     This prediction is accompanied by each time a different type of explanation.''')
     st.markdown("After seeing four profiles, you will be asked to evaluate the explanation you have just seen.")
     
+    st.subheader('Model')
+    st.markdown(''' The same ML model is used to generate the predictions of who survived and who did not. 
+                This model is used to generate all of the four types of explanations that you will see during the experiment. 
+                ''')
+    
     st.subheader('Features')
     st.markdown('''We know certain \"features\" of the passengers that embarked the Titanic. A feature describes something about them, for example their age or how much they paid for the ticket. 
                 These features are used by the ML model to predict whether someone would survive or not. The following features are used.
