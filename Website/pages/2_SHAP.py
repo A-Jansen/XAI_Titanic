@@ -95,8 +95,7 @@ def shapPlot(X_test, _shap_values):
 
 with header2:
     st.header('Explanation - SHAP Values')
-    st.markdown(''' The SHAP approach attempts to fairly assign the contributions of each features. This method can provide both local
-                 and global explanations for machine learning models. Local explanations refer to the contribution of each feature
+    st.markdown(''' The SHAP approach attempts to assign the contributions of each features. Local explanations refer to the contribution of each feature
                 to the prediction of a specific instance, while global explanations refer to the overall importance of each feature
                 across the entire dataset. They corresponding values indicate how much each attribute (e.g. sex or age) contributed to the prediction. 
     Blue bars represent a contribution to a negative prediction (dead) and red bars a contribution towards the positive outcome (survived).

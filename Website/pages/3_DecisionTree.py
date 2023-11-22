@@ -139,8 +139,7 @@ def render_svg(svg):
 with header2: #header2
     st.header("Decision Tree")
     st.markdown(''' The goal is to create a model that predicts the value of a target variable by learning simple decision 
-                rules inferred from the data features. A tree can be seen as a piecewise constant approximation.  Decision tree 
-                models show the decisions made to come to a final prediction. 
+                rules inferred from the data features. Decision tree models show the decisions made to come to a final prediction. 
                 At each point it needs to go to go left or right based on the value of one of the attributes (e.g. sex or age)
                 and below the final path it took to come to a decision is shown.
      ''')

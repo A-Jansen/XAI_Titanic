@@ -118,9 +118,6 @@ with header2:
     st.markdown('''A counterfactual is used to showcase which attributes (e.g. sex or age) would need to change to get the opposite outcome, i.e. to survive when the prediction is not survive. 
     Multiple changes are shown but all have the opposite outcome from the current prediction. ''')
 
-
-    st.markdown('''A counterfactual explanation of a prediction will then describe the smallest amount of change that is necessary for a passenger of the titanic
-     to have an opposite outcome to the orignial one (survived/not survived).''')
     st.subheader(name, anchor='top')
     random_forest= trainModelRF(st.session_state.X_train, st.session_state.Y_train)
     XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
