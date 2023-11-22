@@ -73,13 +73,13 @@ with body2:
 
         if submitted:
             if word_count_1<7: 
-                st.warning('Please explain more extensively your answer (+10 words)')
+                st.warning('Please explain more extensively your answer (+7 words)')
             elif word_count_2<7:
-                st.warning('Please explain more extensively your answer (+10 words)')
+                st.warning('Please explain more extensively your answer (+7 words)')
             elif word_count_3<7:
-                st.warning('Please explain more extensively your answer (+10 words)')
+                st.warning('Please explain more extensively your answer (+7 words)')
             elif word_count_4<7:
-                st.warning('Please explain more extensively your answer (+10 words)')
+                st.warning('Please explain more extensively your answer (+7 words)')
             else: 
                 st.success('Thank you!')
                 if page_start_time:
