@@ -166,16 +166,20 @@ with consent_form2:
                     'do not'), index=1)
 
     st.subheader("Consent")
-    agree = st.checkbox(
-        'I consent to processing my personal data gathered during the research in the way described in the information sheet.')
+    agree = st.radio(
+        'I consent to processing my personal data gathered during the research in the way described in the information sheet.',
+        ('do',
+        'do not'), index=1)
 
     consentforOSF = ""
     if OSF == 'do':
         consentforOSF = 'yes'
     else:
         consentforOSF = 'no'
+        
 
-    if agree:
+
+    if agree == "do":
         if len(prolificID) >0:
             st.write(
                 'Thank you! Please continue to the next page to start the experiment')
@@ -192,3 +196,12 @@ with consent_form2:
                 switch_page("explanationpage")
         else:
             st.warning('Please add your prolific ID')
+    else:
+        if st.button("Next page"):
+            st.session_state.oocsi.send('XAI_consent', {
+                'participant_ID': st.session_state.participantID,
+                'expert': "no",
+                'consent': 'no',
+                'consentForOSF': consentforOSF
+            })
+            switch_page('noconsent')

@@ -44,8 +44,7 @@ with body2:
 
         gender = st.radio("How do you identify your gender", ('Female',
                           'Male', 'Non-binary', 'Other', 'Prefer not to say'))
-        age = st.radio("How old are you?", ('18-25', '26-35',
-                       '36-45', '46-55', '56-65', '66-75', '75+'))
+        age = st.number_input("How old are you?")
         # educationlevel = st.radio("What is your highest level of education?",
         #                           ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
         st.markdown('**AI literacy**')
