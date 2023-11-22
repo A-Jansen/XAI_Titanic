@@ -209,13 +209,13 @@ with explanation2:
     # with open(path, "r") as f:
     #     svg = f.read()
     if(st.session_state.profileIndex ==27 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_27_shedid.svg"
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/27.png"
     elif(st.session_state.profileIndex ==24 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_24_emily.svg"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/24.png"
     elif(st.session_state.profileIndex ==114 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_114_isidor.svg"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/114.png"
     else:
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/dt_58_thomas.svg"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/58.png"
 
     st.image(url, width=650)
     

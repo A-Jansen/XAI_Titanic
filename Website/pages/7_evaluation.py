@@ -151,7 +151,6 @@ with body2:
 
 
         
-        email = st.text_input("If you are willing to participate in a follow-up online inteview of 20 minutes, please leave your emailadress and we might reach out.")
         submitted = st.form_submit_button("Submit")
         if submitted:
             if page_start_time:
