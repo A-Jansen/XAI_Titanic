@@ -116,7 +116,7 @@ with body2:
     # st.subheader('Demographic information')
     # st.markdown("Before you start with the study we would like to ask you to first answer these questions")
 
-    feature_explanation = sst.text_input("Please shortly explain what a feature is and give an example in the case of the Titanic dataset")
+    feature_explanation = st.text_input("Please shortly explain what a feature is and give an example in the case of the Titanic dataset")
 
 with footer2:
     if st.button("Start the experiment "):
