@@ -59,7 +59,7 @@ with body2:
         visualmap = st.slider("Visual map", 0, 10)
         favourite = st.radio("**What was your favourite type of epxlanation?**", ('SHAP', 'Decision tree', 'Counterfactual', 'Visual map'))
         why = st.text_area('**Please explain what you liked about your favourite XAI method and why**', "")
-        why_2 = st.text_area('**Please shortly mention why you disliked the other ones?  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
+        why_2 = st.text_area('**Please shortly mention why you disliked the other three XAI methods?  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
         why_3 = st.text_area('**Please explain how your favourite XAI method helped you to understand the prediction of the ML project**')
         why_4 = st.text_area('**Optional, If you have any remarks regarding the different methods you could input them here**')
         # Every form must have a submit button.
