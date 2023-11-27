@@ -109,8 +109,13 @@ def Counterfactualsplot(X_test, explainer):
     counterfactual_instance['Sex'] = counterfactual_instance['Sex'].replace(sex_mapping)
     counterfactual_instance['Title'] = counterfactual_instance['Title'].replace(title_mapping)
     counterfactual_instance['Embarked'] = counterfactual_instance['Embarked'].replace(port_mapping) 
-    counterfactual_instance['Survived'] = counterfactual_instance['Survived'].replace(life_mapping) 
-    return st.dataframe(counterfactual_instance.set_index(counterfactual_instance.columns[0]), use_container_width= True)
+# <<<<<<< Updated upstream
+#     counterfactual_instance['Survived'] = counterfactual_instance['Survived'].replace(life_mapping) 
+#     return st.dataframe(counterfactual_instance.set_index(counterfactual_instance.columns[0]), use_container_width= True)
+# =======
+    return st.dataframe(counterfactual_instance.set_index(df.columns[0]), use_container_width= False)
+    # st.dataframe(df.set_index(df.columns[0]), use_container_width= False)
+# >>>>>>> Stashed changes
 
 
 with header2:
@@ -161,7 +166,19 @@ with explanation2:
     # data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
     # st.dataframe(data_indices)
 
+    if(st.session_state.profileIndex ==26 ):
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_26_helene.png"
+    elif(st.session_state.profileIndex ==69 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_69_mark.png"
+    elif(st.session_state.profileIndex ==113 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_113_kath.png"
+    else: #57
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_57_olaus.png"
 
+    st.image(url, width=950)
+    st.text("")
+
+    
 with footer2:
     if (st.session_state.index3 < len(st.session_state.profileIndices_counter)-1):
         if st.button("New profile"):
