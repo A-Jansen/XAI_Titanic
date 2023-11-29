@@ -178,7 +178,7 @@ with explanation2:
     else: #57
         url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_57_olaus.png"
 
-    st.image(url, width=800)
+    st.image(url, width=700)
     st.text("")
 
     
