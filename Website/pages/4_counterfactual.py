@@ -159,7 +159,10 @@ with title2:
 
 
 with explanation2:
-    # with st.spinner("Please be patient, we are generating a new explanation"):
+    if prediction == 0:
+        st.markdown("The model predicts  that {}  will :red[**not survive**], the counterfactual will show the change necessary to obtain the :green[**opposite outcome**]".format(name) )
+    else:
+        st.markdown("The model predicts  that {}  will :green[**survive**], the counterfactual will show the change necessary to obtain the :red[**opposite outcome**]".format(name) )
     explainer= getcounterfactual_values(random_forest, prediction_all, st.session_state.X_test)
     st.set_option('deprecation.showPyplotGlobalUse', False)
     e1=Counterfactualsplot(st.session_state.X_test, explainer)
@@ -175,7 +178,7 @@ with explanation2:
     else: #57
         url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_57_olaus.png"
 
-    st.image(url, width=950)
+    st.image(url, width=800)
     st.text("")
 
     
