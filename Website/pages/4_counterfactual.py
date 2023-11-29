@@ -163,9 +163,9 @@ with explanation2:
         st.markdown("The model predicts  that {}  will :red[**not survive**], the counterfactual will show the change necessary to obtain the :green[**opposite outcome**]".format(name) )
     else:
         st.markdown("The model predicts  that {}  will :green[**survive**], the counterfactual will show the change necessary to obtain the :red[**opposite outcome**]".format(name) )
-    explainer= getcounterfactual_values(random_forest, prediction_all, st.session_state.X_test)
+    # explainer= getcounterfactual_values(random_forest, prediction_all, st.session_state.X_test)
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    e1=Counterfactualsplot(st.session_state.X_test, explainer)
+    # e1=Counterfactualsplot(st.session_state.X_test, explainer)
     # data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
     # st.dataframe(data_indices)
 
