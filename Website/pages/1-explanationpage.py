@@ -86,7 +86,7 @@ with body2:
     st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/titanic.jpg?raw=true')
 
     st.header('Explanation experiment')
-    st.markdown('''In this experiment we will show you two different profiles of passengers. 
+    st.markdown('''In this experiment we will show you four different profiles of passengers. 
     Using Machine Learning (ML) we will show a prediction whether they would have survived the disaster. 
     This prediction is accompanied by each time a different type of explanation.''')
     st.markdown("After seeing four profiles, you will be asked to evaluate the explanation you have just seen.")

@@ -200,42 +200,42 @@ with footer2:
             with st.form("my_form3", clear_on_submit=True):
                 st.subheader("Evaluation")
                 st.write("These questions only ask for your opinion about this specific explanation")
-                c_load = st.select_slider('Please rate your mental effort required to understand this type of explanation',
+                c_load = st.select_slider('**1**- Please rate your mental effort required to understand this type of explanation',
                                           options=["very, very low mental effort", "very low mental effort", "low mental effort",
                                    "rather low mental effort", "neither low nor high mental effort", "rather high mental effort", 
                                    "high mental effort", "very high mental effort", "very, very high mental effort"])
+
                 q1 = st.select_slider(
-                '**1**- From the explanation, I **understand** how the model works:',
+                '**2**- From the explanation, I **understand** how the model works:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q2 = st.select_slider(
-                '**2**- This explanation of how the model works is **satisfying**:',
+                '**3**- This explanation of how the model works is **satisfying**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q3 = st.select_slider(
-                '**3**- This explanation of how the model works has **sufficient detail**:',
+                '**4**- This explanation of how the model works has **sufficient detail**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q4 = st.select_slider(
-                '**4**- This explanation of how the model works seems **complete**:',
+                '**5**- This explanation of how the model works seems **complete**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q5 = st.select_slider(
-                '**5**- This explanation of how the model works **tells me how to use it**:',
+                '**6**- This explanation of how the model works **tells me how to use it**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q6 = st.select_slider(
-                '**6**- This explanation of how the model works is **useful to my goals**:',
+                '**7**- This explanation of how the model works is **useful to my goals**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q7 = st.select_slider(
-                '**7**- This explanation of the model shows me how **accurate** the model is:',
+                '**8**- This explanation of the model shows me how **accurate** the model is:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q8 = st.select_slider(
-                '**8**- This explanation lets me judge when I should **trust and not trust** the model:',
+                '**9**- This explanation lets me judge when I should **trust and not trust** the model:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
-
                 # Every form must have a submit button.
                 submitted = st.form_submit_button("Submit")
                 if submitted:
