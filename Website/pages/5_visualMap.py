@@ -127,7 +127,7 @@ with characteristics2:
 with explanation2:
 
     # st.write("Click on the image to see the shap values")
-    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1295?cells=name%2Cimg%2Cpredictoin%2Cinstruction%2Cchart2%2Cviewof+button", scrolling=False, height=954)
+    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1298?cells=name%2Cimg%2Cpredictoin%2Cinstruction%2Cchart2%2Cviewof+button", scrolling=False, height=954)
 
 
 
