@@ -69,7 +69,7 @@ if 'participantID' not in st.session_state:
     st.session_state.pages = [
         'SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
     # st.session_state.profileIndices = [25, 112, 56, 22]
-    st.session_state.profileIndices_SHAP = [28, 110, 50, 21]
+    st.session_state.profileIndices_SHAP = [28, 110, 50, 21]#28, 110, 50, 21
     st.session_state.profileIndices_counter = [26, 113, 57, 69]
     st.session_state.profileIndices_Tree = [27, 114, 58, 24]
     st.session_state. profileIndices_visual = [25, 112, 56, 22]
@@ -104,7 +104,7 @@ with consent_form2:
     st.subheader('Procedure')
     st.markdown('''During this project we ask you to: 
 -	Look at different predictions from an AI model (predicting the survival of passengers of the titanic)
--	Complete a short survey (9 questions) for four types of explanation method
+-	Complete a short survey (9 questions) for each of the four types of explanation method
 -	Complete a survey at the end of the study with demographic information
 -	Complete a second survey in the end to compare the explanation methods and explain why certain methods had your preference.
 ''')
