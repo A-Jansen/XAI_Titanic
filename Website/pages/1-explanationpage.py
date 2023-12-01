@@ -7,7 +7,7 @@ import datetime
 import xgboost as xgb
 import copy
 from PIL import Image
-from datetime import datetime
+from datetime import datetime, timedelta
 import numpy as np
 
 header1, header2, header3 = st.columns([1,2,1])
@@ -20,14 +20,20 @@ def record_page_start_time():
     page_start_time = datetime.now()
 
 # Function to record page duration and send to Data Foundry
-def record_page_duration_and_send():
+def record_page_duration_and_send_explanation():
     current_page_title = st.session_state.current_page_title
     if page_start_time:
         page_end_time = datetime.now()
         page_duration = page_end_time - page_start_time
+        # duration_str = str(page_duration)
+        # hours, minutes, seconds = map(float, duration_str.split(':'))
+        # total_seconds = hours * 3600 + minutes * 60 + seconds*1000
+        # # st.write(f"{total_seconds}")
+        # if total_seconds < 80: 
+        #     return st.write(f"Have you really read carfelly all the instruction, especially the feature table?")
+
         st.write(f"Time spent on {current_page_title}: {page_duration}")
-        
-        # Send data to Data Foundry via OOCSI
+            # Send data to Data Foundry via OOCSI
         data = {
             "page_name": current_page_title,
             "duration_seconds": page_duration.total_seconds()
@@ -121,7 +127,7 @@ with body2:
 with footer2:
     if st.button("Start the experiment "):
         if page_start_time:
-            record_page_duration_and_send()    
+            record_page_duration_and_send_explanation()    
         record_page_start_time()
         st.session_state.oocsi.send('XAImethods_attentioncheck', {
             'participant_ID': st.session_state.participantID,
