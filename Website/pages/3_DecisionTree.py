@@ -15,16 +15,6 @@ from sklearn.datasets import make_moons
 import base64
 from datetime import datetime
 
-# import os
-# os.environ["PATH"] += os.pathsep + 'D:/Program Files (x86)/Graphviz2.38/bin/'
-
-# st.markdown("""<style> 
-# .stSlider {
-#     padding-bottom: 20px;    
-#     }
-#     </style> """, 
-#     unsafe_allow_html=True)
-
 def record_page_start_time():
     global page_start_time
     page_start_time = datetime.now()
@@ -139,9 +129,11 @@ def render_svg(svg):
 with header2: #header2
     st.header("Decision Tree")
     st.markdown(''' The goal is to create a model that predicts the value of a target variable by learning simple decision 
-                rules inferred from the data features. Decision tree models show the decisions made to come to a final prediction. 
-                At each point it needs to go to go left or right based on the value of one of the attributes (e.g. sex or age)
-                and below the final path it took to come to a decision is shown.
+                rules inferred from the data features. To ease the understanding, only the node used for the prediction are showed
+                with the distribution of the data (histogram) for the specific features. The orange triangle indicates the person's value 
+                for the given feature (e.g. sex, Title, Fare, ...). At the end, all the features' value of the person are showed with
+                the deciding one in orange.
+                
      ''')
 
     st.subheader(name)

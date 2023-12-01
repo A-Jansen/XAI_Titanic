@@ -95,7 +95,7 @@ def shapPlot(X_test, _shap_values):
 
 with header2:
     st.header('Explanation - SHAP Values')
-    st.markdown(''' The SHAP approach attempts to assign the contributions of each features, the output of the model is then decompose
+    st.markdown(''' The SHAP approach attempts to assign the contributions of each features. The output of the model is then decompose
                  into the sums of the impact of each features. The corresponding values indicate how much each attribute (e.g. sex or age) contributed to the prediction. 
     Blue bars represent a contribution to a negative prediction (dead) and red bars a contribution towards the positive outcome (survived).
 
