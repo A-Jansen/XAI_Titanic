@@ -11,6 +11,14 @@ import xgboost as xgb
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 from datetime import datetime
+import win32api 
+import time 
+
+
+
+
+
+    
 
 def record_page_start_time():
     global page_start_time
@@ -34,7 +42,9 @@ def record_page_duration_and_send():
 st.session_state.current_page_title = "Visual Map"
 page_start_time = None
 record_page_start_time()
-        
+
+
+
 #Delete this page from the array of pages to visit, this way it cannot be visited twice
 if 'profile4' not in st.session_state:
     st.session_state.pages.remove("visualMap")
@@ -127,7 +137,7 @@ with characteristics2:
 with explanation2:
 
     # st.write("Click on the image to see the shap values")
-    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1298?cells=name%2Cimg%2Cpredictoin%2Cinstruction%2Cchart2%2Cviewof+button", scrolling=False, height=954)
+    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1309?cells=name%2Cimg%2Cpredictoin%2Cinstruction%2Cchart2%2Cviewof+button", scrolling=False, height=954)
 
 
 
@@ -142,6 +152,8 @@ with footer2:
     if is_user_active():
         with st.form("my_form4", clear_on_submit=True):
             st.subheader("Evaluation")
+            check_num = st.number_input("Please enter here the number you see at the end of the visual maps", step=1)
+            
             st.write("These questions only ask for your opinion about this specific explanation")
             c_load = st.select_slider('**1**- Please rate your mental effort required to understand this type of explanation',
                                         options=["very, very low mental effort", "very low mental effort", "low mental effort",
@@ -201,15 +213,21 @@ with footer2:
                     'q8': q8,
                     
                     })
+                st.session_state.oocsi.send('XAImethods_attentioncheck', {
+                    'participant_ID': st.session_state.participantID,
+                    'check_number_visualmap': check_num,
+                    })
                 if (st.session_state.lastQuestion =='yes'): 
                     switch_page('finalPage')
                 else: 
                     # st.session_state.profileIndex =st.session_stateC:\Users\FrancoisLeborgne\OneDrive - Mentech\Documents\GitHub\XAI_Titanic\Website.profileIndices[0]
                     switch_page(st.session_state.pages[st.session_state.nextPage4])
     else:
-        if st.button('Continue to evaluation'):
-            st.session_state['user_active4']=True
-            st.experimental_rerun()
+        to_end = st.checkbox('I have seen all four explanations and see the text: \"You have reached the end of the profiles that can be explored please click on the button below to continue to the evaluation\"')
+        if to_end:
+            if st.button('Continue to evaluation'):
+                st.session_state['user_active4']=True
+                st.experimental_rerun()
 
 
 
