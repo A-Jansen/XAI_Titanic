@@ -222,7 +222,7 @@ with footer2:
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q5 = st.select_slider(
-                '**6**- This explanation of how the model works **tells me how to use it**:',
+                '**6**- This explanation of how the model works **tells me how to use the model**:',
                 options=['totally disagree', 'disagree', 'neutral' , 'agree', 'totally agree'])
 
                 q6 = st.select_slider(
