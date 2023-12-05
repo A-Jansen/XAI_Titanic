@@ -69,7 +69,7 @@ if 'participantID' not in st.session_state:
     st.session_state.pages = [
         'SHAP', 'DecisionTree', 'counterfactual', 'visualMap']
     # st.session_state.profileIndices = [25, 112, 56, 22]
-    st.session_state.profileIndices_SHAP = [28, 36, 50, 21]#28, 110, 50, 21
+    st.session_state.profileIndices_SHAP = [28, 36, 48, 21]#28, 110, 50, 21  ##another women --> 48
     st.session_state.profileIndices_counter = [26, 113, 57, 69]
     st.session_state.profileIndices_Tree = [27, 114, 58, 24]
     st.session_state. profileIndices_visual = [25, 112, 56, 22]
