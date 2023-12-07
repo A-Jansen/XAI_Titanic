@@ -11,12 +11,6 @@ import xgboost as xgb
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
 from datetime import datetime
-import win32api 
-import time 
-
-
-
-
 
     
 
@@ -100,7 +94,7 @@ def shapPlot(X_test, _shap_values):
 with header2:
     st.header('Visual map')
     st.markdown('''In this part, the explanation is given using a combination of SHAP values, values that indicate how much each attribute (e.g. sex or age) contributed to the prediction, were combined with visual representing the different attributes. 
-    When you click on the image the attributes will change color (blue for contributing towards a negative prediction (dead) and red for positive) and the size tells you the importance. 
+    When you click on the image the attributes will change color (red for contributing towards a negative prediction (dead) and green for positive) and the size tells you the importance. 
 
         ''')
     # st.subheader(name, anchor='top')
