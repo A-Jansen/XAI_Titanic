@@ -138,11 +138,11 @@ with title2:
 
 with explanation2:
     # with st.spinner("Please be patient, we are generating a new explanation"):
-    shap_values= getSHAPvalues(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
-    st.set_option('deprecation.showPyplotGlobalUse', False)
-    fig = shap.plots.waterfall(shap_values[st.session_state.profileIndex])
-    st.pyplot(fig, bbox_inches='tight')
-    data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
+    # shap_values= getSHAPvalues(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
+    # st.set_option('deprecation.showPyplotGlobalUse', False)
+    # fig = shap.plots.waterfall(shap_values[st.session_state.profileIndex])
+    # st.pyplot(fig, bbox_inches='tight')
+    # data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
     # st.dataframe(st.session_state.ports_df)
     # st.dataframe(st.session_state.title_df)
     # st.dataframe(st.session_state.gender_df)
@@ -150,10 +150,10 @@ with explanation2:
 
     if(st.session_state.profileIndex ==28 ):
         url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/john.png"
-    elif(st.session_state.profileIndex ==110 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/samuel.png"
-    elif(st.session_state.profileIndex ==50 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/philip.png"
+    elif(st.session_state.profileIndex ==36 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/Sarah.png"
+    elif(st.session_state.profileIndex ==48 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/Emma.png"
     else: #21
         url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/karl.png"
 
