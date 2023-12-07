@@ -93,7 +93,7 @@ def shapPlot(X_test, _shap_values):
 
 with header2:
     st.header('Visual map')
-    st.markdown('''In this part, the explanation is given using a combination of SHAP values, values that indicate how much each attribute (e.g. sex or age) contributed to the prediction, were combined with visual representing the different attributes. 
+    st.markdown('''In this part, the explanation is given using a combination of SHAP values, values that indicate how much each attribute (e.g. sex or age) contributed to the prediction, were combined with visuals representing the different attributes. 
     When you click on the image the attributes will change color (red for contributing towards a negative prediction (dead) and green for positive) and the size tells you the importance. 
 
         ''')

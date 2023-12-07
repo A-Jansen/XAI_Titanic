@@ -120,7 +120,7 @@ def Counterfactualsplot(X_test, explainer):
 
 with header2:
     st.header("Counterfactuals")
-    st.markdown('''A counterfactual is used to showcase which attributes (e.g. sex or age) would need to change to get the opposite outcome, i.e. to survive when the prediction is not survive. 
+    st.markdown('''A counterfactual is used to showcase which attributes (e.g. sex or age) would need to change to get the opposite outcome, i.e. to survive when the prediction is 'not survive'. 
     Multiple changes are shown but all have the opposite outcome from the current prediction. ''')
 
     st.subheader(name, anchor='top')

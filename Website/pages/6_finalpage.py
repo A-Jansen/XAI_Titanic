@@ -52,14 +52,14 @@ with image2:
 
 with body2:
     with st.form("my_form"):
-        st.markdown("**As a final evaluation, please rate the different types of explanations (0-10). This is a general grade that you you would give to the different explanation methods.**")
+        st.markdown("**As a final evaluation, please rate the different types of explanations (0-10). This is a general grade that you would give to the different explanation methods.**")
         shap = st.slider('SHAP', 0, 10)
         dt = st.slider('Decision tree', 0, 10)
         counterfactual  = st.slider("Counterfactual", 0, 10)
         visualmap = st.slider("Visual map", 0, 10)
-        favourite = st.radio("**What was your favourite type of epxlanation?**", ('SHAP', 'Decision tree', 'Counterfactual', 'Visual map'))
+        favourite = st.radio("**What was your favourite type of explanation?**", ('SHAP', 'Decision tree', 'Counterfactual', 'Visual map'))
         why = st.text_area('**Please explain what you liked about your favourite XAI method and why**', "")
-        why_2 = st.text_area('**Please shortly mention why you disliked the other three XAI methods?  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
+        why_2 = st.text_area('**Please briefly mention why you disliked the other three XAI methods.  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
         why_3 = st.text_area('**Please explain how your favourite XAI method helped you to understand the prediction of the ML model**')
         why_4 = st.text_area('**Optional, If you have any remarks regarding the different methods you could input them here**')
         # Every form must have a submit button.

@@ -48,8 +48,8 @@ with body2:
         # educationlevel = st.radio("What is your highest level of education?",
         #                           ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
         st.markdown('**AI literacy**')
-        st.markdown("Please select the right answer at the multiple choice questions below. \
-                    A correct answer is awarded with +1 point, an incorrect answer -1 point and the \"I don't know option\" 0 points.")
+        st.markdown("Please select the right answer to the multiple-choice questions below. \
+                    A correct answer is awarded +1 point, an incorrect answer -1 point and the \"I don't know option\" 0 points.")
 
         # socio1 = st.radio(
         # "AI was first mention in",
@@ -100,7 +100,7 @@ with body2:
              "I don't know"], index=4)
         
         techUser1 = st.radio(
-            "What is the central disctinction between supervised and unsupervised learning",
+            "What is the central distinction between supervised and unsupervised learning",
             ["Supervised learning uses labelled datasets",
              "Unsupervised learning may happen anytime ",
              "Supervised learning is performed by supervised personnel",
@@ -141,7 +141,7 @@ with body2:
              "AI is a part of ML",
              "I don't know"], index=4)
         techCreator2 = st.radio(
-            "What is typical split of testing and training data for development purposes",
+            "What is a typical split of testing and training data for development purposes?",
             ["80% Training and 20% Testing",
              "40% Training, 40% Testing, 20% Train-Testing together",
              "95% Testing and 5% Training",

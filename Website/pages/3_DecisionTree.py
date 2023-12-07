@@ -129,9 +129,9 @@ def render_svg(svg):
 with header2: #header2
     st.header("Decision Tree")
     st.markdown(''' The goal is to create a model that predicts the value of a target variable by learning simple decision 
-                rules inferred from the data features. To ease the understanding, only the node used for the prediction are showed
+                rules inferred from the data features. To ease the understanding, only the nodes used for the prediction are shown
                 with the distribution of the data (histogram) for the specific features. The orange triangle indicates the person's value 
-                for the given feature (e.g. sex, Title, Fare, ...). At the end, all the features' value of the person are showed with
+                for the given feature (e.g. sex, Title, Fare, ...). At the end, all the features' values of the person are shown with
                 the deciding one in orange.
                 
      ''')
