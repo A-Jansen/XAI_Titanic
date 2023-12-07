@@ -201,13 +201,13 @@ with explanation2:
     # with open(path, "r") as f:
     #     svg = f.read()
     if(st.session_state.profileIndex ==27 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/27.png"
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/58.png"
     elif(st.session_state.profileIndex ==24 ):
         url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/24.png"
     elif(st.session_state.profileIndex ==114 ):
         url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/114.png"
     else:
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/58.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/27.png"
 
     st.image(url, width=650)
     
