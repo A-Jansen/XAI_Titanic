@@ -85,7 +85,7 @@ def trainModel(X_train,Y_train):
 @st.cache_resource
 def getcounterfactual_values(_model,X_prediction, X_train):
     # compute counterfactual values
-    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
+    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/train_df.csv"
     train_df=pd.read_csv(url_traindf, index_col=None)
     continuous_col=["Age", 'Fare']
     dice_data = dice_ml.Data(dataframe=train_df,continuous_features=continuous_col, outcome_name='Survived')
@@ -170,13 +170,13 @@ with explanation2:
     # st.dataframe(data_indices)
 
     if(st.session_state.profileIndex ==26 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_26_helene.png"
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/counter_26_helene.png"
     elif(st.session_state.profileIndex ==69 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_69_mark.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/counter_69_mark.png"
     elif(st.session_state.profileIndex ==113 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_113_kath.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/counter_113_kath.png"
     else: #57
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/counter_57_olaus.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/counter_57_olaus.png"
 
     st.image(url, width=700)
     st.text("")

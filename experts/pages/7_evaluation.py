@@ -44,7 +44,7 @@ with body2:
 
         gender = st.radio("How do you identify your gender", ('Female',
                           'Male', 'Non-binary', 'Other', 'Prefer not to say'))
-        age = st.number_input("How old are you?", step=1, min_value=18)
+        age = st.number_input("How old are you?", step=1)
         # educationlevel = st.radio("What is your highest level of education?",
         #                           ('elementary school', 'high school', 'MBO', 'HBO', 'University'))
         st.markdown('**AI literacy**')
@@ -155,7 +155,7 @@ with body2:
             if page_start_time:
                 record_page_duration_and_send()
             # record_page_start_time()
-            st.session_state.oocsi.send('XAI_endcomparison', {
+            st.session_state.oocsi.send('XAI_demograhphics', {
                 'participant_ID': st.session_state.participantID,
                 'gender': gender,
                 'age': age,

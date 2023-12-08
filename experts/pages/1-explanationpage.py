@@ -51,12 +51,12 @@ if 'nextPage' not in st.session_state:
 
 @st.cache_data(persist=True)
 def loadData():
-    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
+    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/experts/assets/train_df.csv"
     # train_df = pd.read_csv('/assets/train_df.csv')
     train_df=pd.read_csv(url_traindf, index_col=None)
-    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_df.csv"
+    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/experts/assets/test_df.csv"
     test_df = pd.read_csv(url_testdf, index_col=None)
-    url_testnames = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_with_names.csv"
+    url_testnames = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/experts/assets/test_with_names.csv"
     test_with_names = pd.read_csv(url_testnames, index_col=None)
    # test_with_names.drop('PassengerId', axis=1, inplace=True)
     X_train = train_df.drop("Survived", axis=1)
@@ -89,7 +89,7 @@ with header2:
 with body2:
     st.header("The Titanic")
     st.markdown("In the year 1912, the Titanic left from Southampton to New York City, but it never arrived. On April 15, it crashed into an iceberg and sunk. Of the estimated 2,224 passengers and crew aboard, more than 1,500 died, making it the deadliest sinking of a single ship up to that time. ")
-    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/titanic.jpg?raw=true')
+    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/experts/assets/titanic.jpg?raw=true')
 
     st.header('Explanation experiment')
     st.markdown('''In this experiment we will show you four different profiles of passengers. 

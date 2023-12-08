@@ -131,7 +131,7 @@ with characteristics2:
 with explanation2:
 
     # st.write("Click on the image to see the shap values")
-    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1309?cells=name%2Cimg%2Cpredictoin%2Cinstruction%2Cchart2%2Cviewof+button", scrolling=False, height=954)
+    components.iframe("https://observablehq.com/embed/d177ef99668b6553@1310?cells=name%2Cimg%2Cpredictoin%2Cinstruction%2Cchart2%2Cviewof+button", scrolling=False, height=954)
 
 
 
@@ -214,7 +214,7 @@ with footer2:
                 if (st.session_state.lastQuestion =='yes'): 
                     switch_page('finalPage')
                 else: 
-                    # st.session_state.profileIndex =st.session_stateC:\Users\FrancoisLeborgne\OneDrive - Mentech\Documents\GitHub\XAI_Titanic\Website.profileIndices[0]
+                    # st.session_state.profileIndex =st.session_stateC:\Users\FrancoisLeborgne\OneDrive - Mentech\Documents\GitHub\XAI_Titanic\experts.profileIndices[0]
                     switch_page(st.session_state.pages[st.session_state.nextPage4])
     else:
         to_end = st.checkbox('I have seen all four explanations and see the text: \"You have reached the end of the profiles that can be explored please click on the button below to continue to the evaluation\"')

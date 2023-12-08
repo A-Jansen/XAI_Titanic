@@ -70,10 +70,10 @@ footer1, footer2, footer3 =st.columns([1,2,1])
 
 @st.cache_data(persist=True)
 def loadData():
-    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
+    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/train_df.csv"
     # train_df = pd.read_csv('/assets/train_df.csv')
     train_df=pd.read_csv(url_traindf, index_col=None)
-    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_df.csv"
+    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/test_df.csv"
     test_df = pd.read_csv(url_testdf, index_col=None)
     X_train = train_df.drop("Survived", axis=1)
     Y_train = train_df["Survived"]
@@ -201,13 +201,13 @@ with explanation2:
     # with open(path, "r") as f:
     #     svg = f.read()
     if(st.session_state.profileIndex ==27 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/58.png"
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/58.png"
     elif(st.session_state.profileIndex ==24 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/24.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/24.png"
     elif(st.session_state.profileIndex ==114 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/114.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/114.png"
     else:
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/27.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/27.png"
 
     st.image(url, width=650)
     

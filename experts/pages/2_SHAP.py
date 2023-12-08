@@ -149,15 +149,15 @@ with explanation2:
     # st.dataframe(data_indices)
 
     if(st.session_state.profileIndex ==28 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/john.png"
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/experts/assets/images/john.png"
     elif(st.session_state.profileIndex ==36 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/Sarah.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/experts/assets/images/Sarah.png"
     elif(st.session_state.profileIndex ==48 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/Emma.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/experts/assets/images/Emma.png"
     else: #21
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/karl.png"
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/experts/assets/images/karl.png"
 
-# https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/images/john.png
+# https://github.com/A-Jansen/XAI_Titanic/blob/main/experts/assets/images/john.png
 
     st.image(url, width=950)
     st.text("")

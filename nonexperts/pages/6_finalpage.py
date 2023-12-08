@@ -48,7 +48,7 @@ with header2:
 
 
 with image2:
-    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/Website/assets/images/overview%20methods.png?raw=true')
+    st.image('https://github.com/A-Jansen/XAI_Titanic/blob/main/nonexperts/assets/images/overview%20methods.png?raw=true')
 
 with body2:
     with st.form("my_form"):
