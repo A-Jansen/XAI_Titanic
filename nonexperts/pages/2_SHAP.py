@@ -5,15 +5,19 @@ from oocsi_source import OOCSI
 from uuid import uuid4
 from streamlit_extras.switch_page_button import switch_page
 import random
-import dtreeviz
 import datetime
+import shap
+from IPython.display import display_html
 import xgboost as xgb
-from dtreeviz.trees import dtreeviz
-from sklearn.tree import DecisionTreeClassifier
-import graphviz as graphviz
-from sklearn.datasets import make_moons
-import base64
+import matplotlib.pyplot as plt
 from datetime import datetime
+
+# st.markdown("""<style> 
+# .stSlider {
+#     padding-bottom: 20px;    
+#     }
+#     </style> """, 
+#     unsafe_allow_html=True)
 
 def record_page_start_time():
     global page_start_time
@@ -34,112 +38,72 @@ def record_page_duration_and_send():
         }
         st.session_state.oocsi.send('Time_XAI', data)
 
-st.session_state.current_page_title = "Decision Tree"
+st.session_state.current_page_title = "Shap"
 page_start_time = None
 record_page_start_time()
 
 #Delete this page from the array of pages to visit, this way it cannot be visited twice
-if 'profile2' not in st.session_state:
-    st.session_state.pages.remove("DecisionTree")
-    st.session_state.profile2= 'deleted'
+if 'profile1' not in st.session_state:
+    st.session_state.pages.remove("SHAP")
+    st.session_state.profile1= 'deleted'
     if (len(st.session_state.pages)>0):
-        st.session_state.nextPage2 = random.randint(0, len(st.session_state.pages)-1)
+        st.session_state.nextPage1 = random.randint(0, len(st.session_state.pages)-1)
         st.session_state.lastQuestion= 'no'
     else:
         st.session_state.lastQuestion= 'yes'
 
 
-if 'index2' not in st.session_state:
-    st.session_state.index2= 0    
+if 'index1' not in st.session_state:
+    st.session_state.index1= 0    
+
 
 
 # if 'profileIndex' not in st.session_state:
-st.session_state.profileIndex= st.session_state.profileIndices_Tree[st.session_state.index2]       
-    
-name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
-
+st.session_state.profileIndex= st.session_state.profileIndices_SHAP[st.session_state.index1]   
 
 
 header1, header2, header3 = st.columns([1,2,1])
 characteristics1, characteristics2, characteristics3 = st.columns([3,8,1])
 prediction1, prediction2, prediction3 =st.columns([1,2,1])
 title1, title2, title3 = st.columns([1,2,1])
-explanation1, explanation2, explanation3 = st.columns([2,3,1])
+explanation1, explanation2, explanation3 = st.columns([1.5,4.5,1])
 footer1, footer2, footer3 =st.columns([1,2,1])
 
 
-@st.cache_data(persist=True)
-def loadData():
-    url_traindf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/train_df.csv"
-    # train_df = pd.read_csv('/assets/train_df.csv')
-    train_df=pd.read_csv(url_traindf, index_col=None)
-    url_testdf="https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/test_df.csv"
-    test_df = pd.read_csv(url_testdf, index_col=None)
-    X_train = train_df.drop("Survived", axis=1)
-    Y_train = train_df["Survived"]
-    X_test  = test_df.drop("PassengerId", axis=1).copy()
-    return X_train, Y_train, X_test
+
+
+name= st.session_state.X_test_names.loc[st.session_state.profileIndex, "Name"]
 
 @st.cache_resource
 def trainModel(X_train,Y_train):
     model = xgb.XGBClassifier().fit(X_train, Y_train)
     return model
 
-# @st.cache_resource
-# def createTree(_model, X_train, Y_train, X_test):
-#     # X, y = make_moons(n_samples=20, noise=0.25, random_state=3)
-#     # treeclf = DecisionTreeClassifier(random_state=0)
-#     # treeclf.fit(X, y)
-#     # viz_model= dtreeviz(treeclf, X, y, target_name="Classes",
-#     #     feature_names=["f0", "f1"], class_names=["c0", "c1"])
-#     # clf = DecisionTreeClassifier(max_depth=3)
-#     # clf.fit(X_train, Y_train)
 
-#     # Y_pred = clf.predict(X_test)  
-#     # acc_decision_tree2 = round(clf.score(X_train, Y_train) * 100, 2)
-#     # viz_model = dtreeviz(clf,
-#     #                      X_train, Y_train,
-#     #                     feature_names=X_train.columns,
-#     #                     target_name='Survived',
-#     #                     class_names=['Dead', 'Alive'],
-#     #                     X=X_test.iloc[1]  
-#     # ) 
-#     viz_model = dtreeviz(_model, 
-#                          X_train, Y_train,
-#                          tree_index=0,
-#                          feature_names=list(X_train.columns),
-#                          target_name='Survived',
-#                          class_names=['Dead', 'Alive'],
-#                          X=X_test.iloc[st.session_state.profileIndex],
-#                         #depth_range_to_display=(0, 2),
-#                         show_just_path=True,
-#                         # orientation ='LR',
-#                          )
-#     path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
-#     viz_model.save(path) 
-#     return viz_model
-
-def render_svg(svg):
-    """Renders the given svg string."""
-    b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
-    html = r'<img src="data:image/svg+xml;base64,%s"/>' % b64
-    st.write(html, unsafe_allow_html=True)
+@st.cache_resource
+def getSHAPvalues(_model,X_train, Y_train, X_test):
+    # compute SHAP values
+    explainer = shap.Explainer(_model, X_test)
+    shap_values = explainer(X_test)
+    return shap_values
 
 
-with header2: #header2
-    st.header("Decision Tree")
-    st.markdown(''' The goal is to create a model that predicts the value of a target variable by learning simple decision 
-                rules inferred from the data features. To ease the understanding, only the nodes used for the prediction are shown
-                with the distribution of the data (histogram) for the specific features. The orange triangle indicates the person's value 
-                for the given feature (e.g. sex, Title, Fare, ...). At the end, all the features' values of the person are shown with
-                the deciding one in orange.
-                
-     ''')
 
-    st.subheader(name)
-    XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
+
+def shapPlot(X_test, _shap_values):
+    return shap.plots.waterfall(shap_values[st.session_state.profileIndex])
+
+with header2:
+    st.header('Explanation - SHAP Values')
+    st.markdown(''' The SHAP approach attempts to assign the contributions of each feature. The output of the model is then decomposed
+                 into the sums of the impact of each feature. The corresponding values indicate how much each attribute (e.g. sex or age) contributed to the prediction. 
+    Blue bars represent a contribution to a negative prediction (dead) and red bars a contribution towards the positive outcome (survived).
+
+    ''')
+    st.subheader(name, anchor='top')
     # st.write("For debugging:")
     # st.write(st.session_state.participantID)
+    XGBmodel= trainModel(st.session_state.X_train, st.session_state.Y_train)
     
 with characteristics2:
     sex_mapping = {0: 'Male', 1: 'Female'}
@@ -153,85 +117,79 @@ with characteristics2:
     df['Title'] = df['Title'].replace(title_mapping)
     df['Embarked'] = df['Embarked'].replace(port_mapping)  
     st.dataframe(df.set_index(df.columns[0]), use_container_width= False)
-
-
+ 
 
 with prediction2:
+    # st.header("Prediction")
     prediction =  XGBmodel.predict(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
     probability = XGBmodel.predict_proba(st.session_state.X_test.iloc[st.session_state.profileIndex].values.reshape(1, -1))
+
     if prediction == 0:
         prob = round((probability[0][0]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :red[**not survive**]".format(prob, name) )
+
     else:
         prob = round((probability[0][1]*100),2)
         st.markdown("The model predicts with {}% probability  that {}  will :green[**survive**]".format(prob, name) )
 
+
 with title2: 
-    st.subheader("Explanation - Decision Tree")
+    st.subheader("Explanation")
 
-
-with explanation2: 
-    # st.markdown('''Decision Tree model are a non-parametric supervised learning method
-    #  commonly used for classification and regression.
-    #  They are constructed using two kinf of elements: Nodes and branches. At each node (intersection),
-    #  one of the data features is evaluated to split the observations into different paths.
-
-    
-    # At typical decision example is shown in the graph below.    
-    # ''')
-
-    # st.image('assets/Decision_tree.jpg')
-
-    # st.markdown(''' The Root Node starts the graph. It is usually the variable that splits the more lcearly the data. 
-    # Then, intermediate nodes are vsisble were different varaibales are evaluated but no final prediction is made yet. 
-    # Finally, leaf nodes are present where the predicrtions (numerical of categoriacl) are made. 
-
-    # For the Titanic dataset, the prediction will be whether the studied person survived the shipwreck.
-    #  ''')
-
-    
-
+with explanation2:
     # with st.spinner("Please be patient, we are generating a new explanation"):
-        #viz_model = createTree(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
-    # st.image("/assets/images/prediction_path.svg", width =200, use_column_width=True)
-    #viz_model.view()
-     # read in svg prediction path and display
-    #     path = "/assets/images/prediction_path" + str(st.session_state.profileIndex) +".svg"
-    # # st.success("Done!")
-    # with open(path, "r") as f:
-    #     svg = f.read()
-    if(st.session_state.profileIndex ==27 ):
-        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/58.png"
-    elif(st.session_state.profileIndex ==24 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/24.png"
-    elif(st.session_state.profileIndex ==114 ):
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/114.png"
-    else:
-        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/Website/assets/images/27.png"
+    # shap_values= getSHAPvalues(XGBmodel, st.session_state.X_train, st.session_state.Y_train, st.session_state.X_test)
+    # st.set_option('deprecation.showPyplotGlobalUse', False)
+    # fig = shap.plots.waterfall(shap_values[st.session_state.profileIndex])
+    # st.pyplot(fig, bbox_inches='tight')
+    # data_indices = pd.concat([d.reset_index(drop=True) for d in [st.session_state.ports_df, st.session_state.title_df, st.session_state.gender_df]], axis=1)
+    # st.dataframe(st.session_state.ports_df)
+    # st.dataframe(st.session_state.title_df)
+    # st.dataframe(st.session_state.gender_df)
+    # st.dataframe(data_indices)
 
-    st.image(url, width=650)
-    
+    if(st.session_state.profileIndex ==28 ):
+        url= "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/john.png"
+    elif(st.session_state.profileIndex ==36 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/Sarah.png"
+    elif(st.session_state.profileIndex ==48 ):
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/Emma.png"
+    else: #21
+        url = "https://raw.githubusercontent.com/A-Jansen/XAI_Titanic/main/nonexperts/assets/images/karl.png"
+
+# https://github.com/A-Jansen/XAI_Titanic/blob/main/nonexperts/assets/images/john.png
+
+    st.image(url, width=950)
     st.text("")
 
 
+
 with footer2:
-    if (st.session_state.index2 < len(st.session_state.profileIndices_Tree)-1):
+
+    if (st.session_state.index1 < len(st.session_state.profileIndices_SHAP)-1):
         if st.button("New profile"):
-            st.session_state.index2 = st.session_state.index2+1
-            st.session_state.profileIndex = st.session_state.profileIndices_Tree[st.session_state.index2]
+  
+            st.session_state.index1 = st.session_state.index1+1
+            st.session_state.profileIndex = st.session_state.profileIndices_SHAP[st.session_state.index1]
             st.experimental_rerun()
     else:
         def is_user_active():
-            if 'user_active2' in st.session_state.keys() and st.session_state['user_active2']:
+            if 'user_active1' in st.session_state.keys() and st.session_state['user_active1']:
                 return True
             else:
                 return False
         if is_user_active():
-            # if st.button("Continue to evaluation"):
-            #     st.write(" ")
-            with st.form("my_form2", clear_on_submit=True):
+        # st.markdown("You have reached the end of the profiles")
+        # if st.button("Continue to evaluation"):
+        #     st.write(" ")
+            with st.form("my_form1", clear_on_submit=True):
                 st.subheader("Evaluation")
                 st.write("These questions only ask for your opinion about this specific explanation")
+                # c_load = st.radio("Please rate your mental effort required to understand this type of explanation",
+                #                   ["very, very low mental effort", "very low mental effort", "low mental effort",
+                #                    "rather low mental effort", "neither low nor high mental effort", "rather high mental effort", 
+                #                    "high mental effort", "very high mental effort", "very, very high mental effort"],
+                #                     horizontal=False)
                 c_load = st.select_slider('**1**- Please rate your mental effort required to understand this type of explanation',
                                           options=["very, very low mental effort", "very low mental effort", "low mental effort",
                                    "rather low mental effort", "neither low nor high mental effort", "rather high mental effort", 
@@ -274,10 +232,10 @@ with footer2:
                 if submitted:
                     if page_start_time:
                         record_page_duration_and_send()    
-                    # st.write("question 1", q1)
+                    st.write("question 1", q1)
                     st.session_state.oocsi.send('XAImethods_evaluation', {
                         'participant_ID': st.session_state.participantID,
-                        'type of explanation': 'Decision tree',
+                        'type of explanation': 'SHAP',
                         'cognitive load': c_load,
                         'q1': q1,
                         'q2': q2,
@@ -293,9 +251,12 @@ with footer2:
                         switch_page('finalPage')
                     else: 
                         # st.session_state.profileIndex =st.session_state.profileIndices[0]
-                        switch_page(st.session_state.pages[st.session_state.nextPage2])
+                        switch_page(st.session_state.pages[st.session_state.nextPage1])
         else:
             if st.button('Continue to evaluation'):
-
-                st.session_state['user_active2']=True
+                st.session_state['user_active1']=True
                 st.experimental_rerun()
+
+
+
+                

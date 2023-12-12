@@ -1,0 +1,13 @@
+pandas
+oocsi
+scikit-learn
+numpy
+streamlit ==1.20
+streamlit-extras
+uuid
+dtreeviz==1.4.1
+shap
+xgboost
+graphviz==0.20.1
+dice_ml
+IPython
