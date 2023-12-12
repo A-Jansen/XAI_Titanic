@@ -30,7 +30,8 @@ def record_page_duration_and_send():
         # Send data to Data Foundry via OOCSI
         data = {
             "page_name": current_page_title,
-            "duration_seconds": page_duration.total_seconds()
+            "duration_seconds": page_duration.total_seconds(), 
+            'participant_ID': st.session_state.participantID
         }
         st.session_state.oocsi.send('Time_XAI', data)
 
