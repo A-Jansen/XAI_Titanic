@@ -88,16 +88,27 @@ with body2:
                 # record_page_start_time()
                     st.session_state.oocsi.send('XAI_endcomparison', {
                         'participant_ID': st.session_state.participantID,
+                        'why_1': why, 
+                    })
+                    st.session_state.oocsi.send('XAI_endcomparison', {
+                        'participant_ID': st.session_state.participantID,
+                        'why_2': why_2, 
+                    })
+                    st.session_state.oocsi.send('XAI_endcomparison', {
+                        'participant_ID': st.session_state.participantID,
+                        'why_3': why_3, 
+                    })
+                    st.session_state.oocsi.send('XAI_endcomparison', {
+                        'participant_ID': st.session_state.participantID,
+                        'why_4': why_4, 
+                    })
+                    st.session_state.oocsi.send('XAI_endcomparison', {
+                        'participant_ID': st.session_state.participantID,
                         'shap': shap,
                         'decisiontree': dt,
                         'counterfactual': counterfactual,
                         'visualmap': visualmap,
                         'favourite': favourite,
-                        'why_1': why, 
-                        'why_2': why_2, 
-                        'why_3': why_3, 
-                        'why_4': why_4
-                    })
-                    
-                
+                    })  
+              
                     switch_page('evaluation')
