@@ -43,28 +43,28 @@ def record_page_duration_and_send():
 def record_why1():
     st.session_state.oocsi.send('XAI_endcomparison_why1', {
         'participant_ID': st.session_state.participantID,
-        'why_1': why,
+        'why_1': why[:900],
     })
 
 
 def record_why2():
     st.session_state.oocsi.send('XAI_endcomparison_why2', {
         'participant_ID': st.session_state.participantID,
-        'why_2': why_2,
+        'why_2': why_2[:900],
     })
 
 
 def record_why3():
     st.session_state.oocsi.send('XAI_endcomparison_why3', {
         'participant_ID': st.session_state.participantID,
-        'why_3': why_3,
+        'why_3': why_3[:900],
     })
 
 
 def record_why4():
     st.session_state.oocsi.send('XAI_endcomparison_why4', {
         'participant_ID': st.session_state.participantID,
-        'why_4': why_4,
+        'why_4': why_4[:900],
     })
 
 
