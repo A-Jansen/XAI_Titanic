@@ -6,8 +6,9 @@ import datetime
 from datetime import datetime
 
 header1, header2, header3 = st.columns([1, 4, 1])
-image1, image2, image3 = st.columns([1,50,1])
+image1, image2, image3 = st.columns([1, 50, 1])
 body1, body2, body3 = st.columns([1, 4, 1])
+
 
 def check_input_length(text):
     words = text.split()
@@ -32,7 +33,7 @@ def record_page_duration_and_send():
         # Send data to Data Foundry via OOCSI
         data = {
             "page_name": current_page_title,
-            "duration_seconds": page_duration.total_seconds(), 
+            "duration_seconds": page_duration.total_seconds(),
             'participant_ID': st.session_state.participantID
         }
         st.session_state.oocsi.send('Time_XAI', data)
@@ -41,6 +42,46 @@ def record_page_duration_and_send():
 st.session_state.current_page_title = "Final Page"
 page_start_time = None
 record_page_start_time()
+
+
+# functions for sending the data via oocsi
+def record_why1():
+    st.session_state.oocsi.send('XAI_endcomparison_why1', {
+        'participant_ID': st.session_state.participantID,
+        'why_1': why,
+    })
+
+
+def record_why2():
+    st.session_state.oocsi.send('XAI_endcomparison_why2', {
+        'participant_ID': st.session_state.participantID,
+        'why_2': why_2,
+    })
+
+
+def record_why3():
+    st.session_state.oocsi.send('XAI_endcomparison_why3', {
+        'participant_ID': st.session_state.participantID,
+        'why_3': why_3,
+    })
+
+
+def record_why4():
+    st.session_state.oocsi.send('XAI_endcomparison_why4', {
+        'participant_ID': st.session_state.participantID,
+        'why_4': why_4,
+    })
+
+
+def record_other():
+    st.session_state.oocsi.send('XAI_endcomparison_other', {
+        'participant_ID': st.session_state.participantID,
+        'shap': shap,
+        'decisiontree': dt,
+        'counterfactual': counterfactual,
+        'visualmap': visualmap,
+        'favourite': favourite,
+    })
 
 
 with header2:
@@ -56,13 +97,18 @@ with body2:
         st.markdown("**As a final evaluation, please rate the different types of explanations (0-10). This is a general grade that you would give to the different explanation methods.**")
         shap = st.slider('SHAP', 0, 10)
         dt = st.slider('Decision tree', 0, 10)
-        counterfactual  = st.slider("Counterfactual", 0, 10)
+        counterfactual = st.slider("Counterfactual", 0, 10)
         visualmap = st.slider("Visual map", 0, 10)
-        favourite = st.radio("**What was your favourite type of explanation?**", ('SHAP', 'Decision tree', 'Counterfactual', 'Visual map'))
-        why = st.text_area('**Please explain what you liked about your favourite XAI method and why**', "")
-        why_2 = st.text_area('**Please briefly mention why you disliked the other three XAI methods.  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
-        why_3 = st.text_area('**Please explain how your favourite XAI method helped you to understand the prediction of the ML model**')
-        why_4 = st.text_area('**Optional, If you have any remarks regarding the different methods you could input them here**')
+        favourite = st.radio("**What was your favourite type of explanation?**",
+                             ('SHAP', 'Decision tree', 'Counterfactual', 'Visual map'))
+        why = st.text_area(
+            '**Please explain what you liked about your favourite XAI method and why**', "")
+        why_2 = st.text_area(
+            '**Please briefly mention why you disliked the other three XAI methods.  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
+        why_3 = st.text_area(
+            '**Please explain how your favourite XAI method helped you to understand the prediction of the ML model**')
+        why_4 = st.text_area(
+            '**Optional, If you have any remarks regarding the different methods you could input them here**')
         # Every form must have a submit button.
         word_count_1 = check_input_length(why)
         word_count_2 = check_input_length(why_2)
@@ -71,44 +117,28 @@ with body2:
 
         submitted = st.form_submit_button("Submit")
 
-
         if submitted:
-            if word_count_1<7: 
-                st.warning('Please explain more extensively your answer (+7 words)')
-            elif word_count_2<7:
-                st.warning('Please explain more extensively your answer (+7 words)')
-            elif word_count_3<7:
-                st.warning('Please explain more extensively your answer (+7 words)')
-            elif word_count_4<7:
-                st.warning('Please explain more extensively your answer (+7 words)')
-            else: 
+            if word_count_1 < 7:
+                st.warning(
+                    'Please explain more extensively your answer (+7 words)')
+            elif word_count_2 < 7:
+                st.warning(
+                    'Please explain more extensively your answer (+7 words)')
+            elif word_count_3 < 7:
+                st.warning(
+                    'Please explain more extensively your answer (+7 words)')
+            elif word_count_4 < 7:
+                st.warning(
+                    'Please explain more extensively your answer (+7 words)')
+            else:
                 st.success('Thank you!')
                 if page_start_time:
                     record_page_duration_and_send()
                 # record_page_start_time()
-                    st.session_state.oocsi.send('XAI_endcomparison', {
-                        'participant_ID': st.session_state.participantID,
-                        'why_1': why, 
-                    })
-                    st.session_state.oocsi.send('XAI_endcomparison', {
-                        'participant_ID': st.session_state.participantID,
-                        'why_2': why_2, 
-                    })
-                    st.session_state.oocsi.send('XAI_endcomparison', {
-                        'participant_ID': st.session_state.participantID,
-                        'why_3': why_3, 
-                    })
-                    st.session_state.oocsi.send('XAI_endcomparison', {
-                        'participant_ID': st.session_state.participantID,
-                        'why_4': why_4, 
-                    })
-                    st.session_state.oocsi.send('XAI_endcomparison', {
-                        'participant_ID': st.session_state.participantID,
-                        'shap': shap,
-                        'decisiontree': dt,
-                        'counterfactual': counterfactual,
-                        'visualmap': visualmap,
-                        'favourite': favourite,
-                    })                   
-                
+                    record_why1()
+                    record_why2()
+                    record_why3()
+                    record_why4()
+                    record_other()
+
                     switch_page('evaluation')
