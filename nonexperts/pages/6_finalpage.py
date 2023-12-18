@@ -57,7 +57,11 @@ def record_why2():
         'participant_ID': st.session_state.participantID,
         'why_2': why_2[:900],
     })
-
+    if len(why_2)>900:
+        st.session_state.oocsi.send('XAI_endcomparison_why2_bis', {
+            'participant_ID': st.session_state.participantID,
+            'why_2_bis': why_2[900:1800],
+        })
 
 def record_why3():
     st.session_state.oocsi.send('XAI_endcomparison_why3', {
