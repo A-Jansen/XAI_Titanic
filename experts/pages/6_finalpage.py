@@ -151,7 +151,7 @@ with body2:
                 # record_page_start_time()
 
                     record_why1()
-                    record_why2(word_count_2)
+                    record_why2()
                     record_why3()
                     record_why4()
                     record_other()
