@@ -121,11 +121,9 @@ with body2:
             '**Please briefly mention why you disliked the other three XAI methods.  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
         why_3 = st.text_area(
             '**Please explain how your favourite XAI method helped you to understand the prediction of the ML model**')
-        if question_4 := st.checkbox("Optional Remarks"):
-            why_4 = st.text_area(
-            '**Optional, If you have any remarks regarding the different methods you could input them here**')
-        else: 
-            why_4 = ''
+        why_4 = st.text_area(
+        '**Optional, If you have any remarks regarding the different methods you could input them here**')
+ 
         # Every form must have a submit button.
         word_count_1 = check_input_length(why)
         word_count_2 = check_input_length(why_2)
