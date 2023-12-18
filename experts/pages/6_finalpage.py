@@ -121,8 +121,11 @@ with body2:
             '**Please briefly mention why you disliked the other three XAI methods.  Use the format: Name of method (1 / 2 / 3): Reason to dislike (1 / 2 / 3)**')
         why_3 = st.text_area(
             '**Please explain how your favourite XAI method helped you to understand the prediction of the ML model**')
-        why_4 = st.text_area(
+        if question_4 := st.checkbox("Optional Remarks"):
+            why_4 = st.text_area(
             '**Optional, If you have any remarks regarding the different methods you could input them here**')
+        else: 
+            why_4 = ''
         # Every form must have a submit button.
         word_count_1 = check_input_length(why)
         word_count_2 = check_input_length(why_2)
@@ -139,9 +142,6 @@ with body2:
                 st.warning(
                     'Please explain more extensively your answer (+7 words)')
             elif word_count_3 < 7:
-                st.warning(
-                    'Please explain more extensively your answer (+7 words)')
-            elif word_count_4 < 7:
                 st.warning(
                     'Please explain more extensively your answer (+7 words)')
             else:
